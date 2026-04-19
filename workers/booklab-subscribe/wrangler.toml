@@ -1,0 +1,8 @@
+name = "booklab-subscribe"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://booklabbybjorn.com"
+BEEHIIV_PUB_ID = "pub_69ada76c-9036-44d8-9c61-5fb2033787b2"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1492780106035495042/JfRFPq7hpvK0UMl-zCuPBzpoM28rQ_gYrq8iJPE7KbeuVKEEQU-i5Vt7YVnaVi6nPEBd"

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/_src/monthly/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Releases | BookLab by Bjorn</title>
+<meta name="description" content="Monthly nonfiction book releases curated by BookLab by Bjorn. Discover the best new books each month.">
+<meta property="og:title" content="Monthly Releases | BookLab by Bjorn">
+<meta property="og:description" content="Monthly nonfiction book releases curated by BookLab by Bjorn.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://booklabbybjorn.com/monthly/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+</style>
+<style>
+.page{max-width:800px;margin:0 auto;padding:60px 20px 40px}
+.page h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-0.5px}
+.page .subtitle{color:var(--muted);font-size:1rem;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid rgba(230,169,25,.15)}
+.month-list{display:flex;flex-direction:column;gap:16px}
+.month-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:var(--radius);padding:24px;transition:.2s}
+.month-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3);text-decoration:none}
+.month-emoji{font-size:2.2rem;flex-shrink:0}
+.month-info{flex:1;min-width:0}
+.month-title{font-family:'Playfair Display',serif;color:var(--cream);font-size:1.2rem;font-weight:700;margin-bottom:2px}
+.month-desc{color:var(--muted);font-size:.9rem}
+.month-badge{background:rgba(230,169,25,.15);color:var(--gold);font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:12px;flex-shrink:0}
+@media(max-width:600px){.month-card{padding:18px;gap:14px}.page{padding:40px 16px 30px}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+
+<div class="page">
+<h1>📅 Monthly Releases</h1>
+<p class="subtitle">The best new nonfiction books, curated each month. Pick a month to explore.</p>
+
+<div class="month-list">
+
+<a href="may-2026" class="month-card">
+<div class="month-emoji">🌸</div>
+<div class="month-info">
+<div class="month-title">May 2026</div>
+<div class="month-desc">The best new nonfiction books releasing May 2026: grief and love, lost civilizations, storytelling, civil rights, and...</div>
+</div>
+<span class="month-badge">Preview</span>
+</a>
+
+<a href="april-2026" class="month-card">
+<div class="month-emoji">🌷</div>
+<div class="month-info">
+<div class="month-title">April 2026</div>
+<div class="month-desc">The 5 best new nonfiction books releasing April 2026: Jim Collins on life purpose, the follow-up to Attached, the Tra...</div>
+</div>
+<span class="month-badge">New</span>
+</a>
+
+<a href="march-2026" class="month-card">
+<div class="month-emoji">🌱</div>
+<div class="month-info">
+<div class="month-title">March 2026</div>
+<div class="month-desc">The best nonfiction books releasing in March 2026 — dark emotions, dark personalities, resilience, inequality, and tw...</div>
+</div>
+</a>
+
+<a href="february-2026" class="month-card">
+<div class="month-emoji">❄️</div>
+<div class="month-info">
+<div class="month-title">February 2026</div>
+<div class="month-desc">The best nonfiction books releasing in February 2026 — new laws of nature, space evolution, human dominance, persecut...</div>
+</div>
+</a>
+
+<a href="january-2026" class="month-card">
+<div class="month-emoji">🎆</div>
+<div class="month-info">
+<div class="month-title">January 2026</div>
+<div class="month-desc">The best nonfiction books releasing in January 2026 — from the philosophy of games and the science of alcohol to teen...</div>
+</div>
+</a>
+</div>
+</div>
+
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

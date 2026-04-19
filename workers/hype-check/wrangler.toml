@@ -1,0 +1,10 @@
+name = "booklab-hype-check"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://booklabbybjorn.com,http://localhost:8080"
+
+[[kv_namespaces]]
+binding = "HYPE_VOTES"
+id = "a636e08d195d41e1bc9e4bf1d682dbc4"

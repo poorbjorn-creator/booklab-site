@@ -1,0 +1,82 @@
+{
+  "a-guide-to-the-good-life-william-irvine": {
+    "related": ["letters-from-a-stoic-seneca", "the-courage-to-be-disliked-kishimi-koga", "flow-mihaly-csikszentmihalyi"],
+    "tags": ["stoicism", "philosophy", "self-improvement"]
+  },
+  "boundaries-henry-cloud-john-townsend": {
+    "related": ["the-courage-to-be-disliked-kishimi-koga", "escape-from-freedom-erich-fromm", "top-five-regrets-of-the-dying-bronnie-ware"],
+    "tags": ["psychology", "self-improvement", "relationships"]
+  },
+  "determined-robert-sapolsky": {
+    "related": ["the-moral-animal-robert-wright", "the-denial-of-death-ernest-becker", "stumbling-on-happiness-daniel-gilbert"],
+    "tags": ["science", "psychology", "philosophy", "free-will"]
+  },
+  "escape-from-freedom-erich-fromm": {
+    "related": ["the-denial-of-death-ernest-becker", "the-stranger-albert-camus", "notes-from-the-underground-dostoevsky"],
+    "tags": ["psychology", "philosophy", "society"]
+  },
+  "flow-mihaly-csikszentmihalyi": {
+    "related": ["so-good-they-cant-ignore-you-cal-newport", "a-guide-to-the-good-life-william-irvine", "the-courage-to-be-disliked-kishimi-koga"],
+    "tags": ["psychology", "self-improvement", "performance"]
+  },
+  "futureproof-kevin-roose": {
+    "related": ["so-good-they-cant-ignore-you-cal-newport", "i-robot-isaac-asimov", "spiral-dynamics-don-beck-christopher-cowan"],
+    "tags": ["technology", "future", "career"]
+  },
+  "i-robot-isaac-asimov": {
+    "related": ["futureproof-kevin-roose", "the-wall-dancers-yi-ling-liu", "notes-from-the-underground-dostoevsky"],
+    "tags": ["fiction", "technology", "ethics"]
+  },
+  "letters-from-a-stoic-seneca": {
+    "related": ["a-guide-to-the-good-life-william-irvine", "the-stranger-albert-camus", "the-denial-of-death-ernest-becker"],
+    "tags": ["stoicism", "philosophy", "classics"]
+  },
+  "life-of-pythagoras-iamblichus": {
+    "related": ["letters-from-a-stoic-seneca", "spiral-dynamics-don-beck-christopher-cowan", "a-guide-to-the-good-life-william-irvine"],
+    "tags": ["philosophy", "classics", "biography"]
+  },
+  "notes-from-the-underground-dostoevsky": {
+    "related": ["the-stranger-albert-camus", "escape-from-freedom-erich-fromm", "the-denial-of-death-ernest-becker"],
+    "tags": ["fiction", "philosophy", "existentialism"]
+  },
+  "shoe-dog-phil-knight": {
+    "related": ["so-good-they-cant-ignore-you-cal-newport", "flow-mihaly-csikszentmihalyi", "boundaries-henry-cloud-john-townsend"],
+    "tags": ["biography", "business", "entrepreneurship"]
+  },
+  "so-good-they-cant-ignore-you-cal-newport": {
+    "related": ["flow-mihaly-csikszentmihalyi", "shoe-dog-phil-knight", "futureproof-kevin-roose"],
+    "tags": ["career", "self-improvement", "performance"]
+  },
+  "spiral-dynamics-don-beck-christopher-cowan": {
+    "related": ["the-moral-animal-robert-wright", "escape-from-freedom-erich-fromm", "determined-robert-sapolsky"],
+    "tags": ["psychology", "philosophy", "society", "development"]
+  },
+  "stumbling-on-happiness-daniel-gilbert": {
+    "related": ["flow-mihaly-csikszentmihalyi", "determined-robert-sapolsky", "the-courage-to-be-disliked-kishimi-koga"],
+    "tags": ["psychology", "happiness", "science"]
+  },
+  "the-courage-to-be-disliked-kishimi-koga": {
+    "related": ["a-guide-to-the-good-life-william-irvine", "boundaries-henry-cloud-john-townsend", "escape-from-freedom-erich-fromm"],
+    "tags": ["psychology", "philosophy", "self-improvement"]
+  },
+  "the-denial-of-death-ernest-becker": {
+    "related": ["escape-from-freedom-erich-fromm", "notes-from-the-underground-dostoevsky", "the-stranger-albert-camus"],
+    "tags": ["psychology", "philosophy", "existentialism"]
+  },
+  "the-moral-animal-robert-wright": {
+    "related": ["determined-robert-sapolsky", "spiral-dynamics-don-beck-christopher-cowan", "stumbling-on-happiness-daniel-gilbert"],
+    "tags": ["psychology", "evolution", "science"]
+  },
+  "the-stranger-albert-camus": {
+    "related": ["notes-from-the-underground-dostoevsky", "escape-from-freedom-erich-fromm", "the-denial-of-death-ernest-becker"],
+    "tags": ["fiction", "philosophy", "existentialism"]
+  },
+  "the-wall-dancers-yi-ling-liu": {
+    "related": ["shoe-dog-phil-knight", "i-robot-isaac-asimov", "escape-from-freedom-erich-fromm"],
+    "tags": ["nonfiction", "society", "technology"]
+  },
+  "top-five-regrets-of-the-dying-bronnie-ware": {
+    "related": ["flow-mihaly-csikszentmihalyi", "the-courage-to-be-disliked-kishimi-koga", "a-guide-to-the-good-life-william-irvine"],
+    "tags": ["self-improvement", "life", "psychology"]
+  }
+}

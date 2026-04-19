@@ -1,0 +1,11 @@
+name = "booklab-submit"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+NOTIFY_EMAIL = "booklab@booklabbybjorn.com"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1492780106035495042/JfRFPq7hpvK0UMl-zCuPBzpoM28rQ_gYrq8iJPE7KbeuVKEEQU-i5Vt7YVnaVi6nPEBd"
+
+[[kv_namespaces]]
+binding = "SUBMISSIONS"
+id = "fa25c7481a7045f988b39e3d900865ce"
