@@ -1,0 +1,33 @@
+/* Review page shared styles — based on Fahrenheit 451 (gold standard) */
+.article{max-width:720px;margin:0 auto;padding:60px 20px 40px}
+.breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:24px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--gold)}
+h1{font-size:2.2rem;margin-bottom:8px;line-height:1.2}
+.tagline{font-size:1.15rem;color:var(--cream);margin:-4px 0 12px;font-style:italic;opacity:.85}
+.meta{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+.hero-img{width:100%;max-width:720px;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+h2{font-size:1.4rem;margin:36px 0 14px;color:var(--gold)}
+p{margin-bottom:16px}
+blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;background:rgba(230,169,25,.05);border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:var(--cream)}
+.takeaway{background:rgba(230,169,25,.08);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);padding:24px;margin:32px 0}
+.takeaway h2{margin-top:0}
+.verdict{background:rgba(15,52,96,.3);border:1px solid rgba(230,169,25,.1);border-radius:var(--radius);padding:24px;margin:32px 0}
+.verdict h2{margin-top:0}
+.rating{text-align:center;font-size:1.5rem;margin:24px 0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
+.stat{background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:8px;padding:10px 14px;font-size:.9rem}
+.stat-positive{color:#5cb85c}
+.stat-negative{color:var(--gold)}
+.cta{text-align:center;margin:24px 0}
+.btn-buy{display:inline-block;background:var(--gold);color:#1a1a2e;padding:14px 32px;border-radius:var(--radius);font-weight:600;font-size:1rem;transition:.2s}
+.btn-buy:hover{background:#d4990f;text-decoration:none;transform:translateY(-2px)}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.might-also-like{margin:40px 0;padding:30px;background:rgba(230,169,25,.05);border-radius:var(--radius);border:1px solid rgba(230,169,25,.12)}
+.might-also-like h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.3rem;margin-bottom:16px}
+.might-also-like .links{display:flex;flex-direction:column;gap:10px}
+.might-also-like a{color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem}
+.might-also-like a:hover{background:rgba(34,34,68,.9);color:var(--gold)}
+.back-link{margin-top:40px;font-size:.9rem}
+@media(max-width:600px){.article{padding:40px 16px 30px}.stats{grid-template-columns:1fr}}

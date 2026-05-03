@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="canonical" href="https://booklabbybjorn.com/_src/great-books-list" />
+<link rel="canonical" href="https://booklabbybjorn.com/great-books-list" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The 30 greatest nonfiction books — psychology, philosophy, history, economics, and human nature. Curated by BookLab by Bjorn.">
 <meta property="og:title" content="The Great Books List | BookLab by Bjorn">
 <meta property="og:description" content="The 30 greatest nonfiction books — psychology, philosophy, history, economics, and human nature.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://booklabbybjorn.com/great-books-list.html">
+<meta property="og:url" content="https://booklabbybjorn.com/great-books-list">
 <meta property="og:image" content="https://booklabbybjorn.com/images/og-kit/og-bookshelf-01.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Great Books List | BookLab by Bjorn">
@@ -18,7 +18,37 @@
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>BookLab by Bjorn — The Great Books List</title>
-<!-- INCLUDE:head-css -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+</style>
 <style>
 /* HEADER */
 header{text-align:center;padding:80px 20px 60px;background:linear-gradient(180deg,#0f0f23 0%,var(--bg) 100%)}
@@ -73,7 +103,39 @@ section .section-desc{color:var(--muted);margin-bottom:30px;font-size:.9rem}
 </head>
 <body>
 
-<!-- INCLUDE:nav -->
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
 
 <header>
 <h1>BookLab by Bjorn</h1>
@@ -458,62 +520,225 @@ section .section-desc{color:var(--muted);margin-bottom:30px;font-size:.9rem}
 </div>
 </section>
 
+<!-- SURVIVE THE FUTURE -->
+<section id="survive-future">
+<div class="container">
+<h2>🛡️ Survive the Future</h2>
+<p class="section-desc">Books for thinking clearly about money, power, and technology in the decades ahead.</p>
+
+<div class="book-card">
+<img src="images/bitcoin-standard-cover.jpg" alt="The Bitcoin Standard" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">01</span>
+<div class="book-title"><a href="/reviews/the-bitcoin-standard-saifedean-ammous">The Bitcoin Standard</a></div>
+<div class="book-author">Saifedean Ammous</div>
+<span class="genre-tag">Economics / Money</span>
+<p class="book-desc">Ammous traces the history of money — from seashells to gold to fiat — and argues that Bitcoin is the first credible return to hard money in the digital age. A crash course in sound money, time preference, and why the currency you hold shapes the civilization you live in.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to actually understand what money is and why it matters</li>
+<li>You're curious about Bitcoin beyond the price charts</li>
+<li>You want a framework for thinking about inflation, savings, and long-term planning</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=The+Bitcoin+Standard+Saifedean+Ammous&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
+</div>
+
+<div class="book-card">
+<img src="images/covers/9780804139298.jpg" alt="Zero to One" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">02</span>
+<div class="book-title">Zero to One</div>
+<div class="book-author">Peter Thiel</div>
+<span class="genre-tag">Startups / Contrarian Thinking</span>
+<p class="book-desc">Real progress comes from going from zero to one — creating something radically new — not from copying what already works. Thiel makes the case for contrarian thinking, monopolies built on genuine innovation, and the courage to bet on a future most people can't yet see.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to think like a founder, not a follower</li>
+<li>You're drawn to contrarians who force you to question your assumptions</li>
+<li>You want a short, dense book that rewires how you see progress and ambition</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Zero+to+One+Peter+Thiel&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
+</div>
+
+<div class="book-card">
+<img src="images/sovereign-individual-cover.jpg" alt="The Sovereign Individual" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">03</span>
+<div class="book-title"><a href="/reviews/the-sovereign-individual-davidson-rees-mogg">The Sovereign Individual</a></div>
+<div class="book-author">Davidson &amp; Rees-Mogg</div>
+<span class="genre-tag">Future / Politics</span>
+<p class="book-desc">Written in 1997 and eerily prescient, Davidson and Rees-Mogg argue that the information age will shatter the nation-state, liberate the individual from predatory governments, and reward those who can operate across borders with their minds and their capital. A blueprint for thriving in the transition.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want a long lens on where technology is taking civilization</li>
+<li>You're trying to future-proof your life, career, or finances</li>
+<li>You enjoy books that were written decades ago but read like they're about today</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=The+Sovereign+Individual+Davidson+Rees-Mogg&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
+</div>
+
+<div class="book-card">
+<img src="images/netocrats-cover.jpg" alt="Netocrats" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">04</span>
+<div class="book-title">Netocrats</div>
+<div class="book-author">Alexander Bard &amp; Jan Söderqvist</div>
+<span class="genre-tag">Future / Sociology</span>
+<p class="book-desc">Bard and Söderqvist argue that capitalism is giving way to a new order ruled by those who command the networks — the netocrats — while the rest of us risk sliding into the consumtariat. A sharp, Swedish, and deeply contrarian map of power in the information age.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want a European counterpoint to Silicon Valley techno-optimism</li>
+<li>You're interested in how class and power mutate in a networked world</li>
+<li>You like big, ambitious books that try to name what's actually happening</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Netocrats+Alexander+Bard&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
+</div>
+
+</div>
+</section>
+
 <!-- LIFE SKILLS -->
 <section id="skills">
 <div class="container">
 <h2>🛠️ Life Skills</h2>
 <p class="section-desc">Practical books for mastering the art of living well.</p>
-<div class="simple-list">
 
-<div class="simple-item">
-<img src="images/covers/9780062407801.jpg" alt="Never Split The Difference" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Never Split The Difference</div><div class="si-author">Chris Voss</div></div>
-<a href="https://www.amazon.com/s?k=Never+Split+The+Difference+Chris+Voss&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9780062407801.jpg" alt="Never Split The Difference" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">01</span>
+<div class="book-title">Never Split The Difference</div>
+<div class="book-author">Chris Voss</div>
+<span class="genre-tag">Negotiation</span>
+<p class="book-desc">A former FBI hostage negotiator turns high-stakes tactics into everyday tools. Voss shows that real negotiation isn't about logic and compromise — it's about empathy, tone of voice, and understanding the emotional world on the other side of the table.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to negotiate better at work, in business, or in life</li>
+<li>You're fascinated by how language and tone shape human behavior</li>
+<li>You want practical techniques you can actually use tomorrow</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Never+Split+The+Difference+Chris+Voss&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/9780970693846.jpg" alt="Radical Honesty" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Radical Honesty</div><div class="si-author">Brad Blanton</div></div>
-<a href="https://www.amazon.com/s?k=Radical+Honesty+Brad+Blanton&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9780970693846.jpg" alt="Radical Honesty" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">02</span>
+<div class="book-title">Radical Honesty</div>
+<div class="book-author">Brad Blanton</div>
+<span class="genre-tag">Communication</span>
+<p class="book-desc">Blanton argues that most of our suffering comes from the lies we tell — big ones, small ones, and the ones we tell ourselves. His prescription is radical: tell the truth, all the time, and watch your life get lighter, messier, and far more real.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to stop performing and start being yourself</li>
+<li>You feel trapped by the little lies of polite society</li>
+<li>You're willing to have uncomfortable conversations in exchange for freedom</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Radical+Honesty+Brad+Blanton&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/9781455586691.jpg" alt="Deep Work" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Deep Work</div><div class="si-author">Cal Newport</div></div>
-<a href="https://www.amazon.com/s?k=Deep+Work+Cal+Newport&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9781455586691.jpg" alt="Deep Work" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">03</span>
+<div class="book-title">Deep Work</div>
+<div class="book-author">Cal Newport</div>
+<span class="genre-tag">Productivity</span>
+<p class="book-desc">In a world of endless notifications and shallow tasks, the ability to focus deeply has become both rare and valuable. Newport makes the case that deep work is the superpower of the 21st century — and gives you a playbook for reclaiming it.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You feel like your attention is being shredded by modern life</li>
+<li>You want to do meaningful work, not just busy work</li>
+<li>You're ready to build a life where focus is the default, not the exception</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Deep+Work+Cal+Newport&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/9780393339758.jpg" alt="The Shallows" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">The Shallows</div><div class="si-author">Nicholas Carr</div></div>
-<a href="https://www.amazon.com/s?k=The+Shallows+Nicholas+Carr&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9780393339758.jpg" alt="The Shallows" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">04</span>
+<div class="book-title">The Shallows</div>
+<div class="book-author">Nicholas Carr</div>
+<span class="genre-tag">Technology / Cognition</span>
+<p class="book-desc">What is the internet doing to our brains? Carr traces how the tools we use reshape how we think, and argues that constant connectivity is rewiring us for distraction and shallow thinking at the expense of depth, memory, and contemplation.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You suspect your phone is changing how your mind works</li>
+<li>You want to understand the cognitive cost of being always online</li>
+<li>You love a well-argued book that blends neuroscience, history, and culture</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=The+Shallows+Nicholas+Carr&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/47.jpg" alt="Influence: The Psychology of Persuasion" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Influence: The Psychology of Persuasion</div><div class="si-author">Robert Cialdini</div></div>
-<a href="https://www.amazon.com/s?k=Influence+Psychology+Persuasion+Robert+Cialdini&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/47.jpg" alt="Influence: The Psychology of Persuasion" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">05</span>
+<div class="book-title">Influence: The Psychology of Persuasion</div>
+<div class="book-author">Robert Cialdini</div>
+<span class="genre-tag">Psychology</span>
+<p class="book-desc">The classic book on why we say yes — and how to recognize when we're being nudged. Cialdini distills decades of research into six principles of persuasion that explain everything from marketing tricks to why you bought that thing you didn't need.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to understand the hidden levers behind human decisions</li>
+<li>You want to stop being manipulated and start being persuasive</li>
+<li>You're curious how salespeople, cults, and advertisers really work</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Influence+Psychology+Persuasion+Robert+Cialdini&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/9780143124177.jpg" alt="Mastery" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Mastery</div><div class="si-author">Robert Greene</div></div>
-<a href="https://www.amazon.com/s?k=Mastery+Robert+Greene&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9780143124177.jpg" alt="Mastery" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">06</span>
+<div class="book-title">Mastery</div>
+<div class="book-author">Robert Greene</div>
+<span class="genre-tag">Self-Development</span>
+<p class="book-desc">Greene studies the lives of history's great masters — Da Vinci, Darwin, Mozart — and reverse-engineers the path they walked. The result is a roadmap for anyone who wants to go from apprentice to true mastery in their chosen craft.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to become exceptional at something you care about</li>
+<li>You love biographies that double as practical lessons</li>
+<li>You need reassurance that talent is built, not born</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Mastery+Robert+Greene&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/9781501144325.jpg" alt="Why We Sleep" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Why We Sleep</div><div class="si-author">Matthew Walker</div></div>
-<a href="https://www.amazon.com/s?k=Why+We+Sleep+Matthew+Walker&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9781501144325.jpg" alt="Why We Sleep" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">07</span>
+<div class="book-title">Why We Sleep</div>
+<div class="book-author">Matthew Walker</div>
+<span class="genre-tag">Health / Neuroscience</span>
+<p class="book-desc">Walker makes the case that sleep isn't a luxury — it's the foundation of physical health, mental performance, emotional stability, and longevity. After reading this, you'll never think of pulling an all-nighter the same way again.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to understand how sleep actually runs your body and brain</li>
+<li>You need motivation to fix your sleep habits for good</li>
+<li>You're interested in the science behind dreams, memory, and recovery</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Why+We+Sleep+Matthew+Walker&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/9780671027032.jpg" alt="How to Win Friends and Influence People" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">How to Win Friends and Influence People</div><div class="si-author">Dale Carnegie</div></div>
-<a href="https://www.amazon.com/s?k=How+to+Win+Friends+and+Influence+People+Dale+Carnegie&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9780671027032.jpg" alt="How to Win Friends and Influence People" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">08</span>
+<div class="book-title">How to Win Friends and Influence People</div>
+<div class="book-author">Dale Carnegie</div>
+<span class="genre-tag">Social Skills</span>
+<p class="book-desc">Nearly a century old and still one of the most practical books ever written about dealing with other human beings. Carnegie's principles are simple, old-fashioned, and unreasonably effective — proof that human nature doesn't change much.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want to be better with people — at work, at home, everywhere</li>
+<li>You appreciate timeless wisdom over trendy frameworks</li>
+<li>You want a short book that can actually change how you show up</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=How+to+Win+Friends+and+Influence+People+Dale+Carnegie&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-</div>
 </div>
 </section>
 
@@ -522,33 +747,87 @@ section .section-desc{color:var(--muted);margin-bottom:30px;font-size:.9rem}
 <div class="container">
 <h2>✨ Spirituality</h2>
 <p class="section-desc">Books for the inner journey.</p>
-<div class="simple-list">
 
-<div class="simple-item">
-<img src="images/covers/34.jpg" alt="A New Earth" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">A New Earth</div><div class="si-author">Eckhart Tolle</div></div>
-<a href="https://www.amazon.com/s?k=A+New+Earth+Eckhart+Tolle&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/34.jpg" alt="A New Earth" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">01</span>
+<div class="book-title">A New Earth</div>
+<div class="book-author">Eckhart Tolle</div>
+<span class="genre-tag">Spirituality</span>
+<p class="book-desc">Tolle argues that most of human suffering comes from identifying with the ego — the voice in your head that tells you who you are. A New Earth is an invitation to step out of that voice, into presence, and into a deeper sense of being that isn't built on circumstances.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You want a practical introduction to presence and awareness</li>
+<li>You feel run around by your own thoughts and reactions</li>
+<li>You're looking for a gentler, less dogmatic spirituality</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=A+New+Earth+Eckhart+Tolle&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/31.jpg" alt="Levels of Energy" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Levels of Energy</div><div class="si-author">Frederick Dodson</div></div>
-<a href="https://www.amazon.com/s?k=Levels+of+Energy+Frederick+Dodson&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/31.jpg" alt="Levels of Energy" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">02</span>
+<div class="book-title">Levels of Energy</div>
+<div class="book-author">Frederick Dodson</div>
+<span class="genre-tag">Consciousness</span>
+<p class="book-desc">Dodson maps out a ladder of states of consciousness — from apathy and fear all the way up to joy, peace, and enlightenment — and shows how the level you live at shapes everything you attract, create, and experience. Strange, ambitious, and oddly practical.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You're curious about consciousness and inner states as a map for life</li>
+<li>You want a framework that connects emotion, energy, and reality</li>
+<li>You like your spirituality a little weirder and more exploratory</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Levels+of+Energy+Frederick+Dodson&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-<div class="simple-item">
-<img src="images/covers/9780963826930.jpg" alt="Parallel Universes of Self" class="simple-cover" loading="lazy">
-<div class="si-info"><div class="si-title">Parallel Universes of Self</div><div class="si-author">Frederick Dodson</div></div>
-<a href="https://www.amazon.com/s?k=Parallel+Universes+of+Self+Frederick+Dodson&tag=poorbjorn-20" target="_blank" class="btn-amazon btn-sm">Amazon →</a>
+<div class="book-card">
+<img src="images/covers/9780963826930.jpg" alt="Parallel Universes of Self" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<span class="book-num">03</span>
+<div class="book-title">Parallel Universes of Self</div>
+<div class="book-author">Frederick Dodson</div>
+<span class="genre-tag">Metaphysics</span>
+<p class="book-desc">Dodson takes the idea of parallel realities and turns it into a tool for personal transformation. The premise: every version of you already exists, and the work of living is learning to shift into the reality you actually want to inhabit.</p>
+<div class="read-if"><strong>Read if:</strong><ul>
+<li>You enjoy bending your brain with metaphysical thought experiments</li>
+<li>You want a fresh lens on identity, choice, and possibility</li>
+<li>You're open to spiritual ideas that flirt with quantum physics and sci-fi</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Parallel+Universes+of+Self+Frederick+Dodson&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+</div>
 </div>
 
-</div>
 </div>
 </section>
 
-<!-- INCLUDE:footer -->
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
 
-<!-- INCLUDE:nav-js -->
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

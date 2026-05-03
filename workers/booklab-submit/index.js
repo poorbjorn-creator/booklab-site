@@ -65,6 +65,7 @@ export default {
               { name: 'Pitch', value: (submission.pitch || '').slice(0, 1024) || 'N/A' },
               { name: 'Link', value: submission.link || 'N/A' },
               { name: 'Submitted By', value: `${submission.submitterName || 'Anonymous'} (${submission.submitterRole || 'unknown'})` },
+              { name: 'Email', value: submission.submitterEmail || 'N/A', inline: true },
             ],
             timestamp: submission.submittedAt,
           }],

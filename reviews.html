@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="canonical" href="https://booklabbybjorn.com/_src/reviews" />
+<link rel="canonical" href="https://booklabbybjorn.com/reviews" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Reviews | BookLab by Bjorn</title>
 <meta name="description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
 <meta property="og:title" content="Book Reviews | BookLab by Bjorn">
 <meta property="og:description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://booklabbybjorn.com/reviews.html">
+<meta property="og:url" content="https://booklabbybjorn.com/reviews">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -50,7 +50,8 @@ footer .links a{color:var(--gold)}
 .review-list{display:flex;flex-direction:column;gap:16px}
 .review-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:var(--radius);padding:20px;transition:.2s}
 .review-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3);text-decoration:none}
-.review-card img{width:60px;height:90px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.review-card img{width:60px;height:90px;object-fit:cover;border-radius:6px;flex-shrink:0;background:var(--card);border:1px solid rgba(230,169,25,.15)}
+.review-card img.broken{display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:var(--gold);background:linear-gradient(135deg,var(--card),rgba(15,52,96,.3))}
 .review-info{flex:1;min-width:0}
 .review-title{font-family:'Playfair Display',serif;color:var(--cream);font-size:1.1rem;font-weight:700;margin-bottom:2px}
 .review-author{color:var(--muted);font-size:.9rem}
@@ -83,25 +84,183 @@ footer .links a{color:var(--gold)}
 <div class="nav-overlay-bg"></div>
 <div class="nav-overlay">
 <a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
 <a href="/monthly/index">Monthly Releases</a>
-<a href="/#browse">Topics</a>
-<a href="/#about">About</a>
-<a href="/submit-book">Submit a Book</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
 <a href="/work-with-us">Work With Us</a>
-<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
 </div>
 <div class="page">
 <h1>Book Reviews</h1>
 <p class="subtitle">Every book I've reviewed on BookLab — nonfiction, philosophy, psychology, classics, and more.</p>
-<p class="review-count">20 reviews</p>
+<p class="review-count">47 reviews</p>
 <div class="review-list">
+<a href="/reviews/same-as-ever-morgan-housel" class="review-card">
+<img src="/images/covers/9780593332702.jpg" alt="Same As Ever">
+<div class="review-info">
+<div class="review-title">Same As Ever</div>
+<div class="review-author">Morgan Housel</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/antifragile-nassim-taleb" class="review-card">
+<img src="/images/antifragile-nassim-taleb-cover.jpg" alt="Antifragile">
+<div class="review-info">
+<div class="review-title">Antifragile</div>
+<div class="review-author">Nassim Nicholas Taleb</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/21-lessons-for-the-21st-century-yuval-noah-harari" class="review-card">
+<img src="/images/21-lessons-cover.jpg" alt="21 Lessons for the 21st Century">
+<div class="review-info">
+<div class="review-title">21 Lessons for the 21st Century</div>
+<div class="review-author">Yuval Noah Harari</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/a-world-without-email-cal-newport" class="review-card">
+<img src="/images/world-without-email-cover.jpg" alt="A World Without Email">
+<div class="review-info">
+<div class="review-title">A World Without Email</div>
+<div class="review-author">Cal Newport</div>
+<div class="review-rating">⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/bitcoin-everything-divided-by-21-million-knut-svanholm" class="review-card">
+<img src="/images/bitcoin-21m-cover.png" alt="Bitcoin: Everything Divided by 21 Million">
+<div class="review-info">
+<div class="review-title">Bitcoin: Everything Divided by 21 Million</div>
+<div class="review-author">Knut Svanholm</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/building-a-storybrand-donald-miller" class="review-card">
+<img src="/images/building-a-storybrand-cover.jpg" alt="Building a StoryBrand">
+<div class="review-info">
+<div class="review-title">Building a StoryBrand</div>
+<div class="review-author">Donald Miller</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/courage-is-calling-ryan-holiday" class="review-card">
+<img src="/images/courage-is-calling-cover.jpg" alt="Courage Is Calling">
+<div class="review-info">
+<div class="review-title">Courage Is Calling</div>
+<div class="review-author">Ryan Holiday</div>
+<div class="review-rating">⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/demian-hermann-hesse" class="review-card">
+<img src="/images/demian-cover.jpg" alt="Demian">
+<div class="review-info">
+<div class="review-title">Demian</div>
+<div class="review-author">Hermann Hesse</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/greenlights-matthew-mcconaughey" class="review-card">
+<img src="/images/greenlights-cover.jpg" alt="Greenlights">
+<div class="review-info">
+<div class="review-title">Greenlights</div>
+<div class="review-author">Matthew McConaughey</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/in-the-realm-of-hungry-ghosts-gabor-mate" class="review-card">
+<img src="/images/covers/9781785152610.jpg" alt="In the Realm of Hungry Ghosts">
+<div class="review-info">
+<div class="review-title">In the Realm of Hungry Ghosts</div>
+<div class="review-author">Gabor Maté</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/i-robot-isaac-asimov" class="review-card">
+<img src="/images/i-robot-cover.jpg" alt="I, Robot">
+<div class="review-info">
+<div class="review-title">I, Robot</div>
+<div class="review-author">Isaac Asimov</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/ishmael-daniel-quinn" class="review-card">
+<img src="/images/ishmael-cover.jpg" alt="Ishmael">
+<div class="review-info">
+<div class="review-title">Ishmael</div>
+<div class="review-author">Daniel Quinn</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/stumbling-on-happiness-daniel-gilbert" class="review-card">
+<img src="/images/stumbling-on-happiness-cover.jpg" alt="Stumbling on Happiness">
+<div class="review-info">
+<div class="review-title">Stumbling on Happiness</div>
+<div class="review-author">Daniel Gilbert</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-courage-to-be-disliked-kishimi-koga" class="review-card">
+<img src="/images/courage-to-be-disliked-cover.jpg" alt="The Courage to Be Disliked">
+<div class="review-info">
+<div class="review-title">The Courage to Be Disliked</div>
+<div class="review-author">Ichiro Kishimi &amp; Fumitake Koga</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-moral-animal-robert-wright" class="review-card">
+<img src="/images/moral-animal-cover.jpg" alt="The Moral Animal">
+<div class="review-info">
+<div class="review-title">The Moral Animal</div>
+<div class="review-author">Robert Wright</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/top-five-regrets-of-the-dying-bronnie-ware" class="review-card">
+<img src="/images/top-five-regrets-cover.jpg" alt="The Top Five Regrets of the Dying">
+<div class="review-info">
+<div class="review-title">The Top Five Regrets of the Dying</div>
+<div class="review-author">Bronnie Ware</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/trust-me-im-lying-ryan-holiday" class="review-card">
+<img src="/images/trust-me-im-lying-cover.jpg" alt="Trust Me, I'm Lying">
+<div class="review-info">
+<div class="review-title">Trust Me, I'm Lying</div>
+<div class="review-author">Ryan Holiday</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/fahrenheit-451-ray-bradbury" class="review-card">
+<img src="/images/fahrenheit-451-cover.jpg" alt="Fahrenheit 451">
+<div class="review-info">
+<div class="review-title">Fahrenheit 451</div>
+<div class="review-author">Ray Bradbury</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
 <a href="/reviews/among-the-thugs-bill-buford" class="review-card">
 <img src="/images/among-the-thugs-cover.jpg" alt="Among the Thugs">
 <div class="review-info">
@@ -152,6 +311,24 @@ footer .links a{color:var(--gold)}
 <div class="review-info">
 <div class="review-title">The Almanack of Naval Ravikant</div>
 <div class="review-author">Eric Jorgenson</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-coming-wave-mustafa-suleyman" class="review-card">
+<img src="/images/the-coming-wave-cover.jpg" alt="The Coming Wave">
+<div class="review-info">
+<div class="review-title">The Coming Wave</div>
+<div class="review-author">Mustafa Suleyman</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-beginning-of-infinity-david-deutsch" class="review-card">
+<img src="/images/beginning-of-infinity-cover.jpg" alt="The Beginning of Infinity">
+<div class="review-info">
+<div class="review-title">The Beginning of Infinity</div>
+<div class="review-author">David Deutsch</div>
 <div class="review-rating">⭐⭐⭐⭐⭐</div>
 </div>
 </a>
@@ -347,6 +524,15 @@ footer .links a{color:var(--gold)}
 </div>
 </a>
 
+<a href="/reviews/why-we-sleep-matthew-walker" class="review-card">
+<img src="/images/covers/9781501144325.jpg" alt="Why We Sleep">
+<div class="review-info">
+<div class="review-title">Why We Sleep</div>
+<div class="review-author">Matthew Walker</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
 </div>
 </div>
 <footer>
@@ -374,6 +560,7 @@ bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
 })();
 </script>
+<script>document.querySelectorAll('.review-card img').forEach(function(img){img.onerror=function(){var s=document.createElement('span');s.className='review-card-placeholder';s.style.cssText='width:60px;height:90px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;border-radius:6px;flex-shrink:0;background:linear-gradient(135deg,#222244,rgba(15,52,96,.3));border:1px solid rgba(230,169,25,.15)';s.textContent='📚';img.replaceWith(s)}})</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

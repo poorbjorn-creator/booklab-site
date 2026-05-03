@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/articles" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles | BookLab by Bjorn</title>
+<meta name="description" content="Articles and essays on reading, books, and ideas by BookLab by Bjorn.">
+<meta property="og:title" content="Articles | BookLab by Bjorn">
+<meta property="og:description" content="Articles and essays on reading, books, and ideas by BookLab by Bjorn.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://booklabbybjorn.com/articles.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+</style>
+<style>
+.page{max-width:800px;margin:0 auto;padding:60px 20px 40px}
+.page h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-0.5px}
+.page .subtitle{color:var(--muted);font-size:1rem;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid rgba(230,169,25,.15)}
+.article-list{display:flex;flex-direction:column;gap:16px}
+.article-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:var(--radius);padding:20px;transition:.2s}
+.article-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3);text-decoration:none}
+.article-card img{width:120px;height:80px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.article-info{flex:1;min-width:0}
+.article-title{font-family:'Playfair Display',serif;color:var(--cream);font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.article-desc{color:var(--muted);font-size:.88rem}
+@media(max-width:600px){.article-card{flex-direction:column;padding:14px;gap:12px}.article-card img{width:100%;height:160px}.page{padding:40px 16px 30px}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+<div class="page">
+<h1>Articles</h1>
+<p class="subtitle">Essays and ideas on reading, books, and the life of the mind.</p>
+<div class="article-list">
+
+<a href="/articles/5-nonfiction-books-about-death-that-changed-how-i-think-about-living" class="article-card">
+<img src="/images/og-kit/og-bookshelf-04.jpg" alt="5 Nonfiction Books About Death That Changed How I Think About Living">
+<div class="article-info">
+<div class="article-title">5 Nonfiction Books About Death That Changed How I Think About Living</div>
+<div class="article-desc">5 profound books on mortality — from Becker's Denial of Death to Frankl, Kalanithi, Gawande, and Terror Management Theory — that will make you more awake to life.</div>
+</div>
+</a>
+
+<a href="/articles/biographies-you-should-read-asap" class="article-card">
+<img src="/images/og-biographies-you-should-read.jpg" alt="7 Biographies You Should Read ASAP">
+<div class="article-info">
+<div class="article-title">7 Biographies You Should Read ASAP</div>
+<div class="article-desc">Seven outstanding biographies every nonfiction reader needs — from Einstein and Oppenheimer to Steve Jobs, Gandhi, and Theodore Roosevelt.</div>
+</div>
+</a>
+
+<a href="/articles/5-must-read-books-for-personal-growth-for-the-unemployed" class="article-card">
+<img src="/images/og-kit/og-bookshelf-04.jpg" alt="5 Must-Read Books for Personal Growth for the Unemployed">
+<div class="article-info">
+<div class="article-title">5 Must-Read Books for Personal Growth for the Unemployed</div>
+<div class="article-desc">Facing unemployment? These 5 nonfiction books will help you build resilience, cultivate a growth mindset, and turn setbacks into stepping stones.</div>
+</div>
+</a>
+
+<a href="/articles/green-beards-altruism-and-kinship-halfway-through-behave-by-robert-sapolsky" class="article-card">
+<img src="/images/og-green-beards-behave.jpg" alt="Green Beards, Altruism and Kinship — Halfway Through BEHAVE by Robert Sapolsky">
+<div class="article-info">
+<div class="article-title">Green Beards, Altruism and Kinship — Halfway Through BEHAVE</div>
+<div class="article-desc">Kin selection, the Green Beard Effect, and why we lay down our lives for brothers and cousins — notes from halfway through Behave by Robert Sapolsky.</div>
+</div>
+</a>
+
+<a href="/articles/why-you-should-read-books-that-confuse-you" class="article-card">
+<img src="/images/og-kit/og-bookshelf-02.jpg" alt="Why You Should Read Books That Confuse You">
+<div class="article-info">
+<div class="article-title">Why You Should Read Books That Confuse You</div>
+<div class="article-desc">Confusion isn't a stop sign — it's the workout. Why reading difficult books is the fastest way to grow as a reader and thinker.</div>
+</div>
+</a>
+
+<a href="/articles/books-i-wish-i-read-in-my-20s" class="article-card">
+<img src="/images/books-i-wish-i-read-in-my-20s-hero.jpg" alt="Books I Wish I'd Read in My 20s">
+<div class="article-info">
+<div class="article-title">Books I Wish I'd Read in My 20s</div>
+<div class="article-desc">I read 300+ books. These 8 would have changed everything if I'd read them a decade earlier — from meaning and mortality to habits and persuasion.</div>
+</div>
+</a>
+
+<a href="/articles/5-books-on-human-nature-thin-to-thick" class="article-card">
+<img src="/articles/og-5-books-human-nature.jpg" alt="5 Books on Human Nature — From Thin to Thick">
+<div class="article-info">
+<div class="article-title">5 Books on Human Nature — From Thin to Thick</div>
+<div class="article-desc">Level up your understanding of human nature with these 5 books — ordered from a 21-page pamphlet to a 560-page epic. Curated by Bjorn at BookLab.</div>
+</div>
+</a>
+
+<a href="/articles/why-audiobooks" class="article-card">
+<img src="/images/og-kit/og-bookshelf-02.jpg" alt="Why Audiobooks Changed Everything">
+<div class="article-info">
+<div class="article-title">Why Audiobooks Changed Everything</div>
+<div class="article-desc">Audiobooks were the catalyst for my reading habit. Here's why they're so powerful and how to get started.</div>
+</div>
+</a>
+
+<a href="/articles/great-books-on-human-nature" class="article-card">
+<img src="/articles/og-great-books-human-nature.jpg" alt="Great Books on Human Nature — 8 Books That Reveal What Makes Us Tick">
+<div class="article-info">
+<div class="article-title">Great Books on Human Nature — 8 Books That Reveal What Makes Us Tick</div>
+<div class="article-desc">After 500+ nonfiction books and 12 years of reading, these 8 books on human nature made the Great Books List. From The Denial of Death to The Righteous Mind.</div>
+</div>
+</a>
+
+<a href="/topics/books-to-change-your-life" class="article-card">
+<img src="/images/og-kit/og-bookshelf-02.jpg" alt="7 Books That Will Change Your Life">
+<div class="article-info">
+<div class="article-title">7 Books That Will Change Your Life</div>
+<div class="article-desc">7 life-changing books on meaning, focus, sleep, resilience, and philosophy. These nonfiction books will genuinely transform how you live. Curated by Bjorn at...</div>
+</div>
+</a>
+
+<a href="/topics/thriving-in-the-ai-age" class="article-card">
+<img src="/images/og-kit/og-bookshelf-02.jpg" alt="Books for Surviving and Thriving in the AI Age">
+<div class="article-info">
+<div class="article-title">Books for Surviving and Thriving in the AI Age</div>
+<div class="article-desc">10 essential books for understanding AI, disruption, and how to stay sovereign in a rapidly changing world. Curated by BookLab by Bjorn.</div>
+</div>
+</a>
+
+<a href="/topics/books-about-money" class="article-card">
+<img src="/images/og-kit/og-bookshelf-02.jpg" alt="Books That Changed How I Think About Money">
+<div class="article-info">
+<div class="article-title">Books That Changed How I Think About Money</div>
+<div class="article-desc">8 books that transformed my understanding of money, economics, and building wealth. Curated by BookLab by Bjorn.</div>
+</div>
+</a>
+
+<a href="/topics/philosophy-starter-kit" class="article-card">
+<img src="/images/og-kit/og-bookshelf-02.jpg" alt="8 Philosophy Books for Beginners">
+<div class="article-info">
+<div class="article-title">8 Philosophy Books for Beginners</div>
+<div class="article-desc">The 8 best philosophy books for beginners — from Stoicism and Eastern thought to modern practical philosophy. Curated by Bjorn at BookLab.</div>
+</div>
+</a>
+
+<a href="/topics/stoicism-starter-pack" class="article-card">
+<img src="/images/og-kit/og-bookshelf-02.jpg" alt="The Stoicism Starter Pack — 6 Books to Get Started">
+<div class="article-info">
+<div class="article-title">The Stoicism Starter Pack — 6 Books to Get Started</div>
+<div class="article-desc">The best books to start your journey into Stoic philosophy. From Marcus Aurelius to modern practical guides. Curated by BookLab by Bjorn.</div>
+</div>
+</a>
+
+<a href="/topics/understanding-human-nature" class="article-card">
+<img src="/topics/og-human-nature.jpg" alt="10 Books to Understand Human Nature">
+<div class="article-info">
+<div class="article-title">10 Books to Understand Human Nature</div>
+<div class="article-desc">The 10 best books to understand human nature — from psychology and evolutionary biology to philosophy and persuasion. Curated by Bjorn at BookLab.</div>
+</div>
+</a>
+
+<a href="/articles/5-important-books-for-spiritual-beginners-explore-the-soul" class="article-card">
+<img src="/images/covers/9781577314806.jpg" alt="5 Must-Read Spirituality Books for Beginners">
+<div class="article-info">
+<div class="article-title">5 Must-Read Spirituality Books for Beginners</div>
+<div class="article-desc">New to spirituality? These 5 books — from Eckhart Tolle to Paulo Coelho — will guide you toward mindfulness, self-discovery, and inner peace.</div>
+</div>
+</a>
+
+<a href="/articles/5-books-to-overcome-laziness-and-inactivity" class="article-card">
+<img src="/images/og-5-books-laziness.jpg" alt="5 Best Books to Beat Laziness and Boost Productivity">
+<div class="article-info">
+<div class="article-title">5 Best Books to Beat Laziness and Boost Productivity</div>
+<div class="article-desc">Struggling with laziness? These 5 nonfiction books — from Atomic Habits to Can't Hurt Me — will help you build discipline, focus, and lasting motivation.</div>
+</div>
+</a>
+
+<a href="/articles/3-books-about-voluntary-discomfort" class="article-card">
+<img src="/images/og-voluntary-discomfort.jpg" alt="3 Books About Voluntary Discomfort That Will Change Your Life">
+<div class="article-info">
+<div class="article-title">3 Books About Voluntary Discomfort That Will Change Your Life</div>
+<div class="article-desc">Discover 3 powerful books about voluntary discomfort — from Stoic philosophy to Navy SEAL grit. Learn why choosing discomfort builds resilience, gratitude, a...</div>
+</div>
+</a>
+
+<a href="/articles/5-must-read-nonfiction-books-for-every-australian" class="article-card">
+<img src="/images/og-5-books-australian.jpg" alt="5 Must-Read Nonfiction Books for Every Australian">
+<div class="article-info">
+<div class="article-title">5 Must-Read Nonfiction Books for Every Australian</div>
+<div class="article-desc">From Stoic philosophy to the history of humankind — 5 essential nonfiction books every Australian should read for personal growth and deeper understanding.</div>
+</div>
+</a>
+
+<a href="/articles/i-read-300-books-these-8-will-change-your-20s" class="article-card">
+<img src="/images/og-8-books-change-your-20s.jpg" alt="I Read 300+ Books — These 8 Will Change Your 20s">
+<div class="article-info">
+<div class="article-title">I Read 300+ Books — These 8 Will Change Your 20s</div>
+<div class="article-desc">The 8 best books to read in your 20s, picked from 300+ books. Covering meaning, habits, stoicism, mortality, creativity, and influence.</div>
+</div>
+</a>
+
+<a href="/articles/best-psychology-books-of-2016" class="article-card">
+<img src="/images/og-best-psychology-books-2016.jpg" alt="Best Psychology Books of 2016: Influence, Man's Search for Meaning &amp; More">
+<div class="article-info">
+<div class="article-title">Best Psychology Books of 2016: Influence, Man's Search for Meaning & More</div>
+<div class="article-desc">Bjorn's top psychology book picks of 2016, featuring Influence by Robert Cialdini, Man's Search for Meaning by Viktor Frankl, and Civilization and its Discon...</div>
+</div>
+</a>
+
+<a href="/articles/5-essential-nonfiction-books-for-expats-in-sweden-a-swedish-perspective" class="article-card">
+<img src="/images/covers/9781250107817.jpg" alt="5 Must-Read Nonfiction Books for Expats Moving to Sweden">
+<div class="article-info">
+<div class="article-title">5 Must-Read Nonfiction Books for Expats Moving to Sweden</div>
+<div class="article-desc">A native Swede's curated list of 5 nonfiction books that align with Swedish values — from Rosling's Factfulness to Frankl's Man's Search for Meaning.</div>
+</div>
+</a>
+</div>
+</div>
+
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

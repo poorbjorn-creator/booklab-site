@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/reviews" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Reviews | BookLab by Bjorn</title>
+<meta name="description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
+<meta property="og:title" content="Book Reviews | BookLab by Bjorn">
+<meta property="og:description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://booklabbybjorn.com/reviews.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+</style>
+<style>
+.page{max-width:800px;margin:0 auto;padding:60px 20px 40px}
+.page h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-0.5px}
+.page .subtitle{color:var(--muted);font-size:1rem;margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid rgba(230,169,25,.15)}
+.review-list{display:flex;flex-direction:column;gap:16px}
+.review-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:var(--radius);padding:20px;transition:.2s}
+.review-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3);text-decoration:none}
+.review-card img{width:60px;height:90px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.review-info{flex:1;min-width:0}
+.review-title{font-family:'Playfair Display',serif;color:var(--cream);font-size:1.1rem;font-weight:700;margin-bottom:2px}
+.review-author{color:var(--muted);font-size:.9rem}
+.review-rating{color:var(--gold);font-size:.9rem;margin-top:4px}
+.review-count{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:32px}
+@media(max-width:600px){.review-card{padding:14px;gap:14px}.review-card img{width:48px;height:72px}.page{padding:40px 16px 30px}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+<div class="page">
+<h1>Book Reviews</h1>
+<p class="subtitle">Every book I've reviewed on BookLab — nonfiction, philosophy, psychology, classics, and more.</p>
+<p class="review-count">42 reviews</p>
+<div class="review-list">
+<a href="/reviews/antifragile-nassim-taleb" class="review-card">
+<img src="/images/antifragile-nassim-taleb.jpg" alt="Antifragile">
+<div class="review-info">
+<div class="review-title">Antifragile</div>
+<div class="review-author">Nassim Nicholas Taleb</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/21-lessons-for-the-21st-century-yuval-noah-harari" class="review-card">
+<img src="/images/21-lessons-cover.jpg" alt="21 Lessons for the 21st Century">
+<div class="review-info">
+<div class="review-title">21 Lessons for the 21st Century</div>
+<div class="review-author">Yuval Noah Harari</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/a-world-without-email-cal-newport" class="review-card">
+<img src="/images/world-without-email-cover.jpg" alt="A World Without Email">
+<div class="review-info">
+<div class="review-title">A World Without Email</div>
+<div class="review-author">Cal Newport</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/building-a-storybrand-donald-miller" class="review-card">
+<img src="/images/building-a-storybrand-cover.jpg" alt="Building a StoryBrand">
+<div class="review-info">
+<div class="review-title">Building a StoryBrand</div>
+<div class="review-author">Donald Miller</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/courage-is-calling-ryan-holiday" class="review-card">
+<img src="/images/courage-is-calling-cover.jpg" alt="Courage Is Calling">
+<div class="review-info">
+<div class="review-title">Courage Is Calling</div>
+<div class="review-author">Ryan Holiday</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/demian-hermann-hesse" class="review-card">
+<img src="/images/demian-cover.jpg" alt="Demian">
+<div class="review-info">
+<div class="review-title">Demian</div>
+<div class="review-author">Hermann Hesse</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/greenlights-matthew-mcconaughey" class="review-card">
+<img src="/images/greenlights-cover.jpg" alt="Greenlights">
+<div class="review-info">
+<div class="review-title">Greenlights</div>
+<div class="review-author">Matthew McConaughey</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/in-the-realm-of-hungry-ghosts-gabor-mate" class="review-card">
+<img src="/images/hungry-ghosts-cover.jpg" alt="In the Realm of Hungry Ghosts">
+<div class="review-info">
+<div class="review-title">In the Realm of Hungry Ghosts</div>
+<div class="review-author">Gabor Maté</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/i-robot-isaac-asimov" class="review-card">
+<img src="/images/i-robot-cover.jpg" alt="I, Robot">
+<div class="review-info">
+<div class="review-title">I, Robot</div>
+<div class="review-author">Isaac Asimov</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/ishmael-daniel-quinn" class="review-card">
+<img src="/images/ishmael-cover.jpg" alt="Ishmael">
+<div class="review-info">
+<div class="review-title">Ishmael</div>
+<div class="review-author">Daniel Quinn</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/stumbling-on-happiness-daniel-gilbert" class="review-card">
+<img src="/images/stumbling-on-happiness-cover.jpg" alt="Stumbling on Happiness">
+<div class="review-info">
+<div class="review-title">Stumbling on Happiness</div>
+<div class="review-author">Daniel Gilbert</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-courage-to-be-disliked-kishimi-koga" class="review-card">
+<img src="/images/courage-to-be-disliked-cover.jpg" alt="The Courage to Be Disliked">
+<div class="review-info">
+<div class="review-title">The Courage to Be Disliked</div>
+<div class="review-author">Ichiro Kishimi &amp; Fumitake Koga</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-moral-animal-robert-wright" class="review-card">
+<img src="/images/moral-animal-cover.jpg" alt="The Moral Animal">
+<div class="review-info">
+<div class="review-title">The Moral Animal</div>
+<div class="review-author">Robert Wright</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/top-five-regrets-of-the-dying-bronnie-ware" class="review-card">
+<img src="/images/top-five-regrets-cover.jpg" alt="The Top Five Regrets of the Dying">
+<div class="review-info">
+<div class="review-title">The Top Five Regrets of the Dying</div>
+<div class="review-author">Bronnie Ware</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/trust-me-im-lying-ryan-holiday" class="review-card">
+<img src="/images/trust-me-im-lying-cover.jpg" alt="Trust Me, I'm Lying">
+<div class="review-info">
+<div class="review-title">Trust Me, I'm Lying</div>
+<div class="review-author">Ryan Holiday</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/fahrenheit-451-ray-bradbury" class="review-card">
+<img src="/images/fahrenheit-451-cover.jpg" alt="Fahrenheit 451">
+<div class="review-info">
+<div class="review-title">Fahrenheit 451</div>
+<div class="review-author">Ray Bradbury</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/among-the-thugs-bill-buford" class="review-card">
+<img src="/images/among-the-thugs-cover.jpg" alt="Among the Thugs">
+<div class="review-info">
+<div class="review-title">Among the Thugs</div>
+<div class="review-author">Bill Buford</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/lost-connections-johann-hari" class="review-card">
+<img src="/images/lost-connections-cover.jpg" alt="Lost Connections">
+<div class="review-info">
+<div class="review-title">Lost Connections</div>
+<div class="review-author">Johann Hari</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/when-the-body-says-no-gabor-mate" class="review-card">
+<img src="/images/when-the-body-says-no-cover.jpg" alt="When the Body Says No">
+<div class="review-info">
+<div class="review-title">When the Body Says No</div>
+<div class="review-author">Gabor Maté</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/a-guide-to-the-good-life-william-irvine" class="review-card">
+<img src="/images/guide-to-good-life.jpg" alt="A Guide to the Good Life">
+<div class="review-info">
+<div class="review-title">A Guide to the Good Life</div>
+<div class="review-author">William B. Irvine</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-laws-of-human-nature-robert-greene" class="review-card">
+<img src="/images/the-laws-of-human-nature.jpg" alt="The Laws of Human Nature">
+<div class="review-info">
+<div class="review-title">The Laws of Human Nature</div>
+<div class="review-author">Robert Greene</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-almanack-of-naval-ravikant-eric-jorgenson" class="review-card">
+<img src="/images/the-almanack-of-naval-ravikant.jpg" alt="The Almanack of Naval Ravikant">
+<div class="review-info">
+<div class="review-title">The Almanack of Naval Ravikant</div>
+<div class="review-author">Eric Jorgenson</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-sovereign-individual-davidson-rees-mogg" class="review-card">
+<img src="/images/sovereign-individual-cover.jpg" alt="The Sovereign Individual">
+<div class="review-info">
+<div class="review-title">The Sovereign Individual</div>
+<div class="review-author">Davidson &amp; Rees-Mogg</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-bitcoin-standard-saifedean-ammous" class="review-card">
+<img src="/images/bitcoin-standard-cover.jpg" alt="The Bitcoin Standard">
+<div class="review-info">
+<div class="review-title">The Bitcoin Standard</div>
+<div class="review-author">Saifedean Ammous</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/double-review-good-to-great-and-autobiography-of-a-yogi" class="review-card">
+<img src="https://covers.openlibrary.org/b/isbn/0066620996-M.jpg" alt="Good to Great & Autobiography of a Yogi">
+<div class="review-info">
+<div class="review-title">Good to Great &amp; Autobiography of a Yogi</div>
+<div class="review-author">Jim Collins / Yogananda</div>
+<div class="review-rating">⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/understanding-human-nature-alfred-adler" class="review-card">
+<img src="/images/understanding-human-nature.jpg" alt="Understanding Human Nature">
+<div class="review-info">
+<div class="review-title">Understanding Human Nature</div>
+<div class="review-author">Alfred Adler</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-denial-of-death-ernest-becker" class="review-card">
+<img src="/images/denial-of-death.jpg" alt="The Denial of Death">
+<div class="review-info">
+<div class="review-title">The Denial of Death</div>
+<div class="review-author">Ernest Becker</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+
+<a href="/reviews/spiral-dynamics-don-beck-christopher-cowan" class="review-card">
+<img src="/images/spiral-dynamics.jpg" alt="Spiral Dynamics">
+<div>
+<div class="review-title">Spiral Dynamics: Mastering Values, Leadership and Change</div>
+<div class="review-author">Don Edward Beck &amp; Christopher C. Cowan</div>
+<div class="review-stars">⭐⭐⭐⭐⭐</div>
+<div class="review-snippet">Maslow's hierarchy on steroids. A map of how cultures and people evolve — and why they keep talking past each other.</div>
+</div>
+</a>
+
+<a href="/reviews/the-wall-dancers-yi-ling-liu" class="review-card">
+<img src="/images/the-wall-dancers.jpg" alt="The Wall Dancers">
+<div class="review-info">
+<div class="review-title">The Wall Dancers</div>
+<div class="review-author">Yi-Ling Liu</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/determined-robert-sapolsky" class="review-card">
+<img src="/images/determined.jpg" alt="Determined">
+<div class="review-info">
+<div class="review-title">Determined: A Science of Life Without Free Will</div>
+<div class="review-author">Robert Sapolsky</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/flow-mihaly-csikszentmihalyi" class="review-card">
+<img src="/images/flow.jpg" alt="Flow">
+<div class="review-info">
+<div class="review-title">Flow: The Psychology of Optimal Experience</div>
+<div class="review-author">Mihaly Csikszentmihalyi</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/notes-from-the-underground-dostoevsky" class="review-card">
+<img src="/images/notes-from-the-underground.jpg" alt="Notes from the Underground">
+<div class="review-info">
+<div class="review-title">Notes from the Underground</div>
+<div class="review-author">Fyodor Dostoevsky</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/a-guide-to-the-good-life-william-irvine" class="review-card">
+<img src="/images/a-guide-to-the-good-life.jpg" alt="A Guide to The Good Life">
+<div class="review-info">
+<div class="review-title">A Guide to The Good Life</div>
+<div class="review-author">William Irvine</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/demian-synchronicity-carl-jung" class="review-card">
+<img src="https://covers.openlibrary.org/b/isbn/0486414132-M.jpg" alt="Demian by Hermann Hesse">
+<div class="review-info">
+<div class="review-title">Demian, Synchronicity &amp; Carl Jung</div>
+<div class="review-author">Hermann Hesse</div>
+<div class="review-rating">⭐⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/escape-from-freedom-erich-fromm" class="review-card">
+<img src="/images/escape-from-freedom.jpg" alt="Escape From Freedom">
+<div class="review-info">
+<div class="review-title">Escape From Freedom</div>
+<div class="review-author">Erich Fromm</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/letters-from-a-stoic-seneca" class="review-card">
+<img src="/images/letters-from-a-stoic.jpg" alt="Letters from a Stoic">
+<div class="review-info">
+<div class="review-title">Letters from a Stoic</div>
+<div class="review-author">Seneca</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/shoe-dog-phil-knight" class="review-card">
+<img src="/images/shoe-dog.jpg" alt="Shoe Dog">
+<div class="review-info">
+<div class="review-title">Shoe Dog</div>
+<div class="review-author">Phil Knight</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/the-stranger-albert-camus" class="review-card">
+<img src="/images/the-stranger.jpg" alt="The Stranger">
+<div class="review-info">
+<div class="review-title">The Stranger</div>
+<div class="review-author">Albert Camus</div>
+<div class="review-rating">⭐⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/boundaries-henry-cloud-john-townsend" class="review-card">
+<img src="/images/boundaries.jpg" alt="Boundaries">
+<div class="review-info">
+<div class="review-title">Boundaries</div>
+<div class="review-author">Henry Cloud & John Townsend</div>
+<div class="review-rating">⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/futureproof-kevin-roose" class="review-card">
+<img src="/images/futureproof.jpg" alt="Futureproof">
+<div class="review-info">
+<div class="review-title">Futureproof: 9 Rules for Humans in the Age of Automation</div>
+<div class="review-author">Kevin Roose</div>
+<div class="review-rating">⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/life-of-pythagoras-iamblichus" class="review-card">
+<img src="/images/life-of-pythagoras.jpg" alt="The Life of Pythagoras">
+<div class="review-info">
+<div class="review-title">The Life of Pythagoras</div>
+<div class="review-author">Iamblichus</div>
+<div class="review-rating">⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/so-good-they-cant-ignore-you-cal-newport" class="review-card">
+<img src="/images/so-good-they-cant-ignore-you.jpg" alt="So Good They Can't Ignore You">
+<div class="review-info">
+<div class="review-title">So Good They Can't Ignore You</div>
+<div class="review-author">Cal Newport</div>
+<div class="review-rating">⭐⭐⭐</div>
+</div>
+</a>
+
+<a href="/reviews/bhagavad-gita-video-game-development-and-outcome-independence" class="review-card">
+<img src="https://covers.openlibrary.org/b/isbn/1586380192-M.jpg" alt="The Bhagavad Gita">
+<div class="review-info">
+<div class="review-title">The Bhagavad Gita</div>
+<div class="review-author">Ancient Text</div>
+<div class="review-rating">Personal Reflection</div>
+</div>
+</a>
+
+</div>
+</div>
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
