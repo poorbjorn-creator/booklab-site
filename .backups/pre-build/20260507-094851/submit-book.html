@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/submit-book" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Submit a Book — BookLab by Bjorn</title>
+<meta name="description" content="Have a nonfiction book coming out? Submit it for consideration in BookLab's monthly nonfiction releases — reaching 60,000+ serious readers.">
+<meta property="og:title" content="Submit a Book — BookLab by Bjorn">
+<meta property="og:description" content="Have a nonfiction book coming out? Submit it for consideration in BookLab's monthly releases.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://booklabbybjorn.com/submit-book">
+<meta property="og:image" content="https://booklabbybjorn.com/og-submit-book.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://booklabbybjorn.com/og-submit-book.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+
+header{text-align:center;padding:80px 20px 60px;background:linear-gradient(180deg,#0f0f23 0%,var(--bg) 100%)}
+header h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-1px}
+header .subtitle{font-size:1.1rem;color:var(--cream);font-family:'Playfair Display',serif;font-style:italic;margin-bottom:16px}
+header .intro{max-width:650px;margin:0 auto;font-size:.92rem;color:var(--text);line-height:1.8}
+.divider{width:60px;height:3px;background:var(--gold);margin:24px auto;border-radius:2px}
+.container{max-width:700px;margin:0 auto;padding:0 20px}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+.info-box{background:var(--card);border-radius:var(--radius);padding:20px;text-align:center;border-top:3px solid var(--gold)}
+.info-box .emoji{font-size:1.8rem;margin-bottom:8px}
+.info-box h3{font-size:.95rem;color:var(--cream);margin-bottom:4px}
+.info-box p{font-size:.82rem;color:var(--muted)}
+
+.form-card{background:var(--card);border-radius:var(--radius);padding:36px;border:1px solid rgba(230,169,25,.15);margin:40px auto}
+.form-card h2{text-align:center;font-size:1.5rem;color:var(--cream);margin-bottom:6px}
+.form-card .form-sub{text-align:center;font-size:.85rem;color:var(--muted);margin-bottom:28px}
+
+.field{margin-bottom:20px}
+.field label{display:block;font-size:.85rem;font-weight:600;color:var(--cream);margin-bottom:6px}
+.field label .req{color:var(--gold)}
+.field input,.field textarea,.field select{width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(230,169,25,.2);background:var(--bg);color:var(--cream);font-size:.9rem;font-family:inherit;outline:none;transition:border-color .2s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}
+.field textarea{resize:vertical;min-height:80px}
+.field select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a8c75' fill='none' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.field select option{background:var(--bg);color:var(--cream)}
+.field .hint{font-size:.78rem;color:var(--muted);margin-top:4px}
+
+.btn-submit{display:block;width:100%;background:var(--gold);color:#1a1a2e;font-weight:700;font-size:1rem;padding:16px;border:none;border-radius:8px;cursor:pointer;transition:.2s;font-family:inherit;margin-top:24px}
+.btn-submit:hover{background:#d4990f;transform:scale(1.01)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-msg{text-align:center;font-size:.85rem;margin-top:12px}
+
+.note-box{background:rgba(230,169,25,.06);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);padding:20px;margin:30px 0;font-size:.88rem}
+.note-box strong{color:var(--cream)}
+
+@media(max-width:500px){
+  .info-grid{grid-template-columns:1fr}
+  .form-card{padding:24px 18px}
+  header{padding:60px 16px 40px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+
+<header>
+<h1>📖 Submit a Book</h1>
+<p class="subtitle">Help us discover the best new nonfiction</p>
+<div class="divider"></div>
+<p class="intro">Every month, BookLab highlights the most interesting new nonfiction releases for 60,000+ readers. We're always looking for great books we might have missed. If you're an author, publisher, or reader who knows about an upcoming nonfiction title — tell us about it.</p>
+</header>
+
+<div class="container">
+
+<div class="info-grid">
+<div class="info-box">
+<div class="emoji">🆓</div>
+<h3>Completely Free</h3>
+<p>This isn't a paid service. We just want to find great books.</p>
+</div>
+<div class="info-box">
+<div class="emoji">📹</div>
+<h3>Monthly Releases</h3>
+<p>Selected books appear in our popular monthly releases videos.</p>
+</div>
+<div class="info-box">
+<div class="emoji">🎯</div>
+<h3>Nonfiction Only</h3>
+<p>Psychology, philosophy, history, science, technology, self-improvement.</p>
+</div>
+<div class="info-box">
+<div class="emoji">🤝</div>
+<h3>No Guarantees</h3>
+<p>We review every submission but only feature what fits our audience.</p>
+</div>
+</div>
+
+<div class="form-card">
+<h2>Tell Us About Your Book</h2>
+<p class="form-sub">All submissions are reviewed personally by Bjorn.</p>
+
+<form id="submit-form" onsubmit="return handleSubmit(event)">
+
+<div class="field">
+<label>Book Title <span class="req">*</span></label>
+<input type="text" name="title" required placeholder="e.g. The Psychology of Tomorrow">
+</div>
+
+<div class="field">
+<label>Author <span class="req">*</span></label>
+<input type="text" name="author" required placeholder="e.g. Jane Smith">
+</div>
+
+<div class="field">
+<label>Publication Date <span class="req">*</span></label>
+<input type="date" name="pubDate" required>
+</div>
+
+<div class="field">
+<label>Category <span class="req">*</span></label>
+<select name="category" required>
+<option value="">Select a category…</option>
+<option value="psychology">Psychology</option>
+<option value="philosophy">Philosophy</option>
+<option value="history">History / Biography</option>
+<option value="science">Science</option>
+<option value="technology">Technology / AI</option>
+<option value="economics">Economics / Business</option>
+<option value="self-improvement">Self-Improvement</option>
+<option value="society">Society / Culture</option>
+<option value="politics">Politics</option>
+<option value="health">Health / Wellness</option>
+<option value="other">Other Nonfiction</option>
+</select>
+</div>
+
+<div class="field">
+<label>Publisher</label>
+<input type="text" name="publisher" placeholder="e.g. Penguin Random House (or self-published)">
+</div>
+
+<div class="field">
+<label>Amazon or Book Link</label>
+<input type="url" name="link" placeholder="https://amazon.com/dp/...">
+<p class="hint">Pre-order or product page link, if available.</p>
+</div>
+
+<div class="field">
+<label>Why should BookLab readers care? <span class="req">*</span></label>
+<textarea name="pitch" required placeholder="What's the book about? What makes it stand out? Why would nonfiction readers be interested? (2-3 sentences is perfect)" rows="4"></textarea>
+</div>
+
+<div class="field">
+<label>Your Name</label>
+<input type="text" name="submitterName" placeholder="Your name (author, publicist, or reader)">
+</div>
+
+<div class="field">
+<label>Your Email</label>
+<input type="email" name="submitterEmail" placeholder="your@email.com">
+<p class="hint">Optional. We'll only use this to follow up about your submission.</p>
+</div>
+
+<div class="field">
+<label>Your Role</label>
+<select name="submitterRole">
+<option value="">Select…</option>
+<option value="author">I'm the author</option>
+<option value="publisher">Publisher / Publicist</option>
+<option value="reader">Reader / Fan</option>
+<option value="other">Other</option>
+</select>
+</div>
+
+<button type="submit" class="btn-submit" id="submit-btn">📬 Submit Book</button>
+<p id="form-msg" class="form-msg"></p>
+
+</form>
+</div>
+
+<div class="note-box">
+<strong>Looking for guaranteed coverage?</strong> This form is for free submissions to our monthly discovery pipeline. If you want a dedicated book spotlight or featured release with guaranteed coverage across all BookLab channels, check out our <a href="/work-with-us">Work With Us</a> page.
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+
+async function handleSubmit(e){
+  e.preventDefault();
+  var btn=document.getElementById('submit-btn'),msg=document.getElementById('form-msg');
+  var form=document.getElementById('submit-form');
+  var data={};
+  new FormData(form).forEach(function(v,k){data[k]=v;});
+  btn.disabled=true;btn.textContent='Submitting...';
+  try{
+    var r=await fetch('https://booklab-submit.poorbjorn.workers.dev',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+    if(r.ok){
+      msg.style.color='var(--gold)';
+      msg.textContent='🎉 Thank you! We\'ve received your submission and will review it.';
+      btn.textContent='Submitted ✓';btn.style.background='#2ecc71';
+      form.reset();
+    }else{
+      var d=await r.json().catch(function(){return{}});
+      msg.style.color='#e74c3c';msg.textContent=d.error||'Something went wrong. Try again!';
+      btn.disabled=false;btn.textContent='📬 Submit Book';
+    }
+  }catch(err){
+    msg.style.color='#e74c3c';msg.textContent='Network error. Try again!';
+    btn.disabled=false;btn.textContent='📬 Submit Book';
+  }
+}
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
