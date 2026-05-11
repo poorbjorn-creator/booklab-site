@@ -3,7 +3,7 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://booklabbybjorn.com/</loc><lastmod>2026-05-01</lastmod><priority>1.0</priority></url>
   <url><loc>https://booklabbybjorn.com/great-books-list</loc><lastmod>2026-04-08</lastmod><priority>0.9</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews</loc><lastmod>2026-04-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews</loc><lastmod>2026-07-07</lastmod><priority>0.9</priority></url>
   <url><loc>https://booklabbybjorn.com/work-with-us</loc><lastmod>2026-02-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reading-list-2026</loc><lastmod>2026-04-28</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/february-2026</loc><lastmod>2026-02-01</lastmod><priority>0.7</priority></url>
@@ -124,7 +124,13 @@
   </url>
 <url>
 <loc>https://booklabbybjorn.com/articles/best-books-for-overthinkers</loc>
-<lastmod>2026-05-08</lastmod>
+<lastmod>2026-07-07</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://booklabbybjorn.com/reviews/four-thousand-weeks-oliver-burkeman</loc>
+<lastmod>2026-07-07</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
