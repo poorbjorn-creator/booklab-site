@@ -81,6 +81,18 @@ Review pages use a **custom hero image** — NOT the book cover. These are edito
 - Stars appear ONLY at the bottom of the review (in the `<div class="rating">` block).
 - The meta block should just be: `<div class="meta">by AUTHOR</div>`
 
+## Crosslinking
+
+When an article mentions a book that has a full review on the site (`/reviews/`), **always add a visible "Read Review →" button** next to the Amazon affiliate link. Use the outline button style:
+
+```html
+<a href="/reviews/SLUG" class="btn-buy" style="background:transparent;border:2px solid var(--gold);color:var(--gold)">Read Review →</a>
+```
+
+- Check `_src/reviews/` for existing review pages before publishing any article that mentions books.
+- Only add the button for books that actually have a review page — don't link to pages that don't exist.
+- This applies to all article types: listicles, topic pages, and recommendation articles.
+
 ## Surgical Changes
 
 - Only touch what was asked
