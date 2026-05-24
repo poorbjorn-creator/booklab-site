@@ -31,6 +31,11 @@ After making changes:
 
 ## New Reviews
 
+**When adding a new review, you MUST also:**
+1. Add the review card to `_src/reviews.html` (the reviews index page) — newest first
+2. Update the review count in the same file
+3. Update `sitemap.xml` with the new review URL and today's date
+
 **Always use `_src/reviews/_TEMPLATE.html`** as the starting point for new reviews. It includes:
 - Proper `INCLUDE` markers (head-css, review-css, nav, footer, nav-js)
 - Structured data (JSON-LD for Review + optional Video)
