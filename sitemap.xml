@@ -3,17 +3,20 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://booklabbybjorn.com/</loc><lastmod>2026-05-01</lastmod><priority>1.0</priority></url>
   <url><loc>https://booklabbybjorn.com/great-books-list</loc><lastmod>2026-05-16</lastmod><priority>0.9</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews</loc><lastmod>2026-05-16</lastmod><priority>0.9</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews</loc><lastmod>2026-05-22</lastmod><priority>0.9</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/this-is-for-everyone-tim-berners-lee</loc><lastmod>2026-05-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-big-print-lawrence-lepard</loc><lastmod>2026-05-20</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-mandibles-lionel-shriver</loc><lastmod>2026-07-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/parallel-universes-of-self-frederick-dodson</loc><lastmod>2026-05-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-compound-effect-darren-hardy</loc><lastmod>2026-05-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/work-with-us</loc><lastmod>2026-02-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reading-list-2026</loc><lastmod>2026-04-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/reading-list-2026</loc><lastmod>2026-05-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/february-2026</loc><lastmod>2026-02-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/march-2026</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/april-2026</loc><lastmod>2026-03-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/may-2026</loc><lastmod>2026-05-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/outlive-peter-attia</loc><lastmod>2026-05-06</lastmod><priority>0.7</priority></url>
-  <url><loc>https://booklabbybjorn.com/monthly/june-2026</loc><lastmod>2026-05-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/monthly/june-2026</loc><lastmod>2026-05-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-psychology-of-money-morgan-housel</loc><lastmod>2026-05-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/a-guide-to-the-good-life-william-irvine</loc><lastmod>2026-04-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/among-the-thugs-bill-buford</loc><lastmod>2026-04-14</lastmod><priority>0.8</priority></url>
@@ -43,15 +46,15 @@
   <url><loc>https://booklabbybjorn.com/reviews/shoe-dog-phil-knight</loc><lastmod>2026-02-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-stranger-albert-camus</loc><lastmod>2026-02-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-wall-dancers-yi-ling-liu</loc><lastmod>2026-02-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/i-robot-isaac-asimov</loc><lastmod>2026-02-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/the-sovereign-individual-davidson-rees-mogg</loc><lastmod>2026-04-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/i-robot-isaac-asimov</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-sovereign-individual-davidson-rees-mogg</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/so-good-they-cant-ignore-you-cal-newport</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/spiral-dynamics-don-beck-christopher-cowan</loc><lastmod>2026-03-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-denial-of-death-ernest-becker</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/top-five-regrets-of-the-dying-bronnie-ware</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/the-moral-animal-robert-wright</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/stumbling-on-happiness-daniel-gilbert</loc><lastmod>2026-03-26</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/the-courage-to-be-disliked-kishimi-koga</loc><lastmod>2026-05-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-moral-animal-robert-wright</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/stumbling-on-happiness-daniel-gilbert</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-courage-to-be-disliked-kishimi-koga</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/understanding-human-nature-alfred-adler</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-almanack-of-naval-ravikant-eric-jorgenson</loc><lastmod>2026-03-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/double-review-good-to-great-and-autobiography-of-a-yogi</loc><lastmod>2026-04-07</lastmod><priority>0.8</priority></url>
@@ -59,13 +62,14 @@
   <url><loc>https://booklabbybjorn.com/reviews/bhagavad-gita-video-game-development-and-outcome-independence</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-laws-of-human-nature-robert-greene</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/when-the-body-says-no-gabor-mate</loc><lastmod>2026-04-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/topics/books-about-money</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/articles/best-books-on-money-and-financial-freedom</loc><lastmod>2026-05-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/atlas-shrugged-ayn-rand</loc><lastmod>2026-05-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/topics/books-to-change-your-life</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/topics/philosophy-starter-kit</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/topics/stoicism-starter-pack</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/topics/thriving-in-the-ai-age</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/books-i-wish-i-read-in-my-20s</loc><lastmod>2026-03-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/articles/great-books-on-human-nature</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/articles/great-books-on-human-nature</loc><lastmod>2026-05-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/5-books-on-human-nature-thin-to-thick</loc><lastmod>2026-03-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/why-audiobooks</loc><lastmod>2026-03-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/best-psychology-books-of-2016</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority></url>
@@ -76,22 +80,22 @@
   <url><loc>https://booklabbybjorn.com/articles/green-beards-altruism-and-kinship-halfway-through-behave-by-robert-sapolsky</loc><lastmod>2026-04-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/3-books-about-the-surprising-benefits-of-voluntary-discomfort</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/5-must-read-books-for-personal-growth-for-the-unemployed</loc><lastmod>2026-04-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/articles/biographies-you-should-read-asap</loc><lastmod>2026-04-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/articles/biographies-you-should-read-asap</loc><lastmod>2026-05-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/australian-non-fiction-books</loc><lastmod>2026-04-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/5-must-read-nonfiction-books-for-every-australian</loc><lastmod>2026-04-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/newsletter</loc><lastmod>2026-04-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/recommend</loc><lastmod>2026-03-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/top-50-books-booklab.pdf</loc><lastmod>2026-03-19</lastmod><priority>0.5</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/antifragile-nassim-taleb</loc><lastmod>2026-04-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/antifragile-nassim-taleb</loc><lastmod>2026-05-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/21-lessons-for-the-21st-century-yuval-noah-harari</loc><lastmod>2026-04-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/a-world-without-email-cal-newport</loc><lastmod>2026-04-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/building-a-storybrand-donald-miller</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/courage-is-calling-ryan-holiday</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/demian-hermann-hesse</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/demian-hermann-hesse</loc><lastmod>2026-05-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/greenlights-matthew-mcconaughey</loc><lastmod>2026-04-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/in-the-realm-of-hungry-ghosts-gabor-mate</loc><lastmod>2026-04-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/ishmael-daniel-quinn</loc><lastmod>2026-04-21</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/trust-me-im-lying-ryan-holiday</loc><lastmod>2026-04-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/ishmael-daniel-quinn</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/trust-me-im-lying-ryan-holiday</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-beginning-of-infinity-david-deutsch</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-coming-wave-mustafa-suleyman</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/bitcoin-everything-divided-by-21-million-knut-svanholm</loc><lastmod>2026-04-25</lastmod><priority>0.8</priority></url>
@@ -112,7 +116,7 @@
   </url>
   <url>
     <loc>https://booklabbybjorn.com/reviews/the-true-believer</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <video:video>
@@ -149,4 +153,6 @@
 <priority>0.8</priority>
 </url>
   <url><loc>https://booklabbybjorn.com/reviews/zero-to-one-peter-thiel</loc><lastmod>2026-05-14</lastmod><priority>0.8</priority></url>
+<url><loc>https://booklabbybjorn.com/reviews/the-price-of-tomorrow-jeff-booth</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://booklabbybjorn.com/reviews/slaughterhouse-five-kurt-vonnegut</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

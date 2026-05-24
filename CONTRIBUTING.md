@@ -40,6 +40,10 @@ After making changes:
 
 Copy the template, find-replace the ALL_CAPS placeholders, add content.
 
+## Video Placement
+
+When a review has a video, place the video embed **in the middle of the review** (between content sections), not at the bottom. This keeps readers engaged and breaks up the text naturally. The exact position depends on the review, but aim for roughly the halfway point — after the setup/summary sections and before the opinion/verdict sections.
+
 ## Shared CSS (`_includes/`)
 
 - `base.css` — global styles (nav, footer, variables, typography)
