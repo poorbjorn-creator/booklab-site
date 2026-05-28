@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/reviews" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Reviews | BookLab by Bjorn</title>
+<meta name="description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
+<meta property="og:title" content="Book Reviews | BookLab by Bjorn">
+<meta property="og:description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://booklabbybjorn.com/reviews">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+
+.page{max-width:800px;margin:0 auto;padding:60px 20px 40px}
+.page h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-0.5px}
+.page .subtitle{color:var(--muted);font-size:1rem;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(230,169,25,.15)}
+
+/* Controls */
+.controls{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.search-box{flex:1;min-width:200px;padding:10px 14px;background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);color:var(--cream);font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s}
+.search-box:focus{border-color:var(--gold)}
+.search-box::placeholder{color:var(--muted)}
+.sort-select{padding:10px 14px;background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);color:var(--cream);font-size:.9rem;font-family:inherit;cursor:pointer;outline:none}
+.sort-select:focus{border-color:var(--gold)}
+
+/* Filter tags */
+.filter-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter-tag{padding:6px 14px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:20px;color:var(--muted);font-size:.85rem;cursor:pointer;transition:.2s;user-select:none}
+.filter-tag:hover{border-color:var(--gold);color:var(--cream)}
+.filter-tag.active{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:600}
+
+.review-count{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:32px}
+.review-list{display:flex;flex-direction:column;gap:16px}
+.review-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:var(--radius);padding:20px;transition:.2s;text-decoration:none}
+.review-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3);text-decoration:none}
+.review-card img{width:60px;height:90px;object-fit:cover;border-radius:6px;flex-shrink:0;background:var(--card);border:1px solid rgba(230,169,25,.15)}
+.review-info{flex:1;min-width:0}
+.review-title{font-family:'Playfair Display',serif;color:var(--cream);font-size:1.1rem;font-weight:700;margin-bottom:2px}
+.review-author{color:var(--muted);font-size:.9rem}
+.review-rating{color:var(--gold);font-size:.9rem;margin-top:4px}
+.review-snippet{color:var(--muted);font-size:.85rem;margin-top:4px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.no-results{text-align:center;color:var(--muted);padding:40px 20px;font-size:1rem}
+
+@media(max-width:600px){.review-card{padding:14px;gap:14px}.review-card img{width:48px;height:72px}.page{padding:40px 16px 30px}.controls{flex-direction:column}.search-box{min-width:0}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+<div class="page">
+<h1>Book Reviews</h1>
+<p class="subtitle">Every book I've reviewed on BookLab — nonfiction, philosophy, psychology, classics, and more.</p>
+
+<div class="controls">
+<input type="text" class="search-box" placeholder="Search by title or author..." id="searchBox">
+<select class="sort-select" id="sortSelect">
+<option value="newest">Newest first</option>
+<option value="oldest">Oldest first</option>
+<option value="rating-high">Highest rated</option>
+<option value="rating-low">Lowest rated</option>
+<option value="title-az">Title A–Z</option>
+<option value="title-za">Title Z–A</option>
+</select>
+</div>
+
+<div class="filter-tags" id="filterTags"></div>
+
+<p class="review-count" id="reviewCount"></p>
+<div class="review-list" id="reviewList"></div>
+</div>
+
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+
+<script>
+/* ============================================================
+   REVIEW DATA — edit this array to add/update reviews.
+   Adding a book = adding one object. Adding a field = adding
+   one key to each object. That's it.
+   ============================================================ */
+var REVIEWS = [
+  {slug:"the-wealth-of-nations-adam-smith",title:"The Wealth of Nations",author:"Adam Smith",cover:"/images/covers/9780140432084.jpg",rating:4,tags:["economics","classics"],snippet:"The 1776 blueprint for modern capitalism. Division of labor, invisible hands, and why free markets create prosperity."},
+  {slug:"when-breath-becomes-air-paul-kalanithi",title:"When Breath Becomes Air",author:"Paul Kalanithi",cover:"/images/covers/9780812988406.jpg",rating:3,tags:["memoir","philosophy"],snippet:""},
+  {slug:"atlas-shrugged-ayn-rand",title:"Atlas Shrugged",author:"Ayn Rand",cover:"/images/covers/9780451191144.jpg",rating:5,tags:["fiction","philosophy"],snippet:""},
+  {slug:"this-is-for-everyone-tim-berners-lee",title:"This Is for Everyone",author:"Tim Berners-Lee",cover:"/images/covers/9780374612467.jpg",rating:3,tags:["technology"],snippet:""},
+  {slug:"the-big-print-lawrence-lepard",title:"The Big Print",author:"Lawrence Lepard",cover:"/images/covers/9798992242508.jpg",rating:4,tags:["economics"],snippet:""},
+  {slug:"the-price-of-tomorrow-jeff-booth",title:"The Price of Tomorrow",author:"Jeff Booth",cover:"/images/covers/9781999257408.jpg",rating:4,tags:["economics","technology"],snippet:""},
+  {slug:"the-mandibles-lionel-shriver",title:"The Mandibles: A Family, 2029–2047",author:"Lionel Shriver",cover:"/images/covers/9780062328250.jpg",rating:5,tags:["fiction","economics"],snippet:""},
+  {slug:"parallel-universes-of-self-frederick-dodson",title:"Parallel Universes of Self",author:"Frederick Dodson",cover:"/images/covers/parallel-universes-of-self.jpg",rating:5,tags:["self-improvement","philosophy"],snippet:""},
+  {slug:"the-compound-effect-darren-hardy",title:"The Compound Effect",author:"Darren Hardy",cover:"/images/covers/9781593157241.jpg",rating:4,tags:["self-improvement"],snippet:""},
+  {slug:"zero-to-one-peter-thiel",title:"Zero to One",author:"Peter Thiel",cover:"/images/covers/9780804139298.jpg",rating:5,tags:["business","technology"],snippet:""},
+  {slug:"eat-that-frog-brian-tracy",title:"Eat That Frog!",author:"Brian Tracy",cover:"/images/covers/9781626569416.jpg",rating:4,tags:["self-improvement"],snippet:""},
+  {slug:"four-thousand-weeks-oliver-burkeman",title:"Four Thousand Weeks",author:"Oliver Burkeman",cover:"/images/covers/9780374159122.jpg",rating:4,tags:["philosophy","self-improvement"],snippet:""},
+  {slug:"outlive-peter-attia",title:"Outlive: The Science and Art of Longevity",author:"Peter Attia, MD",cover:"/images/covers/9780593236598.jpg",rating:4,tags:["health","science"],snippet:""},
+  {slug:"the-true-believer",title:"The True Believer",author:"Eric Hoffer",cover:"/images/covers/9780060505912.jpg",rating:5,tags:["psychology","philosophy"],snippet:""},
+  {slug:"same-as-ever-morgan-housel",title:"Same As Ever",author:"Morgan Housel",cover:"/images/covers/9780593332702.jpg",rating:5,tags:["psychology","economics"],snippet:""},
+  {slug:"antifragile-nassim-taleb",title:"Antifragile",author:"Nassim Nicholas Taleb",cover:"/images/antifragile-nassim-taleb-cover.jpg",rating:4,tags:["philosophy","economics"],snippet:""},
+  {slug:"21-lessons-for-the-21st-century-yuval-noah-harari",title:"21 Lessons for the 21st Century",author:"Yuval Noah Harari",cover:"/images/21-lessons-cover.jpg",rating:4,tags:["philosophy","technology"],snippet:""},
+  {slug:"a-world-without-email-cal-newport",title:"A World Without Email",author:"Cal Newport",cover:"/images/world-without-email-cover.jpg",rating:3,tags:["business","self-improvement"],snippet:""},
+  {slug:"bitcoin-everything-divided-by-21-million-knut-svanholm",title:"Bitcoin: Everything Divided by 21 Million",author:"Knut Svanholm",cover:"/images/bitcoin-21m-cover.png",rating:4,tags:["economics"],snippet:""},
+  {slug:"building-a-storybrand-donald-miller",title:"Building a StoryBrand",author:"Donald Miller",cover:"/images/building-a-storybrand-cover.jpg",rating:4,tags:["business"],snippet:""},
+  {slug:"courage-is-calling-ryan-holiday",title:"Courage Is Calling",author:"Ryan Holiday",cover:"/images/courage-is-calling-cover.jpg",rating:2,tags:["philosophy","stoicism"],snippet:""},
+  {slug:"demian-hermann-hesse",title:"Demian",author:"Hermann Hesse",cover:"/images/demian-cover.jpg",rating:5,tags:["fiction","philosophy"],snippet:""},
+  {slug:"greenlights-matthew-mcconaughey",title:"Greenlights",author:"Matthew McConaughey",cover:"/images/greenlights-cover.jpg",rating:4,tags:["memoir"],snippet:""},
+  {slug:"in-the-realm-of-hungry-ghosts-gabor-mate",title:"In the Realm of Hungry Ghosts",author:"Gabor Maté",cover:"/images/covers/9781785152610.jpg",rating:5,tags:["psychology","health"],snippet:""},
+  {slug:"i-robot-isaac-asimov",title:"I, Robot",author:"Isaac Asimov",cover:"/images/i-robot-cover.jpg",rating:4,tags:["fiction","technology"],snippet:""},
+  {slug:"ishmael-daniel-quinn",title:"Ishmael",author:"Daniel Quinn",cover:"/images/ishmael-cover.jpg",rating:4,tags:["fiction","philosophy"],snippet:""},
+  {slug:"stumbling-on-happiness-daniel-gilbert",title:"Stumbling on Happiness",author:"Daniel Gilbert",cover:"/images/stumbling-on-happiness-cover.jpg",rating:4,tags:["psychology"],snippet:""},
+  {slug:"the-courage-to-be-disliked-kishimi-koga",title:"The Courage to Be Disliked",author:"Ichiro Kishimi & Fumitake Koga",cover:"/images/covers/176063073X.jpg",rating:4,tags:["psychology","philosophy"],snippet:""},
+  {slug:"the-moral-animal-robert-wright",title:"The Moral Animal",author:"Robert Wright",cover:"/images/moral-animal-cover.jpg",rating:5,tags:["psychology","science"],snippet:""},
+  {slug:"top-five-regrets-of-the-dying-bronnie-ware",title:"The Top Five Regrets of the Dying",author:"Bronnie Ware",cover:"/images/top-five-regrets-cover.jpg",rating:5,tags:["philosophy","memoir"],snippet:""},
+  {slug:"trust-me-im-lying-ryan-holiday",title:"Trust Me, I'm Lying",author:"Ryan Holiday",cover:"/images/trust-me-im-lying-cover.jpg",rating:4,tags:["business","psychology"],snippet:""},
+  {slug:"slaughterhouse-five-kurt-vonnegut",title:"Slaughterhouse-Five",author:"Kurt Vonnegut",cover:"/images/covers/slaughterhouse-five.jpg",rating:3,tags:["fiction","classics"],snippet:""},
+  {slug:"fahrenheit-451-ray-bradbury",title:"Fahrenheit 451",author:"Ray Bradbury",cover:"/images/fahrenheit-451-cover.jpg",rating:4,tags:["fiction","classics"],snippet:""},
+  {slug:"among-the-thugs-bill-buford",title:"Among the Thugs",author:"Bill Buford",cover:"/images/among-the-thugs-cover.jpg",rating:5,tags:["memoir","psychology"],snippet:""},
+  {slug:"lost-connections-johann-hari",title:"Lost Connections",author:"Johann Hari",cover:"/images/lost-connections-cover.jpg",rating:5,tags:["psychology","health"],snippet:""},
+  {slug:"when-the-body-says-no-gabor-mate",title:"When the Body Says No",author:"Gabor Maté",cover:"/images/when-the-body-says-no-cover.jpg",rating:5,tags:["psychology","health"],snippet:""},
+  {slug:"a-guide-to-the-good-life-william-irvine",title:"A Guide to the Good Life",author:"William B. Irvine",cover:"/images/guide-to-good-life.jpg",rating:5,tags:["philosophy","stoicism"],snippet:""},
+  {slug:"the-laws-of-human-nature-robert-greene",title:"The Laws of Human Nature",author:"Robert Greene",cover:"/images/the-laws-of-human-nature.jpg",rating:5,tags:["psychology","self-improvement"],snippet:""},
+  {slug:"the-almanack-of-naval-ravikant-eric-jorgenson",title:"The Almanack of Naval Ravikant",author:"Eric Jorgenson",cover:"/images/the-almanack-of-naval-ravikant.jpg",rating:5,tags:["philosophy","business"],snippet:""},
+  {slug:"the-coming-wave-mustafa-suleyman",title:"The Coming Wave",author:"Mustafa Suleyman",cover:"/images/the-coming-wave-cover.jpg",rating:4,tags:["technology"],snippet:""},
+  {slug:"the-beginning-of-infinity-david-deutsch",title:"The Beginning of Infinity",author:"David Deutsch",cover:"/images/beginning-of-infinity-cover.jpg",rating:5,tags:["philosophy","science"],snippet:""},
+  {slug:"the-sovereign-individual-davidson-rees-mogg",title:"The Sovereign Individual",author:"Davidson & Rees-Mogg",cover:"/images/sovereign-individual-cover.jpg",rating:5,tags:["economics","philosophy"],snippet:""},
+  {slug:"the-bitcoin-standard-saifedean-ammous",title:"The Bitcoin Standard",author:"Saifedean Ammous",cover:"/images/bitcoin-standard-cover.jpg",rating:5,tags:["economics"],snippet:""},
+  {slug:"double-review-good-to-great-and-autobiography-of-a-yogi",title:"Good to Great & Autobiography of a Yogi",author:"Jim Collins / Yogananda",cover:"https://covers.openlibrary.org/b/isbn/0066620996-M.jpg",rating:2,tags:["business","philosophy"],snippet:""},
+  {slug:"understanding-human-nature-alfred-adler",title:"Understanding Human Nature",author:"Alfred Adler",cover:"/images/understanding-human-nature.jpg",rating:4,tags:["psychology"],snippet:""},
+  {slug:"the-denial-of-death-ernest-becker",title:"The Denial of Death",author:"Ernest Becker",cover:"/images/denial-of-death.jpg",rating:5,tags:["psychology","philosophy"],snippet:""},
+  {slug:"spiral-dynamics-don-beck-christopher-cowan",title:"Spiral Dynamics: Mastering Values, Leadership and Change",author:"Don Edward Beck & Christopher C. Cowan",cover:"/images/spiral-dynamics.jpg",rating:5,tags:["psychology","philosophy"],snippet:"Maslow's hierarchy on steroids. A map of how cultures and people evolve — and why they keep talking past each other."},
+  {slug:"the-wall-dancers-yi-ling-liu",title:"The Wall Dancers",author:"Yi-Ling Liu",cover:"/images/the-wall-dancers.jpg",rating:4,tags:["memoir"],snippet:""},
+  {slug:"determined-robert-sapolsky",title:"Determined: A Science of Life Without Free Will",author:"Robert Sapolsky",cover:"/images/determined.jpg",rating:5,tags:["psychology","science"],snippet:""},
+  {slug:"flow-mihaly-csikszentmihalyi",title:"Flow: The Psychology of Optimal Experience",author:"Mihaly Csikszentmihalyi",cover:"/images/flow.jpg",rating:5,tags:["psychology"],snippet:""},
+  {slug:"notes-from-the-underground-dostoevsky",title:"Notes from the Underground",author:"Fyodor Dostoevsky",cover:"/images/notes-from-the-underground.jpg",rating:5,tags:["fiction","classics","philosophy"],snippet:""},
+  {slug:"demian-synchronicity-carl-jung",title:"Demian, Synchronicity & Carl Jung",author:"Hermann Hesse",cover:"https://covers.openlibrary.org/b/isbn/0486414132-M.jpg",rating:5,tags:["philosophy","psychology"],snippet:""},
+  {slug:"escape-from-freedom-erich-fromm",title:"Escape From Freedom",author:"Erich Fromm",cover:"/images/escape-from-freedom.jpg",rating:4,tags:["psychology","philosophy"],snippet:""},
+  {slug:"letters-from-a-stoic-seneca",title:"Letters from a Stoic",author:"Seneca",cover:"/images/letters-from-a-stoic.jpg",rating:4,tags:["philosophy","stoicism","classics"],snippet:""},
+  {slug:"shoe-dog-phil-knight",title:"Shoe Dog",author:"Phil Knight",cover:"/images/shoe-dog.jpg",rating:4,tags:["memoir","business"],snippet:""},
+  {slug:"the-stranger-albert-camus",title:"The Stranger",author:"Albert Camus",cover:"/images/the-stranger.jpg",rating:4,tags:["fiction","philosophy","classics"],snippet:""},
+  {slug:"boundaries-henry-cloud-john-townsend",title:"Boundaries",author:"Henry Cloud & John Townsend",cover:"/images/boundaries.jpg",rating:3,tags:["psychology","self-improvement"],snippet:""},
+  {slug:"futureproof-kevin-roose",title:"Futureproof: 9 Rules for Humans in the Age of Automation",author:"Kevin Roose",cover:"/images/futureproof.jpg",rating:3,tags:["technology"],snippet:""},
+  {slug:"life-of-pythagoras-iamblichus",title:"The Life of Pythagoras",author:"Iamblichus",cover:"/images/life-of-pythagoras.jpg",rating:2,tags:["philosophy","classics"],snippet:""},
+  {slug:"so-good-they-cant-ignore-you-cal-newport",title:"So Good They Can't Ignore You",author:"Cal Newport",cover:"/images/so-good-they-cant-ignore-you.jpg",rating:3,tags:["self-improvement","business"],snippet:""},
+  {slug:"bhagavad-gita-video-game-development-and-outcome-independence",title:"The Bhagavad Gita",author:"Ancient Text",cover:"https://covers.openlibrary.org/b/isbn/1586380192-M.jpg",rating:0,tags:["philosophy","classics"],snippet:""},
+  {slug:"why-we-sleep-matthew-walker",title:"Why We Sleep",author:"Matthew Walker",cover:"/images/covers/9781501144325.jpg",rating:5,tags:["health","science"],snippet:""},
+  {slug:"the-psychology-of-money-morgan-housel",title:"The Psychology of Money",author:"Morgan Housel",cover:"/images/covers/9780857197689.jpg",rating:4,tags:["economics","psychology"],snippet:""}
+];
+
+/* ============================================================
+   RENDER ENGINE — don't touch this unless changing layout
+   ============================================================ */
+(function(){
+  var list = document.getElementById('reviewList');
+  var countEl = document.getElementById('reviewCount');
+  var searchBox = document.getElementById('searchBox');
+  var sortSelect = document.getElementById('sortSelect');
+  var filterContainer = document.getElementById('filterTags');
+  var activeTag = 'all';
+
+  // Build tag list from data
+  var tagSet = new Set();
+  REVIEWS.forEach(function(r){ r.tags.forEach(function(t){ tagSet.add(t); }); });
+  var allTags = Array.from(tagSet).sort();
+
+  // Render filter tags
+  var tagHtml = '<span class="filter-tag active" data-tag="all">All</span>';
+  allTags.forEach(function(t){
+    tagHtml += '<span class="filter-tag" data-tag="'+t+'">'+t.charAt(0).toUpperCase()+t.slice(1)+'</span>';
+  });
+  filterContainer.innerHTML = tagHtml;
+
+  function stars(n){
+    if(n===0) return '<div class="review-rating">Personal Reflection</div>';
+    var s='';for(var i=0;i<n;i++)s+='⭐';
+    return '<div class="review-rating">'+s+'</div>';
+  }
+
+  function render(){
+    var q = searchBox.value.toLowerCase().trim();
+    var sort = sortSelect.value;
+
+    // Filter
+    var filtered = REVIEWS.filter(function(r){
+      var matchTag = activeTag==='all' || r.tags.indexOf(activeTag)!==-1;
+      var matchSearch = !q || r.title.toLowerCase().indexOf(q)!==-1 || r.author.toLowerCase().indexOf(q)!==-1;
+      return matchTag && matchSearch;
+    });
+
+    // Sort
+    filtered.sort(function(a,b){
+      switch(sort){
+        case 'newest': return 0; // preserve original order (newest first)
+        case 'oldest': return 0; // we'd need dates for true oldest — reverse for now
+        case 'rating-high': return b.rating - a.rating;
+        case 'rating-low': return a.rating - b.rating;
+        case 'title-az': return a.title.localeCompare(b.title);
+        case 'title-za': return b.title.localeCompare(a.title);
+        default: return 0;
+      }
+    });
+    if(sort==='oldest') filtered.reverse();
+
+    countEl.textContent = filtered.length + ' review' + (filtered.length!==1?'s':'');
+
+    if(filtered.length===0){
+      list.innerHTML = '<div class="no-results">No reviews match your search.</div>';
+      return;
+    }
+
+    var html = '';
+    filtered.forEach(function(r){
+      html += '<a href="/reviews/'+r.slug+'" class="review-card">';
+      html += '<img src="'+r.cover+'" alt="'+r.title+'" onerror="this.outerHTML=\'<span style=\\\'width:60px;height:90px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;border-radius:6px;flex-shrink:0;background:linear-gradient(135deg,#222244,rgba(15,52,96,.3));border:1px solid rgba(230,169,25,.15)\\\'>📚</span>\'">';
+      html += '<div class="review-info">';
+      html += '<div class="review-title">'+r.title+'</div>';
+      html += '<div class="review-author">'+r.author+'</div>';
+      html += stars(r.rating);
+      if(r.snippet) html += '<div class="review-snippet">'+r.snippet+'</div>';
+      html += '</div></a>';
+    });
+    list.innerHTML = html;
+  }
+
+  // Events
+  searchBox.addEventListener('input', render);
+  sortSelect.addEventListener('change', render);
+  filterContainer.addEventListener('click', function(e){
+    var tag = e.target.dataset.tag;
+    if(!tag) return;
+    activeTag = tag;
+    filterContainer.querySelectorAll('.filter-tag').forEach(function(el){
+      el.classList.toggle('active', el.dataset.tag===tag);
+    });
+    render();
+  });
+
+  render();
+})();
+</script>
+
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

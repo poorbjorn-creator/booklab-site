@@ -36,6 +36,8 @@ After making changes:
 2. Update the review count in the same file
 3. Update `sitemap.xml` with the new review URL and today's date
 
+**Every review card on the /reviews index MUST include a `<div class="review-snippet">` with a short, compelling tagline** (1-2 sentences max) to drive interest and clicks. See Spiral Dynamics or The Wealth of Nations for examples.
+
 **Always use `_src/reviews/_TEMPLATE.html`** as the starting point for new reviews. It includes:
 - Proper `INCLUDE` markers (head-css, review-css, nav, footer, nav-js)
 - Structured data (JSON-LD for Review + optional Video)

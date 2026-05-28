@@ -88,6 +88,75 @@ def backup_before_build():
     print(f'Backup saved to {backup_path}')
     return backup_path
 
+def prerender_reviews(content):
+    """Extract REVIEWS JSON from the page and inject static HTML cards for SEO.
+    The JS on the page will take over for search/filter/sort on load."""
+    import json, re, html as html_mod
+
+    # Extract the var REVIEWS = [...]; block
+    m = re.search(r'var REVIEWS\s*=\s*\[(.+?)\];', content, re.DOTALL)
+    if not m:
+        return content
+
+    # Parse the JS array — it's almost JSON, convert to valid JSON
+    raw = '[' + m.group(1) + ']'
+    # JS uses unquoted keys — quote them (keep delimiter, add quotes around key)
+    raw = re.sub(r'(?<=\{)\s*(\w+)\s*:', r'"\1":', raw)
+    raw = re.sub(r',\s*(\w+)\s*:', r',"\1":', raw)
+    # Fix JS-escaped single quotes (\') which aren't valid JSON
+    raw = raw.replace("\\'", "'")
+
+    try:
+        reviews = json.loads(raw)
+    except json.JSONDecodeError as e:
+        print(f'  ⚠️  Could not parse REVIEWS JSON for pre-render: {e}')
+        return content
+
+    # Build static HTML
+    cards = []
+    for r in reviews:
+        rating_val = r.get('rating', 0)
+        if rating_val == 0:
+            stars_html = '<div class="review-rating">Personal Reflection</div>'
+        else:
+            stars_html = f'<div class="review-rating">{"⭐" * rating_val}</div>'
+
+        snippet_html = ''
+        if r.get('snippet'):
+            snippet_html = f'<div class="review-snippet">{html_mod.escape(r["snippet"])}</div>'
+
+        card = (
+            f'<a href="/reviews/{html_mod.escape(r["slug"])}" class="review-card">'
+            f'<img src="{html_mod.escape(r["cover"])}" alt="{html_mod.escape(r["title"])}">'
+            f'<div class="review-info">'
+            f'<div class="review-title">{html_mod.escape(r["title"])}</div>'
+            f'<div class="review-author">{html_mod.escape(r["author"])}</div>'
+            f'{stars_html}'
+            f'{snippet_html}'
+            f'</div></a>'
+        )
+        cards.append(card)
+
+    static_html = '\n'.join(cards)
+    count_html = f'{len(reviews)} review{"s" if len(reviews) != 1 else ""}'
+
+    # Inject static cards into the reviewList div (between open and close tags)
+    content = re.sub(
+        r'(<div[^>]*id="reviewList"[^>]*>)(</div>)',
+        lambda m: m.group(1) + '\n' + static_html + '\n' + m.group(2),
+        content
+    )
+
+    # Inject count into the reviewCount element
+    content = re.sub(
+        r'(<p[^>]*id="reviewCount"[^>]*>)(</p>)',
+        lambda m: m.group(1) + count_html + m.group(2),
+        content
+    )
+
+    return content
+
+
 def build():
     includes = load_includes()
     count = 0
@@ -108,6 +177,10 @@ def build():
             for key, value in includes.items():
                 marker = f'<!-- INCLUDE:{key} -->'
                 content = content.replace(marker, value)
+
+            # Pre-render reviews page for SEO
+            if fname == 'reviews.html' and root == SRC_DIR:
+                content = prerender_reviews(content)
 
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
             with open(out_path, 'w', encoding='utf-8') as f:
