@@ -79,6 +79,17 @@ Review pages use a **custom hero image** — NOT the book cover. These are edito
 - Hero images are set in the `<img class="hero-img">` tag and in OG/Twitter meta tags.
 - Don't use a plain book cover as the hero image on review pages.
 
+### Image Optimization Guidelines
+
+**All images MUST be optimized before committing/deploying:**
+
+- **Hero/OG images:** Max **1200px wide**, JPEG quality **80**, target **under 200KB**
+- **Book covers:** Max **400px wide**, JPEG quality **80**, target **under 100KB**
+- **Format:** Always use **JPEG** (`.jpg`) for hero/OG images — not PNG. JPEG is smaller and universally supported by social crawlers for `og:image`.
+- **No PNGs for photos.** PNG is only acceptable for graphics/logos with transparency.
+- **Resize on ingest:** When adding a new image from a phone or camera, always resize it down before placing it. Raw phone photos (3000-4000px wide, 2-5MB) are never acceptable.
+- **Command:** `convert input.jpg -resize "1200x>" -quality 80 output.jpg`
+
 ## Before ANY Change
 
 1. **State what you plan to change** — describe the approach
@@ -105,6 +116,27 @@ This gives a solid dark background with gold border and gold text — visible an
 - Check `_src/reviews/` for existing review pages before publishing any article that mentions books.
 - Only add the button for books that actually have a review page — don't link to pages that don't exist.
 - This applies to all article types: listicles, topic pages, and recommendation articles.
+
+## Newsletter Creation (Beehiiv)
+
+When creating a weekly newsletter:
+1. Receive draft/notes from Bjorn (usually a .docx)
+2. Verify all links: review pages exist and return 200, Amazon affiliate links use `?tag=poorbjorn-20`
+3. Check book titles, authors, and facts (search if unsure)
+4. **Output as a single `.html` file** in `/home/bjorn/shared/content/` — raw HTML that can be pasted directly into Beehiiv's code editor
+5. Use semantic HTML: `<h2>` for sections, `<p>` for text, `<em>` for book titles, `<strong>` for emphasis, `<a>` for links, `<hr>` for section dividers
+6. Mark image/video insertion points with `<strong>[BJORN: description]</strong>` — Bjorn adds these manually in Beehiiv
+7. Send the file via Discord (message tool with filePath)
+
+## New Articles / Pillar Pages
+
+When creating a new article or pillar page, you MUST also:
+1. **Add the article card to `_src/articles.html`** (the articles index) — newest first
+2. **Add a hero image** to the page itself (not just OG meta tags — display it visually)
+3. **Verify all book covers visually** before using them — never trust that an existing ISBN file contains the right cover. Use the `image` tool to confirm.
+4. **Use Amazon search links** (`amazon.com/s?k=Title+Author&tag=poorbjorn-20`) instead of specific edition links (`/dp/ASIN`). Search links are more reliable and won't break when editions change.
+5. **Update `sitemap.xml`** with the new URL and today's date
+6. If the article references books with existing reviews, **add crosslinks from those review pages back to the article** (see Crosslinking section)
 
 ## Surgical Changes
 

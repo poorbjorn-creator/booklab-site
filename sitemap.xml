@@ -20,7 +20,8 @@
   <url><loc>https://booklabbybjorn.com/monthly/april-2026</loc><lastmod>2026-03-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/may-2026</loc><lastmod>2026-05-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/outlive-peter-attia</loc><lastmod>2026-05-06</lastmod><priority>0.7</priority></url>
-  <url><loc>https://booklabbybjorn.com/monthly/june-2026</loc><lastmod>2026-05-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/monthly/july-2026</loc><lastmod>2026-06-02</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/monthly/june-2026</loc><lastmod>2026-06-02</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-psychology-of-money-morgan-housel</loc><lastmod>2026-05-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/a-guide-to-the-good-life-william-irvine</loc><lastmod>2026-05-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/among-the-thugs-bill-buford</loc><lastmod>2026-05-28</lastmod><priority>0.8</priority></url>
@@ -101,7 +102,7 @@
   <url><loc>https://booklabbybjorn.com/reviews/ishmael-daniel-quinn</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/trust-me-im-lying-ryan-holiday</loc><lastmod>2026-05-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-beginning-of-infinity-david-deutsch</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reviews/the-coming-wave-mustafa-suleyman</loc><lastmod>2026-04-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-coming-wave-mustafa-suleyman</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/bitcoin-everything-divided-by-21-million-knut-svanholm</loc><lastmod>2026-04-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/articles/the-shelf-that-changed-my-mind-library-tour-1-stoicism-and-meaning</loc><lastmod>2026-04-28</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/why-we-sleep-matthew-walker</loc><lastmod>2026-04-30</lastmod><priority>0.8</priority></url>
@@ -160,4 +161,15 @@
 <url><loc>https://booklabbybjorn.com/reviews/the-price-of-tomorrow-jeff-booth</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://booklabbybjorn.com/reviews/slaughterhouse-five-kurt-vonnegut</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://booklabbybjorn.com/reviews/scattered-minds-gabor-mate</loc><lastmod>2026-05-28</lastmod></url>
+<url><loc>https://booklabbybjorn.com/reviews/king-of-the-world-david-remnick</loc><lastmod>2026-05-28</lastmod></url>
+<url><loc>https://booklabbybjorn.com/reviews/never-split-the-difference-chris-voss</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/scary-smart-mo-gawdat</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/superintelligence-nick-bostrom</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/articles/best-books-by-ai-founders</loc><lastmod>2026-06-03</lastmod><priority>0.9</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/drinking-a-love-story-caroline-knapp</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/american-prometheus-kai-bird-martin-sherwin</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-autobiography-of-benjamin-franklin</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/benjamin-franklin-an-american-life-walter-isaacson</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://booklabbybjorn.com/behind-the-book</loc><lastmod>2025-06-07</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://booklabbybjorn.com/behind-the-book/slaughterhouse-five</loc><lastmod>2025-06-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

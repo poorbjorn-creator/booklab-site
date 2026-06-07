@@ -16,7 +16,7 @@ INCLUDES_DIR = os.path.join(SITE_DIR, '_includes')
 BACKUP_DIR = os.path.join(SITE_DIR, '.backups', 'pre-build')
 
 # Dirs that the build system manages (output mirrors _src)
-MANAGED_DIRS = ['reviews', 'articles', 'topics', 'monthly']
+MANAGED_DIRS = ['reviews', 'articles', 'topics', 'monthly', 'behind-the-book']
 
 def read_file(path):
     with open(path, 'r', encoding='utf-8') as f:
