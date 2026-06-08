@@ -138,6 +138,33 @@ When creating a new article or pillar page, you MUST also:
 5. **Update `sitemap.xml`** with the new URL and today's date
 6. If the article references books with existing reviews, **add crosslinks from those review pages back to the article** (see Crosslinking section)
 
+## New Behind the Book Pages
+
+A "Behind the Book" page tells the story of how a famous book got written, based on Bjorn's video.
+
+1. Get subtitles from the YouTube video (yt-dlp)
+2. Write the page from Bjorn's actual words — clean up, structure into sections, keep his voice
+3. Use the review template as a base but with `Article` structured data (not `Review`)
+4. Breadcrumb: Home → Behind the Book → Title
+5. Include video embed in the middle of the page
+6. Add "📚 You Might Also Like" with link to the review (if exists) and related books
+7. Use the book's hero/OG image for the page, book cover for the index card
+8. Add to `_src/behind-the-book.html` index (newest first)
+9. Crosslink from the review page back to the Behind the Book page
+10. Update `sitemap.xml`
+
+## New Highlight Pages (Sponsored)
+
+A highlight page is a dedicated page for a sponsored/submitted book. Structure:
+
+1. Breadcrumb: Home → Highlight
+2. "📣 Sponsored Highlight" badge for transparency
+3. Book cover, description, "Why It's on BookLab" quick take, key topics
+4. Amazon affiliate link + author website link
+5. Add to `_src/highlights.html` index (newest first)
+6. Add to "Featured This Month" on landing page when actively promoting
+7. Update `sitemap.xml`
+
 ## Surgical Changes
 
 - Only touch what was asked

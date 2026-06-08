@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/reviews" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Reviews | BookLab by Bjorn</title>
+<meta name="description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
+<meta property="og:title" content="Book Reviews | BookLab by Bjorn">
+<meta property="og:description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://booklabbybjorn.com/reviews">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+
+.page{max-width:800px;margin:0 auto;padding:60px 20px 40px}
+.page h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-0.5px}
+.page .subtitle{color:var(--muted);font-size:1rem;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(230,169,25,.15)}
+
+/* Controls */
+.controls{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.search-box{flex:1;min-width:200px;padding:10px 14px;background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);color:var(--cream);font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s}
+.search-box:focus{border-color:var(--gold)}
+.search-box::placeholder{color:var(--muted)}
+.sort-select{padding:10px 14px;background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);color:var(--cream);font-size:.9rem;font-family:inherit;cursor:pointer;outline:none}
+.sort-select:focus{border-color:var(--gold)}
+
+/* Filter tags */
+.filter-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter-tag{padding:6px 14px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:20px;color:var(--muted);font-size:.85rem;cursor:pointer;transition:.2s;user-select:none}
+.filter-tag:hover{border-color:var(--gold);color:var(--cream)}
+.filter-tag.active{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:600}
+
+.review-count{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:32px}
+.review-list{display:flex;flex-direction:column;gap:16px}
+.review-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:var(--radius);padding:20px;transition:.2s;text-decoration:none}
+.review-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3);text-decoration:none}
+.review-card img{width:60px;height:90px;object-fit:cover;border-radius:6px;flex-shrink:0;background:var(--card);border:1px solid rgba(230,169,25,.15)}
+.review-info{flex:1;min-width:0}
+.review-title{font-family:'Playfair Display',serif;color:var(--cream);font-size:1.1rem;font-weight:700;margin-bottom:2px}
+.review-author{color:var(--muted);font-size:.9rem}
+.review-rating{color:var(--gold);font-size:.9rem;margin-top:4px}
+.review-snippet{color:var(--muted);font-size:.85rem;margin-top:4px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.no-results{text-align:center;color:var(--muted);padding:40px 20px;font-size:1rem}
+
+@media(max-width:600px){.review-card{padding:14px;gap:14px}.review-card img{width:48px;height:72px}.page{padding:40px 16px 30px}.controls{flex-direction:column}.search-box{min-width:0}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/#browse">Topics</a>
+<a href="/#about">About</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+<div class="page">
+<h1>Book Reviews</h1>
+<p class="subtitle">Every book I've reviewed on BookLab — nonfiction, philosophy, psychology, classics, and more.</p>
+
+<div class="controls">
+<input type="text" class="search-box" placeholder="Search by title or author..." id="searchBox">
+<select class="sort-select" id="sortSelect">
+<option value="newest">Newest first</option>
+<option value="oldest">Oldest first</option>
+<option value="rating-high">Highest rated</option>
+<option value="rating-low">Lowest rated</option>
+<option value="title-az">Title A–Z</option>
+<option value="title-za">Title Z–A</option>
+</select>
+</div>
+
+<div class="filter-tags" id="filterTags"></div>
+
+<p class="review-count" id="reviewCount">74 reviews</p>
+<div class="review-list" id="reviewList">
+<a href="/reviews/the-autobiography-of-benjamin-franklin" class="review-card"><img src="/images/covers/autobiography-of-benjamin-franklin.jpg" alt="The Autobiography of Benjamin Franklin"><div class="review-info"><div class="review-title">The Autobiography of Benjamin Franklin</div><div class="review-author">Benjamin Franklin</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The original self-help book — written by the man who invented the genre before it existed. Franklin&#x27;s own account of curiosity, self-improvement, and the 13 virtues experiment.</div></div></a>
+<a href="/reviews/benjamin-franklin-an-american-life-walter-isaacson" class="review-card"><img src="/images/covers/9780743258074.jpg" alt="Benjamin Franklin: An American Life"><div class="review-info"><div class="review-title">Benjamin Franklin: An American Life</div><div class="review-author">Walter Isaacson</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Isaacson does for Franklin what he did for Jobs and Einstein — turns a myth back into a man. The definitive modern biography of America&#x27;s most versatile founding father.</div></div></a>
+<a href="/reviews/drinking-a-love-story-caroline-knapp" class="review-card"><img src="/images/covers/9780385315548.jpg" alt="Drinking: A Love Story"><div class="review-info"><div class="review-title">Drinking: A Love Story</div><div class="review-author">Caroline Knapp</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The most common kind of alcoholic is the one nobody suspects. A raw, honest memoir about high-functioning alcoholism and the invisible slide into addiction.</div></div></a>
+<a href="/reviews/american-prometheus-kai-bird-martin-sherwin" class="review-card"><img src="/images/covers/9780375726262.jpg" alt="American Prometheus"><div class="review-info"><div class="review-title">American Prometheus</div><div class="review-author">Kai Bird &amp; Martin J. Sherwin</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The definitive biography of J. Robert Oppenheimer — father of the atomic bomb, destroyer of worlds, and a warning about what happens when innovation outpaces ethics.</div></div></a>
+<a href="/reviews/superintelligence-nick-bostrom" class="review-card"><img src="/images/covers/9780198739838.jpg" alt="Superintelligence"><div class="review-info"><div class="review-title">Superintelligence</div><div class="review-author">Nick Bostrom</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The more you learn about general AI, the scarier it gets. Bostrom&#x27;s landmark book maps the paths, dangers, and strategies for humanity&#x27;s biggest challenge.</div></div></a>
+<a href="/reviews/scary-smart-mo-gawdat" class="review-card"><img src="/images/covers/9781529077650.jpg" alt="Scary Smart"><div class="review-info"><div class="review-title">Scary Smart</div><div class="review-author">Mo Gawdat</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">AI is growing up fast and we are its parents. Google X&#x27;s former CBO delivers the best beginner&#x27;s guide to artificial intelligence.</div></div></a>
+<a href="/reviews/never-split-the-difference-chris-voss" class="review-card"><img src="/images/covers/9780062407801.jpg" alt="Never Split the Difference"><div class="review-info"><div class="review-title">Never Split the Difference</div><div class="review-author">Chris Voss</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">If Atomic Habits is the definitive book on habit building, this is the definitive book on negotiation. FBI-tested tools you can use tomorrow.</div></div></a>
+<a href="/reviews/king-of-the-world-david-remnick" class="review-card"><img src="/images/covers/9780375702297.jpg" alt="King of the World"><div class="review-info"><div class="review-title">King of the World</div><div class="review-author">David Remnick</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">You don&#x27;t have to care about boxing — this is really about race, religion, and the making of Muhammad Ali into an American myth.</div></div></a>
+<a href="/reviews/scattered-minds-gabor-mate" class="review-card"><img src="/images/covers/9780676972597.jpg" alt="Scattered Minds"><div class="review-info"><div class="review-title">Scattered Minds</div><div class="review-author">Gabor Maté</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">ADD isn&#x27;t a brain defect — it&#x27;s a developmental wound shaped by attachment, stress, and a world that keeps getting louder.</div></div></a>
+<a href="/reviews/rasputin-the-untold-story-joseph-fuhrmann" class="review-card"><img src="/images/covers/rasputin-the-untold-story.jpg" alt="Rasputin: The Untold Story"><div class="review-info"><div class="review-title">Rasputin: The Untold Story</div><div class="review-author">Joseph T. Fuhrmann</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">How a Siberian peasant with a soul-piercing gaze became the most powerful person in Russia — and brought down an empire.</div></div></a>
+<a href="/reviews/the-true-story-of-kaspar-hauser" class="review-card"><img src="/images/covers/the-true-story-of-kaspar-hauser.jpg" alt="The True Story of Kaspar Hauser"><div class="review-info"><div class="review-title">The True Story of Kaspar Hauser</div><div class="review-author">The Duchess of Cleveland</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">A mysterious youth appears from nowhere in 1828 Germany — fraud, enigma, or victim of unimaginable isolation?</div></div></a>
+<a href="/reviews/the-wealth-of-nations-adam-smith" class="review-card"><img src="/images/covers/9780140432084.jpg" alt="The Wealth of Nations"><div class="review-info"><div class="review-title">The Wealth of Nations</div><div class="review-author">Adam Smith</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The 1776 blueprint for modern capitalism. Division of labor, invisible hands, and why free markets create prosperity.</div></div></a>
+<a href="/reviews/when-breath-becomes-air-paul-kalanithi" class="review-card"><img src="/images/covers/9780812988406.jpg" alt="When Breath Becomes Air"><div class="review-info"><div class="review-title">When Breath Becomes Air</div><div class="review-author">Paul Kalanithi</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">A neurosurgeon faces his own terminal diagnosis. A devastating meditation on what makes life worth living.</div></div></a>
+<a href="/reviews/atlas-shrugged-ayn-rand" class="review-card"><img src="/images/covers/9780451191144.jpg" alt="Atlas Shrugged"><div class="review-info"><div class="review-title">Atlas Shrugged</div><div class="review-author">Ayn Rand</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">What happens when the most competent people withdraw their talents from the world?</div></div></a>
+<a href="/reviews/this-is-for-everyone-tim-berners-lee" class="review-card"><img src="/images/covers/9780374612467.jpg" alt="This Is for Everyone"><div class="review-info"><div class="review-title">This Is for Everyone</div><div class="review-author">Tim Berners-Lee</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">The inventor of the web on why the internet should remain open, free, and accessible to all.</div></div></a>
+<a href="/reviews/the-big-print-lawrence-lepard" class="review-card"><img src="/images/covers/9798992242508.jpg" alt="The Big Print"><div class="review-info"><div class="review-title">The Big Print</div><div class="review-author">Lawrence Lepard</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">A deep dive into how money printing erodes wealth — and what you can do about it.</div></div></a>
+<a href="/reviews/the-price-of-tomorrow-jeff-booth" class="review-card"><img src="/images/covers/9781999257408.jpg" alt="The Price of Tomorrow"><div class="review-info"><div class="review-title">The Price of Tomorrow</div><div class="review-author">Jeff Booth</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Technology is deflationary. Our monetary system is inflationary. Something has to give.</div></div></a>
+<a href="/reviews/the-mandibles-lionel-shriver" class="review-card"><img src="/images/covers/9780062328250.jpg" alt="The Mandibles: A Family, 2029–2047"><div class="review-info"><div class="review-title">The Mandibles: A Family, 2029–2047</div><div class="review-author">Lionel Shriver</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">A family saga set against the collapse of the US dollar. Fiction that feels uncomfortably prophetic.</div></div></a>
+<a href="/reviews/parallel-universes-of-self-frederick-dodson" class="review-card"><img src="/images/covers/parallel-universes-of-self.jpg" alt="Parallel Universes of Self"><div class="review-info"><div class="review-title">Parallel Universes of Self</div><div class="review-author">Frederick Dodson</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">A wild ride through the idea that your reality shifts with your state of consciousness.</div></div></a>
+<a href="/reviews/the-compound-effect-darren-hardy" class="review-card"><img src="/images/covers/9781593157241.jpg" alt="The Compound Effect"><div class="review-info"><div class="review-title">The Compound Effect</div><div class="review-author">Darren Hardy</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Small, consistent actions compound into massive results. Simple idea, powerful execution.</div></div></a>
+<a href="/reviews/zero-to-one-peter-thiel" class="review-card"><img src="/images/covers/9780804139298.jpg" alt="Zero to One"><div class="review-info"><div class="review-title">Zero to One</div><div class="review-author">Peter Thiel</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">The contrarian playbook for building something the world has never seen before.</div></div></a>
+<a href="/reviews/eat-that-frog-brian-tracy" class="review-card"><img src="/images/covers/9781626569416.jpg" alt="Eat That Frog!"><div class="review-info"><div class="review-title">Eat That Frog!</div><div class="review-author">Brian Tracy</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Do the hardest thing first. A no-nonsense guide to beating procrastination.</div></div></a>
+<a href="/reviews/four-thousand-weeks-oliver-burkeman" class="review-card"><img src="/images/covers/9780374159122.jpg" alt="Four Thousand Weeks"><div class="review-info"><div class="review-title">Four Thousand Weeks</div><div class="review-author">Oliver Burkeman</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">You have about 4,000 weeks to live. This book will change how you spend them.</div></div></a>
+<a href="/reviews/outlive-peter-attia" class="review-card"><img src="/images/covers/9780593236598.jpg" alt="Outlive: The Science and Art of Longevity"><div class="review-info"><div class="review-title">Outlive: The Science and Art of Longevity</div><div class="review-author">Peter Attia, MD</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The science of living longer and better — from exercise to metabolic health to emotional wellbeing.</div></div></a>
+<a href="/reviews/the-true-believer" class="review-card"><img src="/images/covers/9780060505912.jpg" alt="The True Believer"><div class="review-info"><div class="review-title">The True Believer</div><div class="review-author">Eric Hoffer</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Why people join mass movements. Hoffer&#x27;s 1951 classic is sharper than ever in the age of ideological tribes.</div></div></a>
+<a href="/reviews/same-as-ever-morgan-housel" class="review-card"><img src="/images/covers/9780593332702.jpg" alt="Same As Ever"><div class="review-info"><div class="review-title">Same As Ever</div><div class="review-author">Morgan Housel</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">The things that never change about human behavior — greed, fear, risk, and storytelling.</div></div></a>
+<a href="/reviews/antifragile-nassim-taleb" class="review-card"><img src="/images/antifragile-nassim-taleb-cover.jpg" alt="Antifragile"><div class="review-info"><div class="review-title">Antifragile</div><div class="review-author">Nassim Nicholas Taleb</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Some things benefit from disorder. Taleb&#x27;s framework for thriving in a chaotic, unpredictable world.</div></div></a>
+<a href="/reviews/21-lessons-for-the-21st-century-yuval-noah-harari" class="review-card"><img src="/images/21-lessons-cover.jpg" alt="21 Lessons for the 21st Century"><div class="review-info"><div class="review-title">21 Lessons for the 21st Century</div><div class="review-author">Yuval Noah Harari</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">From AI to religion to fake news — Harari tackles the biggest questions facing humanity right now.</div></div></a>
+<a href="/reviews/a-world-without-email-cal-newport" class="review-card"><img src="/images/world-without-email-cover.jpg" alt="A World Without Email"><div class="review-info"><div class="review-title">A World Without Email</div><div class="review-author">Cal Newport</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">Why constant communication is killing productivity — and what to do instead.</div></div></a>
+<a href="/reviews/bitcoin-everything-divided-by-21-million-knut-svanholm" class="review-card"><img src="/images/bitcoin-21m-cover.png" alt="Bitcoin: Everything Divided by 21 Million"><div class="review-info"><div class="review-title">Bitcoin: Everything Divided by 21 Million</div><div class="review-author">Knut Svanholm</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">A philosophical take on Bitcoin&#x27;s fixed supply and what it means for human freedom.</div></div></a>
+<a href="/reviews/building-a-storybrand-donald-miller" class="review-card"><img src="/images/building-a-storybrand-cover.jpg" alt="Building a StoryBrand"><div class="review-info"><div class="review-title">Building a StoryBrand</div><div class="review-author">Donald Miller</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Your customer is the hero, not your brand. A framework for messaging that actually works.</div></div></a>
+<a href="/reviews/courage-is-calling-ryan-holiday" class="review-card"><img src="/images/courage-is-calling-cover.jpg" alt="Courage Is Calling"><div class="review-info"><div class="review-title">Courage Is Calling</div><div class="review-author">Ryan Holiday</div><div class="review-rating">⭐⭐</div><div class="review-snippet">Ryan Holiday on Stoic courage. Inspirational, but lacks the depth of his earlier work.</div></div></a>
+<a href="/reviews/demian-hermann-hesse" class="review-card"><img src="/images/demian-cover.jpg" alt="Demian"><div class="review-info"><div class="review-title">Demian</div><div class="review-author">Hermann Hesse</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">A young man&#x27;s journey toward self-discovery through forbidden knowledge and inner awakening.</div></div></a>
+<a href="/reviews/greenlights-matthew-mcconaughey" class="review-card"><img src="/images/greenlights-cover.jpg" alt="Greenlights"><div class="review-info"><div class="review-title">Greenlights</div><div class="review-author">Matthew McConaughey</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Part memoir, part philosophy. McConaughey&#x27;s life lessons delivered with southern charm and real depth.</div></div></a>
+<a href="/reviews/in-the-realm-of-hungry-ghosts-gabor-mate" class="review-card"><img src="/images/covers/9781785152610.jpg" alt="In the Realm of Hungry Ghosts"><div class="review-info"><div class="review-title">In the Realm of Hungry Ghosts</div><div class="review-author">Gabor Maté</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Gabor Maté on addiction, trauma, and compassion. Raw, unflinching, and deeply human.</div></div></a>
+<a href="/reviews/i-robot-isaac-asimov" class="review-card"><img src="/images/i-robot-cover.jpg" alt="I, Robot"><div class="review-info"><div class="review-title">I, Robot</div><div class="review-author">Isaac Asimov</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The original AI ethics thought experiment. Asimov&#x27;s robot stories are more relevant than ever.</div></div></a>
+<a href="/reviews/ishmael-daniel-quinn" class="review-card"><img src="/images/ishmael-cover.jpg" alt="Ishmael"><div class="review-info"><div class="review-title">Ishmael</div><div class="review-author">Daniel Quinn</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">A telepathic gorilla teaches a man everything wrong with civilization. Stranger — and better — than it sounds.</div></div></a>
+<a href="/reviews/stumbling-on-happiness-daniel-gilbert" class="review-card"><img src="/images/stumbling-on-happiness-cover.jpg" alt="Stumbling on Happiness"><div class="review-info"><div class="review-title">Stumbling on Happiness</div><div class="review-author">Daniel Gilbert</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">We&#x27;re terrible at predicting what will make us happy. Gilbert explains why with wit and science.</div></div></a>
+<a href="/reviews/the-courage-to-be-disliked-kishimi-koga" class="review-card"><img src="/images/covers/176063073X.jpg" alt="The Courage to Be Disliked"><div class="review-info"><div class="review-title">The Courage to Be Disliked</div><div class="review-author">Ichiro Kishimi &amp; Fumitake Koga</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Adlerian psychology served as a Socratic dialogue. All problems are interpersonal relationship problems.</div></div></a>
+<a href="/reviews/the-moral-animal-robert-wright" class="review-card"><img src="/images/moral-animal-cover.jpg" alt="The Moral Animal"><div class="review-info"><div class="review-title">The Moral Animal</div><div class="review-author">Robert Wright</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Evolutionary psychology explained through Darwin&#x27;s own life. Why we love, lie, and compete the way we do.</div></div></a>
+<a href="/reviews/top-five-regrets-of-the-dying-bronnie-ware" class="review-card"><img src="/images/top-five-regrets-cover.jpg" alt="The Top Five Regrets of the Dying"><div class="review-info"><div class="review-title">The Top Five Regrets of the Dying</div><div class="review-author">Bronnie Ware</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">A palliative care nurse reveals what people wish they&#x27;d done differently. Life-changing perspective.</div></div></a>
+<a href="/reviews/trust-me-im-lying-ryan-holiday" class="review-card"><img src="/images/trust-me-im-lying-cover.jpg" alt="Trust Me, I&#x27;m Lying"><div class="review-info"><div class="review-title">Trust Me, I&#x27;m Lying</div><div class="review-author">Ryan Holiday</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">A media manipulator confesses how the news really works. You&#x27;ll never read headlines the same way.</div></div></a>
+<a href="/reviews/slaughterhouse-five-kurt-vonnegut" class="review-card"><img src="/images/covers/slaughterhouse-five.jpg" alt="Slaughterhouse-Five"><div class="review-info"><div class="review-title">Slaughterhouse-Five</div><div class="review-author">Kurt Vonnegut</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">Billy Pilgrim becomes unstuck in time. Vonnegut&#x27;s anti-war masterpiece — absurd, sad, and unforgettable.</div></div></a>
+<a href="/reviews/fahrenheit-451-ray-bradbury" class="review-card"><img src="/images/fahrenheit-451-cover.jpg" alt="Fahrenheit 451"><div class="review-info"><div class="review-title">Fahrenheit 451</div><div class="review-author">Ray Bradbury</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">A future where books are burned and thinking is dangerous. Bradbury&#x27;s warning feels more urgent every year.</div></div></a>
+<a href="/reviews/among-the-thugs-bill-buford" class="review-card"><img src="/images/among-the-thugs-cover.jpg" alt="Among the Thugs"><div class="review-info"><div class="review-title">Among the Thugs</div><div class="review-author">Bill Buford</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">An American journalist embeds with English football hooligans. Visceral, terrifying, and impossible to put down.</div></div></a>
+<a href="/reviews/lost-connections-johann-hari" class="review-card"><img src="/images/lost-connections-cover.jpg" alt="Lost Connections"><div class="review-info"><div class="review-title">Lost Connections</div><div class="review-author">Johann Hari</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Depression isn&#x27;t just a chemical imbalance. Hari traces it to nine causes — most of them social.</div></div></a>
+<a href="/reviews/when-the-body-says-no-gabor-mate" class="review-card"><img src="/images/when-the-body-says-no-cover.jpg" alt="When the Body Says No"><div class="review-info"><div class="review-title">When the Body Says No</div><div class="review-author">Gabor Maté</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">The hidden link between stress, repressed emotions, and disease. Maté at his most powerful.</div></div></a>
+<a href="/reviews/a-guide-to-the-good-life-william-irvine" class="review-card"><img src="/images/guide-to-good-life.jpg" alt="A Guide to the Good Life"><div class="review-info"><div class="review-title">A Guide to the Good Life</div><div class="review-author">William B. Irvine</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">The most practical introduction to Stoicism you&#x27;ll find. Ancient wisdom made actionable.</div></div></a>
+<a href="/reviews/the-laws-of-human-nature-robert-greene" class="review-card"><img src="/images/the-laws-of-human-nature.jpg" alt="The Laws of Human Nature"><div class="review-info"><div class="review-title">The Laws of Human Nature</div><div class="review-author">Robert Greene</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">A masterclass in reading people — their motivations, blind spots, and hidden patterns.</div></div></a>
+<a href="/reviews/the-almanack-of-naval-ravikant-eric-jorgenson" class="review-card"><img src="/images/the-almanack-of-naval-ravikant.jpg" alt="The Almanack of Naval Ravikant"><div class="review-info"><div class="review-title">The Almanack of Naval Ravikant</div><div class="review-author">Eric Jorgenson</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Wealth, happiness, and clear thinking distilled from one of Silicon Valley&#x27;s sharpest minds.</div></div></a>
+<a href="/reviews/the-coming-wave-mustafa-suleyman" class="review-card"><img src="/images/the-coming-wave-cover.jpg" alt="The Coming Wave"><div class="review-info"><div class="review-title">The Coming Wave</div><div class="review-author">Mustafa Suleyman</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">AI and synthetic biology are coming fast. Suleyman asks whether we can contain what we&#x27;ve created.</div></div></a>
+<a href="/reviews/the-beginning-of-infinity-david-deutsch" class="review-card"><img src="/images/beginning-of-infinity-cover.jpg" alt="The Beginning of Infinity"><div class="review-info"><div class="review-title">The Beginning of Infinity</div><div class="review-author">David Deutsch</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">All problems are solvable. Deutsch makes the case for infinite human progress through good explanations.</div></div></a>
+<a href="/reviews/the-sovereign-individual-davidson-rees-mogg" class="review-card"><img src="/images/sovereign-individual-cover.jpg" alt="The Sovereign Individual"><div class="review-info"><div class="review-title">The Sovereign Individual</div><div class="review-author">Davidson &amp; Rees-Mogg</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Written in 1997, it predicted crypto, remote work, and the decline of the nation-state. Eerily accurate.</div></div></a>
+<a href="/reviews/the-bitcoin-standard-saifedean-ammous" class="review-card"><img src="/images/bitcoin-standard-cover.jpg" alt="The Bitcoin Standard"><div class="review-info"><div class="review-title">The Bitcoin Standard</div><div class="review-author">Saifedean Ammous</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">The history of money, why fiat is broken, and the case for Bitcoin as sound money.</div></div></a>
+<a href="/reviews/double-review-good-to-great-and-autobiography-of-a-yogi" class="review-card"><img src="https://covers.openlibrary.org/b/isbn/0066620996-M.jpg" alt="Good to Great &amp; Autobiography of a Yogi"><div class="review-info"><div class="review-title">Good to Great &amp; Autobiography of a Yogi</div><div class="review-author">Jim Collins / Yogananda</div><div class="review-rating">⭐⭐</div><div class="review-snippet">Two very different books, one video. Business strategy meets spiritual autobiography.</div></div></a>
+<a href="/reviews/understanding-human-nature-alfred-adler" class="review-card"><img src="/images/understanding-human-nature.jpg" alt="Understanding Human Nature"><div class="review-info"><div class="review-title">Understanding Human Nature</div><div class="review-author">Alfred Adler</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Adler&#x27;s original work on inferiority, compensation, and what drives human behavior.</div></div></a>
+<a href="/reviews/the-denial-of-death-ernest-becker" class="review-card"><img src="/images/denial-of-death.jpg" alt="The Denial of Death"><div class="review-info"><div class="review-title">The Denial of Death</div><div class="review-author">Ernest Becker</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Everything we do is a defense against the terror of death. Becker&#x27;s Pulitzer-winning bombshell.</div></div></a>
+<a href="/reviews/spiral-dynamics-don-beck-christopher-cowan" class="review-card"><img src="/images/spiral-dynamics.jpg" alt="Spiral Dynamics: Mastering Values, Leadership and Change"><div class="review-info"><div class="review-title">Spiral Dynamics: Mastering Values, Leadership and Change</div><div class="review-author">Don Edward Beck &amp; Christopher C. Cowan</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Maslow&#x27;s hierarchy on steroids. A map of how cultures and people evolve — and why they keep talking past each other.</div></div></a>
+<a href="/reviews/the-wall-dancers-yi-ling-liu" class="review-card"><img src="/images/the-wall-dancers.jpg" alt="The Wall Dancers"><div class="review-info"><div class="review-title">The Wall Dancers</div><div class="review-author">Yi-Ling Liu</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">China&#x27;s underground climbing scene as a lens into freedom, rebellion, and modern Chinese society.</div></div></a>
+<a href="/reviews/determined-robert-sapolsky" class="review-card"><img src="/images/determined.jpg" alt="Determined: A Science of Life Without Free Will"><div class="review-info"><div class="review-title">Determined: A Science of Life Without Free Will</div><div class="review-author">Robert Sapolsky</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Free will is an illusion. Sapolsky brings the full weight of neuroscience to prove it.</div></div></a>
+<a href="/reviews/flow-mihaly-csikszentmihalyi" class="review-card"><img src="/images/flow.jpg" alt="Flow: The Psychology of Optimal Experience"><div class="review-info"><div class="review-title">Flow: The Psychology of Optimal Experience</div><div class="review-author">Mihaly Csikszentmihalyi</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">The psychology of optimal experience. How losing yourself in a task is the key to happiness.</div></div></a>
+<a href="/reviews/notes-from-the-underground-dostoevsky" class="review-card"><img src="/images/notes-from-the-underground.jpg" alt="Notes from the Underground"><div class="review-info"><div class="review-title">Notes from the Underground</div><div class="review-author">Fyodor Dostoevsky</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">The original anti-hero rants against rationalism from his basement. Dark, brilliant, and uncomfortably relatable.</div></div></a>
+<a href="/reviews/demian-synchronicity-carl-jung" class="review-card"><img src="https://covers.openlibrary.org/b/isbn/0486414132-M.jpg" alt="Demian, Synchronicity &amp; Carl Jung"><div class="review-info"><div class="review-title">Demian, Synchronicity &amp; Carl Jung</div><div class="review-author">Hermann Hesse</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Hesse, Jung, and the strange connections between fiction, psychology, and meaningful coincidence.</div></div></a>
+<a href="/reviews/escape-from-freedom-erich-fromm" class="review-card"><img src="/images/escape-from-freedom.jpg" alt="Escape From Freedom"><div class="review-info"><div class="review-title">Escape From Freedom</div><div class="review-author">Erich Fromm</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Why do people flee from freedom into authoritarianism? Fromm&#x27;s 1941 answer still haunts.</div></div></a>
+<a href="/reviews/letters-from-a-stoic-seneca" class="review-card"><img src="/images/letters-from-a-stoic.jpg" alt="Letters from a Stoic"><div class="review-info"><div class="review-title">Letters from a Stoic</div><div class="review-author">Seneca</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Timeless advice on anger, grief, wealth, and time — from Rome&#x27;s greatest Stoic writer.</div></div></a>
+<a href="/reviews/shoe-dog-phil-knight" class="review-card"><img src="/images/shoe-dog.jpg" alt="Shoe Dog"><div class="review-info"><div class="review-title">Shoe Dog</div><div class="review-author">Phil Knight</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The wild, messy, against-all-odds origin story of Nike. One of the best business memoirs ever written.</div></div></a>
+<a href="/reviews/the-stranger-albert-camus" class="review-card"><img src="/images/the-stranger.jpg" alt="The Stranger"><div class="review-info"><div class="review-title">The Stranger</div><div class="review-author">Albert Camus</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">A man kills someone on a beach and feels nothing. Camus&#x27; existentialist classic in under 100 pages.</div></div></a>
+<a href="/reviews/boundaries-henry-cloud-john-townsend" class="review-card"><img src="/images/boundaries.jpg" alt="Boundaries"><div class="review-info"><div class="review-title">Boundaries</div><div class="review-author">Henry Cloud &amp; John Townsend</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">Learning to say no. A Christian framework for healthy relationships that applies to everyone.</div></div></a>
+<a href="/reviews/futureproof-kevin-roose" class="review-card"><img src="/images/futureproof.jpg" alt="Futureproof: 9 Rules for Humans in the Age of Automation"><div class="review-info"><div class="review-title">Futureproof: 9 Rules for Humans in the Age of Automation</div><div class="review-author">Kevin Roose</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">Nine rules for staying human and relevant in the age of AI and automation.</div></div></a>
+<a href="/reviews/life-of-pythagoras-iamblichus" class="review-card"><img src="/images/life-of-pythagoras.jpg" alt="The Life of Pythagoras"><div class="review-info"><div class="review-title">The Life of Pythagoras</div><div class="review-author">Iamblichus</div><div class="review-rating">⭐⭐</div><div class="review-snippet">An ancient biography of the legendary mathematician-mystic. More myth than history, and a tough read.</div></div></a>
+<a href="/reviews/so-good-they-cant-ignore-you-cal-newport" class="review-card"><img src="/images/so-good-they-cant-ignore-you.jpg" alt="So Good They Can&#x27;t Ignore You"><div class="review-info"><div class="review-title">So Good They Can&#x27;t Ignore You</div><div class="review-author">Cal Newport</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">Forget following your passion. Build rare skills first, and passion will follow.</div></div></a>
+<a href="/reviews/bhagavad-gita-video-game-development-and-outcome-independence" class="review-card"><img src="https://covers.openlibrary.org/b/isbn/1586380192-M.jpg" alt="The Bhagavad Gita"><div class="review-info"><div class="review-title">The Bhagavad Gita</div><div class="review-author">Ancient Text</div><div class="review-rating">Personal Reflection</div><div class="review-snippet">Ancient Hindu wisdom on detachment from outcomes — and what it has to do with making video games.</div></div></a>
+<a href="/reviews/why-we-sleep-matthew-walker" class="review-card"><img src="/images/covers/9781501144325.jpg" alt="Why We Sleep"><div class="review-info"><div class="review-title">Why We Sleep</div><div class="review-author">Matthew Walker</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Sleep is the most underrated performance enhancer. Walker&#x27;s research will terrify you into better habits.</div></div></a>
+<a href="/reviews/the-psychology-of-money-morgan-housel" class="review-card"><img src="/images/covers/9780857197689.jpg" alt="The Psychology of Money"><div class="review-info"><div class="review-title">The Psychology of Money</div><div class="review-author">Morgan Housel</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Your relationship with money is shaped by your unique experiences — not spreadsheets or logic.</div></div></a>
+</div>
+</div>
+
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+
+<script>
+/* ============================================================
+   REVIEW DATA — edit this array to add/update reviews.
+   Adding a book = adding one object. Adding a field = adding
+   one key to each object. That's it.
+   ============================================================ */
+var REVIEWS = [
+  {slug:"the-autobiography-of-benjamin-franklin",title:"The Autobiography of Benjamin Franklin",author:"Benjamin Franklin",cover:"/images/covers/autobiography-of-benjamin-franklin.jpg",rating:4,tags:["biography","classics","self-improvement"],snippet:"The original self-help book — written by the man who invented the genre before it existed. Franklin's own account of curiosity, self-improvement, and the 13 virtues experiment."},
+  {slug:"benjamin-franklin-an-american-life-walter-isaacson",title:"Benjamin Franklin: An American Life",author:"Walter Isaacson",cover:"/images/covers/9780743258074.jpg",rating:4,tags:["biography","history"],snippet:"Isaacson does for Franklin what he did for Jobs and Einstein — turns a myth back into a man. The definitive modern biography of America's most versatile founding father."},
+  {slug:"drinking-a-love-story-caroline-knapp",title:"Drinking: A Love Story",author:"Caroline Knapp",cover:"/images/covers/9780385315548.jpg",rating:4,tags:["memoir","psychology"],snippet:"The most common kind of alcoholic is the one nobody suspects. A raw, honest memoir about high-functioning alcoholism and the invisible slide into addiction."},
+  {slug:"american-prometheus-kai-bird-martin-sherwin",title:"American Prometheus",author:"Kai Bird & Martin J. Sherwin",cover:"/images/covers/9780375726262.jpg",rating:4,tags:["biography","history"],snippet:"The definitive biography of J. Robert Oppenheimer — father of the atomic bomb, destroyer of worlds, and a warning about what happens when innovation outpaces ethics."},
+  {slug:"superintelligence-nick-bostrom",title:"Superintelligence",author:"Nick Bostrom",cover:"/images/covers/9780198739838.jpg",rating:4,tags:["technology"],snippet:"The more you learn about general AI, the scarier it gets. Bostrom's landmark book maps the paths, dangers, and strategies for humanity's biggest challenge."},
+  {slug:"scary-smart-mo-gawdat",title:"Scary Smart",author:"Mo Gawdat",cover:"/images/covers/9781529077650.jpg",rating:4,tags:["technology"],snippet:"AI is growing up fast and we are its parents. Google X's former CBO delivers the best beginner's guide to artificial intelligence."},
+  {slug:"never-split-the-difference-chris-voss",title:"Never Split the Difference",author:"Chris Voss",cover:"/images/covers/9780062407801.jpg",rating:5,tags:["psychology","business"],snippet:"If Atomic Habits is the definitive book on habit building, this is the definitive book on negotiation. FBI-tested tools you can use tomorrow."},
+  {slug:"king-of-the-world-david-remnick",title:"King of the World",author:"David Remnick",cover:"/images/covers/9780375702297.jpg",rating:3,tags:["biography","history"],snippet:"You don't have to care about boxing — this is really about race, religion, and the making of Muhammad Ali into an American myth."},
+  {slug:"scattered-minds-gabor-mate",title:"Scattered Minds",author:"Gabor Maté",cover:"/images/covers/9780676972597.jpg",rating:4,tags:["psychology","health"],snippet:"ADD isn't a brain defect — it's a developmental wound shaped by attachment, stress, and a world that keeps getting louder."},
+  {slug:"rasputin-the-untold-story-joseph-fuhrmann",title:"Rasputin: The Untold Story",author:"Joseph T. Fuhrmann",cover:"/images/covers/rasputin-the-untold-story.jpg",rating:4,tags:["history","biography"],snippet:"How a Siberian peasant with a soul-piercing gaze became the most powerful person in Russia — and brought down an empire."},
+  {slug:"the-true-story-of-kaspar-hauser",title:"The True Story of Kaspar Hauser",author:"The Duchess of Cleveland",cover:"/images/covers/the-true-story-of-kaspar-hauser.jpg",rating:3,tags:["history","biography"],snippet:"A mysterious youth appears from nowhere in 1828 Germany — fraud, enigma, or victim of unimaginable isolation?"},
+  {slug:"the-wealth-of-nations-adam-smith",title:"The Wealth of Nations",author:"Adam Smith",cover:"/images/covers/9780140432084.jpg",rating:4,tags:["economics","classics"],snippet:"The 1776 blueprint for modern capitalism. Division of labor, invisible hands, and why free markets create prosperity."},
+  {slug:"when-breath-becomes-air-paul-kalanithi",title:"When Breath Becomes Air",author:"Paul Kalanithi",cover:"/images/covers/9780812988406.jpg",rating:3,tags:["memoir","philosophy"],snippet:"A neurosurgeon faces his own terminal diagnosis. A devastating meditation on what makes life worth living."},
+  {slug:"atlas-shrugged-ayn-rand",title:"Atlas Shrugged",author:"Ayn Rand",cover:"/images/covers/9780451191144.jpg",rating:5,tags:["fiction","philosophy"],snippet:"What happens when the most competent people withdraw their talents from the world?"},
+  {slug:"this-is-for-everyone-tim-berners-lee",title:"This Is for Everyone",author:"Tim Berners-Lee",cover:"/images/covers/9780374612467.jpg",rating:3,tags:["technology"],snippet:"The inventor of the web on why the internet should remain open, free, and accessible to all."},
+  {slug:"the-big-print-lawrence-lepard",title:"The Big Print",author:"Lawrence Lepard",cover:"/images/covers/9798992242508.jpg",rating:4,tags:["economics"],snippet:"A deep dive into how money printing erodes wealth — and what you can do about it."},
+  {slug:"the-price-of-tomorrow-jeff-booth",title:"The Price of Tomorrow",author:"Jeff Booth",cover:"/images/covers/9781999257408.jpg",rating:4,tags:["economics","technology"],snippet:"Technology is deflationary. Our monetary system is inflationary. Something has to give."},
+  {slug:"the-mandibles-lionel-shriver",title:"The Mandibles: A Family, 2029–2047",author:"Lionel Shriver",cover:"/images/covers/9780062328250.jpg",rating:5,tags:["fiction","economics"],snippet:"A family saga set against the collapse of the US dollar. Fiction that feels uncomfortably prophetic."},
+  {slug:"parallel-universes-of-self-frederick-dodson",title:"Parallel Universes of Self",author:"Frederick Dodson",cover:"/images/covers/parallel-universes-of-self.jpg",rating:5,tags:["self-improvement","philosophy"],snippet:"A wild ride through the idea that your reality shifts with your state of consciousness."},
+  {slug:"the-compound-effect-darren-hardy",title:"The Compound Effect",author:"Darren Hardy",cover:"/images/covers/9781593157241.jpg",rating:4,tags:["self-improvement"],snippet:"Small, consistent actions compound into massive results. Simple idea, powerful execution."},
+  {slug:"zero-to-one-peter-thiel",title:"Zero to One",author:"Peter Thiel",cover:"/images/covers/9780804139298.jpg",rating:5,tags:["business","technology"],snippet:"The contrarian playbook for building something the world has never seen before."},
+  {slug:"eat-that-frog-brian-tracy",title:"Eat That Frog!",author:"Brian Tracy",cover:"/images/covers/9781626569416.jpg",rating:4,tags:["self-improvement"],snippet:"Do the hardest thing first. A no-nonsense guide to beating procrastination."},
+  {slug:"four-thousand-weeks-oliver-burkeman",title:"Four Thousand Weeks",author:"Oliver Burkeman",cover:"/images/covers/9780374159122.jpg",rating:4,tags:["philosophy","self-improvement"],snippet:"You have about 4,000 weeks to live. This book will change how you spend them."},
+  {slug:"outlive-peter-attia",title:"Outlive: The Science and Art of Longevity",author:"Peter Attia, MD",cover:"/images/covers/9780593236598.jpg",rating:4,tags:["health","science"],snippet:"The science of living longer and better — from exercise to metabolic health to emotional wellbeing."},
+  {slug:"the-true-believer",title:"The True Believer",author:"Eric Hoffer",cover:"/images/covers/9780060505912.jpg",rating:5,tags:["psychology","philosophy"],snippet:"Why people join mass movements. Hoffer\'s 1951 classic is sharper than ever in the age of ideological tribes."},
+  {slug:"same-as-ever-morgan-housel",title:"Same As Ever",author:"Morgan Housel",cover:"/images/covers/9780593332702.jpg",rating:5,tags:["psychology","economics"],snippet:"The things that never change about human behavior — greed, fear, risk, and storytelling."},
+  {slug:"antifragile-nassim-taleb",title:"Antifragile",author:"Nassim Nicholas Taleb",cover:"/images/antifragile-nassim-taleb-cover.jpg",rating:4,tags:["philosophy","economics"],snippet:"Some things benefit from disorder. Taleb\'s framework for thriving in a chaotic, unpredictable world."},
+  {slug:"21-lessons-for-the-21st-century-yuval-noah-harari",title:"21 Lessons for the 21st Century",author:"Yuval Noah Harari",cover:"/images/21-lessons-cover.jpg",rating:4,tags:["philosophy","technology"],snippet:"From AI to religion to fake news — Harari tackles the biggest questions facing humanity right now."},
+  {slug:"a-world-without-email-cal-newport",title:"A World Without Email",author:"Cal Newport",cover:"/images/world-without-email-cover.jpg",rating:3,tags:["business","self-improvement"],snippet:"Why constant communication is killing productivity — and what to do instead."},
+  {slug:"bitcoin-everything-divided-by-21-million-knut-svanholm",title:"Bitcoin: Everything Divided by 21 Million",author:"Knut Svanholm",cover:"/images/bitcoin-21m-cover.png",rating:4,tags:["economics"],snippet:"A philosophical take on Bitcoin\'s fixed supply and what it means for human freedom."},
+  {slug:"building-a-storybrand-donald-miller",title:"Building a StoryBrand",author:"Donald Miller",cover:"/images/building-a-storybrand-cover.jpg",rating:4,tags:["business"],snippet:"Your customer is the hero, not your brand. A framework for messaging that actually works."},
+  {slug:"courage-is-calling-ryan-holiday",title:"Courage Is Calling",author:"Ryan Holiday",cover:"/images/courage-is-calling-cover.jpg",rating:2,tags:["philosophy","stoicism"],snippet:"Ryan Holiday on Stoic courage. Inspirational, but lacks the depth of his earlier work."},
+  {slug:"demian-hermann-hesse",title:"Demian",author:"Hermann Hesse",cover:"/images/demian-cover.jpg",rating:5,tags:["fiction","philosophy"],snippet:"A young man\'s journey toward self-discovery through forbidden knowledge and inner awakening."},
+  {slug:"greenlights-matthew-mcconaughey",title:"Greenlights",author:"Matthew McConaughey",cover:"/images/greenlights-cover.jpg",rating:4,tags:["memoir"],snippet:"Part memoir, part philosophy. McConaughey\'s life lessons delivered with southern charm and real depth."},
+  {slug:"in-the-realm-of-hungry-ghosts-gabor-mate",title:"In the Realm of Hungry Ghosts",author:"Gabor Maté",cover:"/images/covers/9781785152610.jpg",rating:5,tags:["psychology","health"],snippet:"Gabor Maté on addiction, trauma, and compassion. Raw, unflinching, and deeply human."},
+  {slug:"i-robot-isaac-asimov",title:"I, Robot",author:"Isaac Asimov",cover:"/images/i-robot-cover.jpg",rating:4,tags:["fiction","technology"],snippet:"The original AI ethics thought experiment. Asimov\'s robot stories are more relevant than ever."},
+  {slug:"ishmael-daniel-quinn",title:"Ishmael",author:"Daniel Quinn",cover:"/images/ishmael-cover.jpg",rating:4,tags:["fiction","philosophy"],snippet:"A telepathic gorilla teaches a man everything wrong with civilization. Stranger — and better — than it sounds."},
+  {slug:"stumbling-on-happiness-daniel-gilbert",title:"Stumbling on Happiness",author:"Daniel Gilbert",cover:"/images/stumbling-on-happiness-cover.jpg",rating:4,tags:["psychology"],snippet:"We\'re terrible at predicting what will make us happy. Gilbert explains why with wit and science."},
+  {slug:"the-courage-to-be-disliked-kishimi-koga",title:"The Courage to Be Disliked",author:"Ichiro Kishimi & Fumitake Koga",cover:"/images/covers/176063073X.jpg",rating:4,tags:["psychology","philosophy"],snippet:"Adlerian psychology served as a Socratic dialogue. All problems are interpersonal relationship problems."},
+  {slug:"the-moral-animal-robert-wright",title:"The Moral Animal",author:"Robert Wright",cover:"/images/moral-animal-cover.jpg",rating:5,tags:["psychology","science"],snippet:"Evolutionary psychology explained through Darwin\'s own life. Why we love, lie, and compete the way we do."},
+  {slug:"top-five-regrets-of-the-dying-bronnie-ware",title:"The Top Five Regrets of the Dying",author:"Bronnie Ware",cover:"/images/top-five-regrets-cover.jpg",rating:5,tags:["philosophy","memoir"],snippet:"A palliative care nurse reveals what people wish they\'d done differently. Life-changing perspective."},
+  {slug:"trust-me-im-lying-ryan-holiday",title:"Trust Me, I'm Lying",author:"Ryan Holiday",cover:"/images/trust-me-im-lying-cover.jpg",rating:4,tags:["business","psychology"],snippet:"A media manipulator confesses how the news really works. You\'ll never read headlines the same way."},
+  {slug:"slaughterhouse-five-kurt-vonnegut",title:"Slaughterhouse-Five",author:"Kurt Vonnegut",cover:"/images/covers/slaughterhouse-five.jpg",rating:3,tags:["fiction","classics"],snippet:"Billy Pilgrim becomes unstuck in time. Vonnegut\'s anti-war masterpiece — absurd, sad, and unforgettable."},
+  {slug:"fahrenheit-451-ray-bradbury",title:"Fahrenheit 451",author:"Ray Bradbury",cover:"/images/fahrenheit-451-cover.jpg",rating:4,tags:["fiction","classics"],snippet:"A future where books are burned and thinking is dangerous. Bradbury\'s warning feels more urgent every year."},
+  {slug:"among-the-thugs-bill-buford",title:"Among the Thugs",author:"Bill Buford",cover:"/images/among-the-thugs-cover.jpg",rating:5,tags:["memoir","psychology"],snippet:"An American journalist embeds with English football hooligans. Visceral, terrifying, and impossible to put down."},
+  {slug:"lost-connections-johann-hari",title:"Lost Connections",author:"Johann Hari",cover:"/images/lost-connections-cover.jpg",rating:5,tags:["psychology","health"],snippet:"Depression isn\'t just a chemical imbalance. Hari traces it to nine causes — most of them social."},
+  {slug:"when-the-body-says-no-gabor-mate",title:"When the Body Says No",author:"Gabor Maté",cover:"/images/when-the-body-says-no-cover.jpg",rating:5,tags:["psychology","health"],snippet:"The hidden link between stress, repressed emotions, and disease. Maté at his most powerful."},
+  {slug:"a-guide-to-the-good-life-william-irvine",title:"A Guide to the Good Life",author:"William B. Irvine",cover:"/images/guide-to-good-life.jpg",rating:5,tags:["philosophy","stoicism"],snippet:"The most practical introduction to Stoicism you\'ll find. Ancient wisdom made actionable."},
+  {slug:"the-laws-of-human-nature-robert-greene",title:"The Laws of Human Nature",author:"Robert Greene",cover:"/images/the-laws-of-human-nature.jpg",rating:5,tags:["psychology","self-improvement"],snippet:"A masterclass in reading people — their motivations, blind spots, and hidden patterns."},
+  {slug:"the-almanack-of-naval-ravikant-eric-jorgenson",title:"The Almanack of Naval Ravikant",author:"Eric Jorgenson",cover:"/images/the-almanack-of-naval-ravikant.jpg",rating:5,tags:["philosophy","business"],snippet:"Wealth, happiness, and clear thinking distilled from one of Silicon Valley\'s sharpest minds."},
+  {slug:"the-coming-wave-mustafa-suleyman",title:"The Coming Wave",author:"Mustafa Suleyman",cover:"/images/the-coming-wave-cover.jpg",rating:4,tags:["technology"],snippet:"AI and synthetic biology are coming fast. Suleyman asks whether we can contain what we\'ve created."},
+  {slug:"the-beginning-of-infinity-david-deutsch",title:"The Beginning of Infinity",author:"David Deutsch",cover:"/images/beginning-of-infinity-cover.jpg",rating:5,tags:["philosophy","science"],snippet:"All problems are solvable. Deutsch makes the case for infinite human progress through good explanations."},
+  {slug:"the-sovereign-individual-davidson-rees-mogg",title:"The Sovereign Individual",author:"Davidson & Rees-Mogg",cover:"/images/sovereign-individual-cover.jpg",rating:5,tags:["economics","philosophy"],snippet:"Written in 1997, it predicted crypto, remote work, and the decline of the nation-state. Eerily accurate."},
+  {slug:"the-bitcoin-standard-saifedean-ammous",title:"The Bitcoin Standard",author:"Saifedean Ammous",cover:"/images/bitcoin-standard-cover.jpg",rating:5,tags:["economics"],snippet:"The history of money, why fiat is broken, and the case for Bitcoin as sound money."},
+  {slug:"double-review-good-to-great-and-autobiography-of-a-yogi",title:"Good to Great & Autobiography of a Yogi",author:"Jim Collins / Yogananda",cover:"https://covers.openlibrary.org/b/isbn/0066620996-M.jpg",rating:2,tags:["business","philosophy"],snippet:"Two very different books, one video. Business strategy meets spiritual autobiography."},
+  {slug:"understanding-human-nature-alfred-adler",title:"Understanding Human Nature",author:"Alfred Adler",cover:"/images/understanding-human-nature.jpg",rating:4,tags:["psychology"],snippet:"Adler\'s original work on inferiority, compensation, and what drives human behavior."},
+  {slug:"the-denial-of-death-ernest-becker",title:"The Denial of Death",author:"Ernest Becker",cover:"/images/denial-of-death.jpg",rating:5,tags:["psychology","philosophy"],snippet:"Everything we do is a defense against the terror of death. Becker\'s Pulitzer-winning bombshell."},
+  {slug:"spiral-dynamics-don-beck-christopher-cowan",title:"Spiral Dynamics: Mastering Values, Leadership and Change",author:"Don Edward Beck & Christopher C. Cowan",cover:"/images/spiral-dynamics.jpg",rating:5,tags:["psychology","philosophy"],snippet:"Maslow's hierarchy on steroids. A map of how cultures and people evolve — and why they keep talking past each other."},
+  {slug:"the-wall-dancers-yi-ling-liu",title:"The Wall Dancers",author:"Yi-Ling Liu",cover:"/images/the-wall-dancers.jpg",rating:4,tags:["memoir"],snippet:"China\'s underground climbing scene as a lens into freedom, rebellion, and modern Chinese society."},
+  {slug:"determined-robert-sapolsky",title:"Determined: A Science of Life Without Free Will",author:"Robert Sapolsky",cover:"/images/determined.jpg",rating:5,tags:["psychology","science"],snippet:"Free will is an illusion. Sapolsky brings the full weight of neuroscience to prove it."},
+  {slug:"flow-mihaly-csikszentmihalyi",title:"Flow: The Psychology of Optimal Experience",author:"Mihaly Csikszentmihalyi",cover:"/images/flow.jpg",rating:5,tags:["psychology"],snippet:"The psychology of optimal experience. How losing yourself in a task is the key to happiness."},
+  {slug:"notes-from-the-underground-dostoevsky",title:"Notes from the Underground",author:"Fyodor Dostoevsky",cover:"/images/notes-from-the-underground.jpg",rating:5,tags:["fiction","classics","philosophy"],snippet:"The original anti-hero rants against rationalism from his basement. Dark, brilliant, and uncomfortably relatable."},
+  {slug:"demian-synchronicity-carl-jung",title:"Demian, Synchronicity & Carl Jung",author:"Hermann Hesse",cover:"https://covers.openlibrary.org/b/isbn/0486414132-M.jpg",rating:5,tags:["philosophy","psychology"],snippet:"Hesse, Jung, and the strange connections between fiction, psychology, and meaningful coincidence."},
+  {slug:"escape-from-freedom-erich-fromm",title:"Escape From Freedom",author:"Erich Fromm",cover:"/images/escape-from-freedom.jpg",rating:4,tags:["psychology","philosophy"],snippet:"Why do people flee from freedom into authoritarianism? Fromm\'s 1941 answer still haunts."},
+  {slug:"letters-from-a-stoic-seneca",title:"Letters from a Stoic",author:"Seneca",cover:"/images/letters-from-a-stoic.jpg",rating:4,tags:["philosophy","stoicism","classics"],snippet:"Timeless advice on anger, grief, wealth, and time — from Rome\'s greatest Stoic writer."},
+  {slug:"shoe-dog-phil-knight",title:"Shoe Dog",author:"Phil Knight",cover:"/images/shoe-dog.jpg",rating:4,tags:["memoir","business"],snippet:"The wild, messy, against-all-odds origin story of Nike. One of the best business memoirs ever written."},
+  {slug:"the-stranger-albert-camus",title:"The Stranger",author:"Albert Camus",cover:"/images/the-stranger.jpg",rating:4,tags:["fiction","philosophy","classics"],snippet:"A man kills someone on a beach and feels nothing. Camus\' existentialist classic in under 100 pages."},
+  {slug:"boundaries-henry-cloud-john-townsend",title:"Boundaries",author:"Henry Cloud & John Townsend",cover:"/images/boundaries.jpg",rating:3,tags:["psychology","self-improvement"],snippet:"Learning to say no. A Christian framework for healthy relationships that applies to everyone."},
+  {slug:"futureproof-kevin-roose",title:"Futureproof: 9 Rules for Humans in the Age of Automation",author:"Kevin Roose",cover:"/images/futureproof.jpg",rating:3,tags:["technology"],snippet:"Nine rules for staying human and relevant in the age of AI and automation."},
+  {slug:"life-of-pythagoras-iamblichus",title:"The Life of Pythagoras",author:"Iamblichus",cover:"/images/life-of-pythagoras.jpg",rating:2,tags:["philosophy","classics"],snippet:"An ancient biography of the legendary mathematician-mystic. More myth than history, and a tough read."},
+  {slug:"so-good-they-cant-ignore-you-cal-newport",title:"So Good They Can't Ignore You",author:"Cal Newport",cover:"/images/so-good-they-cant-ignore-you.jpg",rating:3,tags:["self-improvement","business"],snippet:"Forget following your passion. Build rare skills first, and passion will follow."},
+  {slug:"bhagavad-gita-video-game-development-and-outcome-independence",title:"The Bhagavad Gita",author:"Ancient Text",cover:"https://covers.openlibrary.org/b/isbn/1586380192-M.jpg",rating:0,tags:["philosophy","classics"],snippet:"Ancient Hindu wisdom on detachment from outcomes — and what it has to do with making video games."},
+  {slug:"why-we-sleep-matthew-walker",title:"Why We Sleep",author:"Matthew Walker",cover:"/images/covers/9781501144325.jpg",rating:5,tags:["health","science"],snippet:"Sleep is the most underrated performance enhancer. Walker\'s research will terrify you into better habits."},
+  {slug:"the-psychology-of-money-morgan-housel",title:"The Psychology of Money",author:"Morgan Housel",cover:"/images/covers/9780857197689.jpg",rating:4,tags:["economics","psychology"],snippet:"Your relationship with money is shaped by your unique experiences — not spreadsheets or logic."}
+];
+
+/* ============================================================
+   RENDER ENGINE — don't touch this unless changing layout
+   ============================================================ */
+(function(){
+  var list = document.getElementById('reviewList');
+  var countEl = document.getElementById('reviewCount');
+  var searchBox = document.getElementById('searchBox');
+  var sortSelect = document.getElementById('sortSelect');
+  var filterContainer = document.getElementById('filterTags');
+  var activeTag = 'all';
+
+  // Build tag list from data
+  var tagSet = new Set();
+  REVIEWS.forEach(function(r){ r.tags.forEach(function(t){ tagSet.add(t); }); });
+  var allTags = Array.from(tagSet).sort();
+
+  // Render filter tags
+  var tagHtml = '<span class="filter-tag active" data-tag="all">All</span>';
+  allTags.forEach(function(t){
+    tagHtml += '<span class="filter-tag" data-tag="'+t+'">'+t.charAt(0).toUpperCase()+t.slice(1)+'</span>';
+  });
+  filterContainer.innerHTML = tagHtml;
+
+  function stars(n){
+    if(n===0) return '<div class="review-rating">Personal Reflection</div>';
+    var s='';for(var i=0;i<n;i++)s+='⭐';
+    return '<div class="review-rating">'+s+'</div>';
+  }
+
+  function render(){
+    var q = searchBox.value.toLowerCase().trim();
+    var sort = sortSelect.value;
+
+    // Filter
+    var filtered = REVIEWS.filter(function(r){
+      var matchTag = activeTag==='all' || r.tags.indexOf(activeTag)!==-1;
+      var matchSearch = !q || r.title.toLowerCase().indexOf(q)!==-1 || r.author.toLowerCase().indexOf(q)!==-1;
+      return matchTag && matchSearch;
+    });
+
+    // Sort
+    filtered.sort(function(a,b){
+      switch(sort){
+        case 'newest': return 0; // preserve original order (newest first)
+        case 'oldest': return 0; // we'd need dates for true oldest — reverse for now
+        case 'rating-high': return b.rating - a.rating;
+        case 'rating-low': return a.rating - b.rating;
+        case 'title-az': return a.title.localeCompare(b.title);
+        case 'title-za': return b.title.localeCompare(a.title);
+        default: return 0;
+      }
+    });
+    if(sort==='oldest') filtered.reverse();
+
+    countEl.textContent = filtered.length + ' review' + (filtered.length!==1?'s':'');
+
+    if(filtered.length===0){
+      list.innerHTML = '<div class="no-results">No reviews match your search.</div>';
+      return;
+    }
+
+    var html = '';
+    filtered.forEach(function(r){
+      html += '<a href="/reviews/'+r.slug+'" class="review-card">';
+      html += '<img src="'+r.cover+'" alt="'+r.title+'" onerror="this.outerHTML=\'<span style=\\\'width:60px;height:90px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;border-radius:6px;flex-shrink:0;background:linear-gradient(135deg,#222244,rgba(15,52,96,.3));border:1px solid rgba(230,169,25,.15)\\\'>📚</span>\'">';
+      html += '<div class="review-info">';
+      html += '<div class="review-title">'+r.title+'</div>';
+      html += '<div class="review-author">'+r.author+'</div>';
+      html += stars(r.rating);
+      if(r.snippet) html += '<div class="review-snippet">'+r.snippet+'</div>';
+      html += '</div></a>';
+    });
+    list.innerHTML = html;
+  }
+
+  // Events
+  searchBox.addEventListener('input', render);
+  sortSelect.addEventListener('change', render);
+  filterContainer.addEventListener('click', function(e){
+    var tag = e.target.dataset.tag;
+    if(!tag) return;
+    activeTag = tag;
+    filterContainer.querySelectorAll('.filter-tag').forEach(function(el){
+      el.classList.toggle('active', el.dataset.tag===tag);
+    });
+    render();
+  });
+
+  render();
+})();
+</script>
+
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

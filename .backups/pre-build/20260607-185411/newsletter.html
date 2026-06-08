@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter — BookLab by Bjorn</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Join the BookLab Newsletter — weekly book recommendations, hidden gems, and honest nonfiction reviews. Plus get my free Top 50 Books PDF.">
+<meta property="og:title" content="Join the BookLab Newsletter">
+<meta property="og:description" content="Weekly book recommendations, hidden gems, and honest nonfiction reviews — straight to your inbox.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://booklabbybjorn.com/newsletter">
+<meta property="og:image" content="https://booklabbybjorn.com/og-newsletter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Join the BookLab Newsletter">
+<meta name="twitter:description" content="Weekly book recommendations, hidden gems, and honest nonfiction reviews — straight to your inbox.">
+<meta name="twitter:image" content="https://booklabbybjorn.com/og-newsletter.png">
+<meta name="twitter:site" content="@poorbjorn">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;height:54px}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700}
+
+.hero{text-align:center;padding:80px 20px 50px;background:linear-gradient(180deg,#0f0f23 0%,var(--bg) 100%)}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--gold);margin-bottom:16px}
+.hero .tagline{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--cream);font-family:'Playfair Display',serif;font-style:italic;max-width:600px;margin:0 auto 12px}
+
+.container{max-width:640px;margin:0 auto;padding:0 20px}
+.content{padding:40px 0 60px}
+
+.signup-box{background:var(--card);border-radius:var(--radius);padding:36px 32px;border:1px solid rgba(230,169,25,.2);text-align:center;margin-bottom:40px}
+.signup-box h2{color:var(--gold);margin-bottom:16px;font-size:1.5rem}
+.signup-box p{margin-bottom:20px;font-size:1rem}
+.signup-box .bonus{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+
+.signup-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto}
+.signup-form input[type="email"]{flex:1;min-width:220px;padding:14px 18px;border-radius:8px;border:1px solid rgba(230,169,25,.3);background:var(--bg);color:var(--cream);font-size:1rem;font-family:inherit;outline:none}
+.signup-form input[type="email"]:focus{border-color:var(--gold)}
+.signup-form button{padding:14px 28px;border-radius:8px;border:none;background:var(--gold);color:#1a1a2e;font-weight:700;font-size:.95rem;cursor:pointer;transition:.2s;font-family:inherit}
+.signup-form button:hover{background:#d4990f;transform:scale(1.02)}
+
+.features{list-style:none;text-align:left;max-width:480px;margin:0 auto 40px}
+.features li{padding:12px 0;border-bottom:1px solid rgba(230,169,25,.08);font-size:.95rem}
+.features li:last-child{border-bottom:none}
+.features .icon{margin-right:10px;font-size:1.1rem}
+
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:30px 0}
+.stat{text-align:center}
+.stat .num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);font-weight:700}
+.stat .label{font-size:.8rem;color:var(--muted)}
+
+footer{text-align:center;padding:40px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:auto;color:var(--muted);font-size:.85rem}
+footer a{color:var(--gold)}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199;opacity:0;pointer-events:none;transition:opacity .3s}
+.nav-overlay-bg.open{opacity:1;pointer-events:auto}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--cream);font-size:1rem;padding:10px 0;border-bottom:1px solid rgba(230,169,25,.08);transition:color .2s}
+.nav-overlay a:hover{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+
+<div class="hero">
+<h1>📬 Join the BookLab Newsletter</h1>
+<p class="tagline">Weekly book recommendations, hidden gems, and honest thoughts on what I'm reading.</p>
+</div>
+
+<div class="container content">
+
+<div class="signup-box">
+<h2>Subscribe for Free</h2>
+<p style="font-size:1.05rem;color:var(--cream);margin-bottom:8px">Short, punchy, personal. No filler.</p>
+<p style="margin-bottom:20px">Full of book recommendations, hidden gems, great lessons and books to keep an eye on.</p>
+<p class="bonus">Plus you'll get my <strong style="color:var(--cream)">Top 50 Nonfiction Books</strong> list as a free PDF when you sign up.</p>
+
+<form class="signup-form" id="subscribe-form" onsubmit="return handleSubscribe(event)">
+<input type="email" id="sub-email" placeholder="your@email.com" required>
+<button type="submit" id="sub-btn">Subscribe →</button>
+</form>
+<p id="sub-msg" style="color:var(--muted);font-size:.75rem;margin-top:12px">No spam. Unsubscribe anytime.</p>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="num">43k</div><div class="label">followers on X</div></div>
+<div class="stat"><div class="num">16k</div><div class="label">YouTube subscribers</div></div>
+<div class="stat"><div class="num">300+</div><div class="label">books reviewed</div></div>
+</div>
+
+<div style="text-align:center;margin-top:30px;padding:24px;background:rgba(230,169,25,.05);border-radius:var(--radius)">
+<p style="color:var(--cream);font-size:1rem;margin-bottom:8px">Short, punchy, personal. No filler.</p>
+<p style="color:var(--muted);font-size:.9rem">The kind of email you actually open.</p>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 BookLab by Bjorn · <a href="/">Home</a></p>
+</footer>
+
+<script>
+async function handleSubscribe(e){
+  e.preventDefault();
+  var btn=document.getElementById('sub-btn'),msg=document.getElementById('sub-msg'),email=document.getElementById('sub-email').value;
+  btn.disabled=true;btn.textContent='Signing up...';
+  try{
+    var r=await fetch('https://booklab-subscribe.poorbjorn.workers.dev',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,utm_source:'newsletter_page',utm_medium:'organic'})
+    });
+    if(r.ok){
+      msg.style.color='var(--gold)';msg.textContent='🎉 You\'re in! Check your inbox for the Top 50 list.';
+      btn.textContent='Subscribed ✓';btn.style.background='#2ecc71';
+    }else{
+      var d=await r.json();msg.style.color='#e74c3c';msg.textContent=d.error||'Something went wrong. Try again!';
+      btn.disabled=false;btn.textContent='Subscribe →';
+    }
+  }catch(err){msg.style.color='#e74c3c';msg.textContent='Network error. Try again!';btn.disabled=false;btn.textContent='Subscribe →';}
+}
+</script>
+<script>
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+</script>
+
+</body>
+</html>
