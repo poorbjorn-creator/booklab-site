@@ -113,7 +113,7 @@ footer .links a{color:var(--gold)}
 </div>
 </nav>
 <div class="nav-overlay-bg"></div>
-<div class="nav-overlay">
+<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
 <a href="/">Home</a>
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
@@ -126,7 +126,7 @@ footer .links a{color:var(--gold)}
 <a href="/#about">About</a>
 </div>
 <div class="article">
-<div class="breadcrumb"><a href="/">Home</a> → <a href="/reviews">Reviews</a> → 5 Books to Beat Laziness</div>
+<div class="breadcrumb"><a href="/">Home</a> → <a href="/articles">Articles</a> → 5 Books to Beat Laziness</div>
 <h1>5 Best Books to Beat Laziness and Boost Productivity</h1>
 <div class="meta">by Bjorn · ⏱ 4 min read · 📚 Reading List</div>
 
@@ -206,7 +206,7 @@ footer .links a{color:var(--gold)}
 <script>
 (function(){
 var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
 btn.addEventListener('click',toggle);
 bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});

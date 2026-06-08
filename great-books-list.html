@@ -124,7 +124,7 @@ section .section-desc{color:var(--muted);margin-bottom:30px;font-size:.9rem}
 </div>
 </nav>
 <div class="nav-overlay-bg"></div>
-<div class="nav-overlay">
+<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
 <a href="/">Home</a>
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
@@ -138,7 +138,7 @@ section .section-desc{color:var(--muted);margin-bottom:30px;font-size:.9rem}
 </div>
 
 <header>
-<h1>BookLab by Bjorn</h1>
+<h1>The Best Nonfiction Books to Change How You Think</h1>
 <p class="subtitle">The Great Books List — Books that will change your life</p>
 <div class="divider"></div>
 <p class="intro">Welcome to my curated collection of books that have shaped my thinking and changed my life. These are not just recommendations — they are invitations to explore the deepest questions about human nature, meaning, and potential. Each book has earned its place here through the impact it had on me. I hope they do the same for you.</p>
@@ -825,7 +825,7 @@ section .section-desc{color:var(--muted);margin-bottom:30px;font-size:.9rem}
 <script>
 (function(){
 var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
 btn.addEventListener('click',toggle);
 bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/reviews/this-is-for-everyone-tim-berners-lee" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>This Is for Everyone by Tim Berners-Lee — Book Review | BookLab by Bjorn</title>
+<meta name="description" content="Book review of This Is for Everyone by Tim Berners-Lee. The inventor of the World Wide Web tells his story — from punch cards to hyperlinks. Fascinating start, but fizzles in the second half.">
+<meta property="og:title" content="This Is for Everyone by Tim Berners-Lee — Book Review | BookLab by Bjorn">
+<meta property="og:description" content="The inventor of the World Wide Web tells his story — from punch cards to hyperlinks. Fascinating start, but fizzles in the second half.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://booklabbybjorn.com/reviews/this-is-for-everyone-tim-berners-lee">
+<meta property="og:image" content="https://booklabbybjorn.com/images/og-this-is-for-everyone.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="This Is for Everyone by Tim Berners-Lee — Book Review | BookLab by Bjorn">
+<meta name="twitter:description" content="The inventor of the World Wide Web tells his story — from punch cards to hyperlinks. Fascinating start, but fizzles in the second half.">
+<meta name="twitter:image" content="https://booklabbybjorn.com/images/og-this-is-for-everyone.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+</style>
+<style>
+/* Review page shared styles — based on Fahrenheit 451 (gold standard) */
+.article{max-width:720px;margin:0 auto;padding:60px 20px 40px}
+.breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:24px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--gold)}
+h1{font-size:2.2rem;margin-bottom:8px;line-height:1.2}
+.tagline{font-size:1.15rem;color:var(--cream);margin:-4px 0 12px;font-style:italic;opacity:.85}
+.meta{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+.hero-img{width:100%;max-width:720px;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+h2{font-size:1.4rem;margin:36px 0 14px;color:var(--gold)}
+p{margin-bottom:16px}
+blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;background:rgba(230,169,25,.05);border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:var(--cream)}
+.takeaway{background:rgba(230,169,25,.08);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);padding:24px;margin:32px 0}
+.takeaway h2{margin-top:0}
+.verdict{background:rgba(15,52,96,.3);border:1px solid rgba(230,169,25,.1);border-radius:var(--radius);padding:24px;margin:32px 0}
+.verdict h2{margin-top:0}
+.rating{text-align:center;font-size:1.5rem;margin:24px 0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
+.stat{background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:8px;padding:10px 14px;font-size:.9rem}
+.stat-positive{color:#5cb85c}
+.stat-negative{color:var(--gold)}
+.cta{text-align:center;margin:24px 0}
+.btn-buy{display:inline-block;background:var(--gold);color:#1a1a2e;padding:14px 32px;border-radius:var(--radius);font-weight:600;font-size:1rem;transition:.2s}
+.btn-buy:hover{background:#d4990f;text-decoration:none;transform:translateY(-2px)}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.might-also-like{margin:40px 0;padding:30px;background:rgba(230,169,25,.05);border-radius:var(--radius);border:1px solid rgba(230,169,25,.12)}
+.might-also-like h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.3rem;margin-bottom:16px}
+.might-also-like .links{display:flex;flex-direction:column;gap:10px}
+.might-also-like a{color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem}
+.might-also-like a:hover{background:rgba(34,34,68,.9);color:var(--gold)}
+.back-link{margin-top:40px;font-size:.9rem}
+@media(max-width:600px){.article{padding:40px 16px 30px}.stats{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "This Is for Everyone by Tim Berners-Lee — Book Review",
+  "description": "The inventor of the World Wide Web tells his story — from punch cards to hyperlinks. Fascinating start, but fizzles in the second half.",
+  "datePublished": "2026-06-12",
+  "url": "https://booklabbybjorn.com/reviews/this-is-for-everyone-tim-berners-lee",
+  "author": {
+    "@type": "Person",
+    "name": "Bjorn R",
+    "url": "https://booklabbybjorn.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BookLab by Bjorn",
+    "url": "https://booklabbybjorn.com"
+  },
+  "itemReviewed": {
+    "@type": "Book",
+    "name": "This Is for Everyone: The Unfinished Story of the World Wide Web",
+    "author": {
+      "@type": "Person",
+      "name": "Tim Berners-Lee"
+    },
+    "isbn": "9780374612467",
+    "image": "https://booklabbybjorn.com/images/covers/9780374612467.jpg"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "3",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "This Is for Everyone by Tim Berners-Lee — Book Review | BookLab by Bjorn",
+  "description": "The inventor of the World Wide Web tells his story — from punch cards to hyperlinks. Fascinating start, but fizzles in the second half.",
+  "thumbnailUrl": "https://booklabbybjorn.com/images/og-this-is-for-everyone.jpg",
+  "uploadDate": "2026-06-12T00:00:00+02:00",
+  "duration": "PT10M",
+  "contentUrl": "https://www.youtube.com/watch?v=jw_9SXkqocc",
+  "embedUrl": "https://www.youtube.com/embed/jw_9SXkqocc",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BookLab by Bjorn",
+    "url": "https://booklabbybjorn.com"
+  }
+}
+</script>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+
+<div class="article">
+<div class="breadcrumb"><a href="/">Home</a> → <a href="/reviews">Reviews</a> → This Is for Everyone</div>
+<h1>This Is for Everyone</h1>
+<p class="tagline">The man who invented the web tells his story — and reminds us how fast everything changed.</p>
+<div class="meta">by Tim Berners-Lee</div>
+
+<img src="/images/og-this-is-for-everyone.jpg" alt="This Is for Everyone by Tim Berners-Lee — BookLab by Bjorn" class="hero-img">
+
+<h2>The Biology of the Internet</h2>
+<p>This book brought me back to my childhood. Tim Berners-Lee is the inventor of the World Wide Web — and that's not just a fancy title. This is the man behind some of the most fundamental protocols and groundwork for what we call the web today.</p>
+<p>He invented the hyperlink that lets you jump from page to page, from server to server as you browse. He's the man behind HTTP, the communication protocol your computer uses. He invented HTML, the language for documents designed to be displayed in a web browser. And if that wasn't enough, he also came up with the standard for the URL — Universal Resource Locator — what allows you to type in a specific address to find a specific location on the internet.</p>
+<p>This is stuff you use every day, but you rarely think about these underlying systems. If that sounds nerdy — it is. But for someone who wants to know how the nuts and bolts of the web work, this is a fascinating journey. This is basically a book about the biology of the internet.</p>
+
+<blockquote>"I was struck by the idea of combining two pre-existing computer technologies into a single platform. The first technology was the internet. The second technology was hypertext."</blockquote>
+
+<h2>From Punch Cards to the Turing Test</h2>
+<p>The progression of this book is linear — from Tim's childhood to his youth to adulthood and beyond. The tech that Tim developed shook the world for real. But his private life seems quite stable in comparison, so don't expect any juicy love stories or family dramas here.</p>
+<p>My main takeaway from this book is the dazzling pace of technological development. We went from mainframe computers that use punch cards to general purpose AIs that pass the Turing test — within one lifetime. It just gets me thinking: what will happen 40 years from now, when I'm 80? Where will technology be? I can't even imagine.</p>
+
+<h2>📺 Video Review</h2>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/jw_9SXkqocc" title="This Is for Everyone by Tim Berners-Lee — Book Review" allowfullscreen loading="lazy"></iframe></div>
+
+<h2>A Pioneer Becomes the Old Guard</h2>
+<p>As with many memoirs, the book starts off really strong with super fascinating stories about the early internet. You get brought to a place and a time where important things actually happened. You get to see all the forks in the road where things could have gone differently but didn't. You get to read about the confluence of different technologies being brought together to become something greater than the sum of its parts.</p>
+<p>But as we move from the early days — when Tim was a pioneer — into him becoming part of the establishment, the book kind of fizzles out. At the age of 70, the old master is not as innovative as he once was. A fair share of the book revolves around his new idea, something called Solid. It's a fine idea, but if you want the real cutting-edge thinking on solving the current challenges of the web, you might want to look elsewhere.</p>
+
+<h2>Where I Disagree</h2>
+<p>I don't fully agree with his ideas for how to solve the current problems of the internet — the polarization, the twisted incentives for users that just want to grab your attention. He suggests that we need more government incentives and more regulation. I'm not sure that's really the way forward.</p>
+<p>For instance, it doesn't sound like he's heard about Nostr — a protocol that solves many of these twisted incentives. On Nostr, quality content is actually more rewarded than just shock value. It has real progress in terms of privacy: you can move your data between platforms, you have full control over your profile, and you can design your own algorithm to control what content you see. Decentralized social media is super interesting, and we're going to hear a lot more about it in the future.</p>
+
+<div class="takeaway">
+<h2>💡 Key Takeaway</h2>
+<p>The most fascinating thing about this book is the sheer velocity of technological change within a single lifetime — from punch cards to AI passing the Turing test. Tim Berners-Lee's early stories capture the magic of a time when brilliant ideas converged to create something world-changing. It's a reminder that the systems we take for granted every day were once radical experiments.</p>
+</div>
+
+<div class="verdict">
+<h2>⚖️ Verdict</h2>
+<p>This is not a book I fully recommend to everyone. The first half is genuinely great — if you're interested in the foundation of the internet and want to learn about these protocols, it's definitely worth your time. It brought me back to my childhood, to the early days of the internet and all the nostalgia that comes with it.</p>
+<p>But the second half loses steam. You could honestly stop halfway through and feel satisfied. The book that started as a fascinating tech memoir ends up drifting into ideas that feel behind the curve. Still — for that first half alone, it's worth picking up.</p>
+</div>
+
+<div class="rating">⭐⭐⭐</div>
+<div class="cta"><a href="https://www.amazon.com/dp/0374612463?tag=poorbjorn-20" target="_blank" rel="noopener" class="btn-buy">Get the Book on Amazon →</a></div>
+
+<div class="might-also-like">
+<h2>📚 You Might Also Like</h2>
+<div class="links">
+<a href="/reviews/the-sovereign-individual-davidson-rees-mogg">→ The Sovereign Individual — Davidson & Rees-Mogg</a>
+<a href="/reviews/the-coming-wave-mustafa-suleyman">→ The Coming Wave — Mustafa Suleyman</a>
+<a href="/reviews/the-bitcoin-standard-saifedean-ammous">→ The Bitcoin Standard — Saifedean Ammous</a>
+</div>
+</div>
+<div class="pillar-link" style="margin:20px 0;padding:16px 20px;background:rgba(230,169,25,.08);border-radius:12px;border-left:3px solid var(--gold);font-size:.92rem;">📖 This book is featured in <a href="/articles/best-books-by-ai-founders" style="font-weight:600;">Books by the Founders of AI</a> — my guide to the 11 essential books by the people actually building AI.</div>
+<div class="back-link"><a href="/reviews">← Back to Reviews</a></div>
+</div>
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/index">Monthly Releases</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

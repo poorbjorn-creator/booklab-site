@@ -113,7 +113,7 @@ header .intro{max-width:650px;margin:0 auto;font-size:.92rem;color:var(--text);l
 </div>
 </nav>
 <div class="nav-overlay-bg"></div>
-<div class="nav-overlay">
+<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
 <a href="/">Home</a>
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
@@ -266,7 +266,7 @@ header .intro{max-width:650px;margin:0 auto;font-size:.92rem;color:var(--text);l
 <script>
 (function(){
 var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
 btn.addEventListener('click',toggle);
 bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});

@@ -113,7 +113,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;color:var(--cream)}
 </div>
 </nav>
 <div class="nav-overlay-bg"></div>
-<div class="nav-overlay">
+<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
 <a href="/">Home</a>
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
@@ -311,7 +311,7 @@ document.getElementById('again-btn').addEventListener('click', recommend);
 <script>
 (function(){
 var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
 btn.addEventListener('click',toggle);
 bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
