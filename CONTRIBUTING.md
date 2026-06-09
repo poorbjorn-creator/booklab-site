@@ -165,6 +165,38 @@ A highlight page is a dedicated page for a sponsored/submitted book. Structure:
 6. Add to "Featured This Month" on landing page when actively promoting
 7. Update `sitemap.xml`
 
+## Monthly Hub Page (/monthly/)
+
+The monthly hub is a pillar page. When adding a new month:
+
+1. **Create the monthly page** (`_src/monthly/[month]-2026.html`) with book cards, Pick of the Month, etc.
+2. **Update the hub page** (`_src/monthly/index.html`):
+   - Move the previous "Coming Up" hero content into a regular month card in the archive
+   - Update the hero module with the new upcoming month
+   - Add Pick of the Month (Bjorn's Pick + Community Pick if applicable) to the new card
+   - The data block at the top of the month card section has HTML comments explaining the structure
+3. **Update `_src/monthly/index.html` ItemList JSON-LD** — add the new month, increment `numberOfItems`
+4. **Add browse-months links** to the new monthly page (include "All Monthly Releases" pill linking to `/monthly/`)
+5. **Update sitemap.xml** with the new monthly page URL
+6. **Update the hub's hero** when Pick of the Month is decided (for preview months)
+
+**Card structure:** Each month card has:
+- Upper section: gold month label (uppercase), Playfair Display title, description, "See the full [Month] list →" CTA
+- Lower section: Bjorn's Pick (gold label) on the left, Community Pick (teal label) on the right (if applicable). 60px cover thumbnails.
+- No emojis on cards. Match the gradient background style of the hero module.
+
+**Low-maintenance rule:** When a new month is published, only the hub page needs editing — no redesign, just add a card block and update the hero. Keep it mechanical.
+
+## URL Format
+
+**All internal links MUST use extensionless URLs.** Examples:
+- ✅ `/reviews/flow-mihaly-csikszentmihalyi`
+- ❌ `/reviews/flow-mihaly-csikszentmihalyi.html`
+- ✅ `/monthly/`
+- ❌ `/monthly/index.html` or `/monthly/index`
+
+Cloudflare Pages resolves both, but consistent extensionless links preserve crawl equity.
+
 ## Surgical Changes
 
 - Only touch what was asked
