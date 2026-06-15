@@ -151,37 +151,7 @@ footer .links a{color:var(--gold)}
 </script>
 </head>
 <body>
-<nav>
-<div class="nav-inner">
-<a href="/" class="nav-brand">📚 BookLab</a>
-<a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/#browse">Topics</a>
-<a href="/#about">About</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
-<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-</nav>
-<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
-<a href="/">Home</a>
-<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/reading-list-2026">Reading List 2026</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/#about">About</a>
-</div>
+<!-- INCLUDE:nav -->
 <div class="nav-overlay-bg"></div>
 
 <div class="article">
@@ -256,30 +226,8 @@ footer .links a{color:var(--gold)}
 </div>
 </div>
 
-<footer>
-<p>© 2026 BookLab by Bjorn</p>
-<div class="links">
-<a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
-</div>
-</footer>
-<script>
-(function(){
-var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
-btn.addEventListener('click',toggle);
-bg.addEventListener('click',toggle);
-ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
-})();
-</script>
+<!-- INCLUDE:footer -->
+<!-- INCLUDE:nav-js -->
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

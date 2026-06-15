@@ -58,43 +58,19 @@ footer .links a{color:var(--gold)}
 </style>
 </head>
 <body>
-<nav>
-<div class="nav-inner">
-<a href="/" class="nav-brand">📚 BookLab</a>
-<a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/#browse">Topics</a>
-<a href="/#about">About</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
-<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-</nav>
-<div class="nav-overlay-bg"></div>
-<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
-<a href="/">Home</a>
-<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/reading-list-2026">Reading List 2026</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/#about">About</a>
-</div>
+<!-- INCLUDE:nav -->
 <div class="page">
 <h1>Nonfiction Reading Guides &amp; Book Essays</h1>
 <p class="subtitle">Essays and ideas on reading, books, and the life of the mind.</p>
 <div class="article-list">
+
+<a href="/articles/best-biographies" class="article-card">
+<img src="/images/og-best-biographies.jpg" alt="Best Biographies of All Time">
+<div class="article-info">
+<div class="article-title">Best Biographies of All Time — 16 Life Stories Worth Reading</div>
+<div class="article-desc">16 biographies that stayed with me after reading 400+ nonfiction books — from Einstein and Oppenheimer to Steve Jobs and Leonardo da Vinci.</div>
+</div>
+</a>
 
 <a href="/articles/best-books-by-ai-founders" class="article-card">
 <img src="/images/og-best-books-by-ai-founders.jpg" alt="Books by the Founders of AI">
@@ -136,13 +112,7 @@ footer .links a{color:var(--gold)}
 </div>
 </a>
 
-<a href="/articles/biographies-you-should-read-asap" class="article-card">
-<img src="/images/og-biographies-you-should-read.jpg" alt="7 Biographies You Should Read ASAP">
-<div class="article-info">
-<div class="article-title">7 Biographies You Should Read ASAP</div>
-<div class="article-desc">Seven outstanding biographies every nonfiction reader needs — from Einstein and Oppenheimer to Steve Jobs, Gandhi, and Theodore Roosevelt.</div>
-</div>
-</a>
+
 
 <a href="/articles/5-must-read-books-for-personal-growth-for-the-unemployed" class="article-card">
 <img src="/images/og-kit/og-bookshelf-04.jpg" alt="5 Must-Read Books for Personal Growth for the Unemployed">
@@ -308,31 +278,8 @@ footer .links a{color:var(--gold)}
 </div>
 </div>
 
-<footer>
-<p>© 2026 BookLab by Bjorn</p>
-<div class="links">
-<a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
-</div>
-</footer>
-<script>
-(function(){
-var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
-btn.addEventListener('click',toggle);
-bg.addEventListener('click',toggle);
-ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
-})();
-</script>
+<!-- INCLUDE:footer -->
+<!-- INCLUDE:nav-js -->
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

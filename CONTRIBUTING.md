@@ -153,17 +153,21 @@ A "Behind the Book" page tells the story of how a famous book got written, based
 9. Crosslink from the review page back to the Behind the Book page
 10. Update `sitemap.xml`
 
-## New Highlight Pages (Sponsored)
+## New Highlight Pages
 
-A highlight page is a dedicated page for a sponsored/submitted book. Structure:
+A highlight page is a dedicated page for a highlighted/submitted book. Structure:
+
+**Gold standard:** [`/highlights/the-curious-mind-of-elon-musk-charles-steel`](https://booklabbybjorn.com/highlights/the-curious-mind-of-elon-musk-charles-steel) — use this as the blueprint for all highlight pages.
 
 1. Breadcrumb: Home → Highlight
-2. "📣 Sponsored Highlight" badge for transparency
-3. Book cover, description, "Why It's on BookLab" quick take, key topics
-4. Amazon affiliate link + author website link
-5. Add to `_src/highlights.html` index (newest first)
-6. Add to "Featured This Month" on landing page when actively promoting
-7. Update `sitemap.xml`
+2. "📣 Highlight" badge
+3. Hero image, book cover, and highlighted page photos where relevant
+4. **Required sections (in order):** What's It About?, 🎯 Why It's on BookLab, 📖 Key Topics, 📝 Highlights from My Reading, 📚 You Might Also Like
+5. Amazon affiliate link + **backlink to author's homepage**
+6. `<div class="might-also-like">` wrapper for the "You Might Also Like" section
+7. Add to `_src/highlights.html` index (newest first)
+8. Add to "Featured This Month" on landing page when actively promoting
+9. Update `sitemap.xml`
 
 ## Monthly Hub Page (/monthly/)
 

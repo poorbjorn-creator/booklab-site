@@ -190,6 +190,40 @@ def build():
 
     print(f'Built {count} pages')
 
+    # Post-build lint: catch bad internal links
+    bad_patterns = ['/monthly/index']
+    violations = []
+    for root, dirs, files in os.walk(SRC_DIR):
+        pass  # We check built output, not _src
+    for subdir in MANAGED_DIRS:
+        if not os.path.isdir(subdir):
+            continue
+        for root, dirs, files in os.walk(subdir):
+            for fname in files:
+                if not fname.endswith('.html'):
+                    continue
+                fpath = os.path.join(root, fname)
+                with open(fpath, 'r', encoding='utf-8') as f:
+                    text = f.read()
+                for pat in bad_patterns:
+                    if pat in text:
+                        violations.append((fpath, pat))
+    # Also check top-level built HTML
+    for fname in os.listdir('.'):
+        if fname.endswith('.html') and os.path.isfile(fname):
+            with open(fname, 'r', encoding='utf-8') as f:
+                text = f.read()
+            for pat in bad_patterns:
+                if pat in text:
+                    violations.append((fname, pat))
+    if violations:
+        print(f'\n⚠️  Link lint: found {len(violations)} bad internal link(s):')
+        for path, pat in violations[:10]:
+            print(f'   {path}: contains "{pat}"')
+        print('Fix these in _src/ or _includes/ and rebuild.')
+    else:
+        print('✅ Link lint passed (no /monthly/index)')
+
 if __name__ == '__main__':
     force = '--force' in sys.argv
 

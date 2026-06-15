@@ -57,7 +57,7 @@ header .intro{max-width:700px;margin:0 auto;font-size:1rem;color:var(--text);lin
 .container{max-width:900px;margin:0 auto;padding:0 20px}
 section{padding:40px 0}
 .book-card{background:var(--card);border-radius:var(--radius);padding:28px 30px;margin-bottom:24px;border-left:4px solid var(--gold);transition:transform .2s,box-shadow .2s;display:flex;gap:20px;align-items:flex-start}
-.book-cover{width:90px;min-width:90px;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);object-fit:cover}
+.book-cover{width:120px;min-width:120px;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);object-fit:cover}
 .book-card-content{flex:1;min-width:0}
 .book-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
 .book-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(230,169,25,.2);float:right;line-height:1;margin-left:10px}
@@ -87,7 +87,7 @@ section{padding:40px 0}
 .might-also-like a:hover{background:rgba(34,34,68,.9);color:var(--gold)}
 @media(max-width:600px){
   .book-card{padding:20px 18px;gap:14px}
-  .book-cover{width:70px;min-width:70px}
+  .book-cover{width:90px;min-width:90px}
   .book-num{font-size:1.8rem}
   header{padding:60px 16px 40px}
 }
@@ -131,6 +131,8 @@ section{padding:40px 0}
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
 <a href="/monthly/">Monthly Releases</a>
 <a href="/great-books-list">Great Books List</a>
 <a href="/reading-list-2026">Reading List 2026</a>
@@ -141,11 +143,13 @@ section{padding:40px 0}
 </div>
 </nav>
 <div class="nav-overlay-bg"></div>
-<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
+<div class="nav-overlay">
 <a href="/">Home</a>
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
 <a href="/monthly/">Monthly Releases</a>
 <a href="/great-books-list">Great Books List</a>
 <a href="/reading-list-2026">Reading List 2026</a>
@@ -153,6 +157,7 @@ section{padding:40px 0}
 <a href="/submit-book">Submit a Book</a>
 <a href="/#about">About</a>
 </div>
+
 
 
 <header>
@@ -277,6 +282,7 @@ section{padding:40px 0}
 <li>You enjoy biographies that don't sanitize their subject</li>
 </ul></div>
 <a href="https://www.amazon.com/s?k=Steve+Jobs+Walter+Isaacson&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+<a href="/reviews/steve-jobs-walter-isaacson" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
 </div>
 </div>
 
@@ -368,6 +374,7 @@ section{padding:40px 0}
 <li>You're interested in how to think about life's big questions without pretending to have the answers</li>
 </ul></div>
 <a href="https://www.amazon.com/s?k=How+to+Live+Montaigne+Sarah+Bakewell&tag=poorbjorn-20" target="_blank" class="btn-amazon">Buy on Amazon →</a>
+<a href="/reviews/how-to-live-sarah-bakewell" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
 </div>
 </div>
 
@@ -510,10 +517,11 @@ section{padding:40px 0}
 </footer>
 
 
+
 <script>
 (function(){
 var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
 btn.addEventListener('click',toggle);
 bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});

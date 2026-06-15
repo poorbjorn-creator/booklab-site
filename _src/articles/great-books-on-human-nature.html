@@ -83,35 +83,7 @@ footer .links a{color:var(--gold)}
 </style>
 </head>
 <body>
-<nav>
-<div class="nav-inner">
-<a href="/" class="nav-brand">📚 BookLab</a>
-<a href="/">Home</a>
-<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/reading-list-2026">Reading List 2026</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/#about">About</a>
-<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-</nav>
-<div class="nav-overlay-bg"></div>
-<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
-<a href="/">Home</a>
-<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/reading-list-2026">Reading List 2026</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/#about">About</a>
-</div>
+<!-- INCLUDE:nav -->
 
 <div class="article">
 <div class="breadcrumb"><a href="/">Home</a> → <a href="/articles">Articles</a> → Human Nature</div>
@@ -234,6 +206,7 @@ footer .links a{color:var(--gold)}
 <p>If you have a book club, this is the one to read — it will spawn amazing discussion. Most of these books are available as audiobooks too, which is how I manage to plow through so many with small children and a daytime job.</p>
 <div class="read-if">📖 Read if you want to know why politics divides us, want to explore the moral landscape, or are curious about the evolutionary advantage of religion.</div>
 <a href="https://www.amazon.com/dp/0307455777?tag=poorbjorn-20" target="_blank" class="btn-amazon">📚 Get on Amazon</a>
+<a href="/reviews/the-righteous-mind-jonathan-haidt" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
 </div>
 </div>
 
@@ -247,6 +220,7 @@ footer .links a{color:var(--gold)}
 <p>It's a highly complex and nuanced read — a companion piece to <em>Determined</em> — but equally rewarding. If you want the full picture of why humans do what they do, from neurons to culture, this is the book.</p>
 <div class="read-if">📖 Read if you want a deep, scientific understanding of human behavior and don't shy away from challenging books.</div>
 <a href="https://www.amazon.com/dp/0143110918?tag=poorbjorn-20" target="_blank" class="btn-amazon">📚 Get on Amazon</a>
+<a href="/reviews/behave-robert-sapolsky" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
 </div>
 </div>
 
@@ -300,6 +274,7 @@ footer .links a{color:var(--gold)}
 <p>A fascinating and humbling look at what makes humans unique — and what doesn't. It's the book that launched Diamond's career and paved the way for <em>Guns, Germs, and Steel</em>.</p>
 <div class="read-if">📖 Read if you want to understand what separates humans from other animals — and what really doesn't.</div>
 <a href="https://www.amazon.com/dp/0060845503?tag=poorbjorn-20" target="_blank" class="btn-amazon">📚 Get on Amazon</a>
+<a href="/reviews/the-third-chimpanzee-jared-diamond" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
 </div>
 </div>
 
@@ -313,6 +288,7 @@ footer .links a{color:var(--gold)}
 <p>If you have any interest at all in understanding human nature, this should jump to the top of your reading list. It's Dostoevsky at his most raw and most human.</p>
 <div class="read-if">📖 Read if you want a Russian classic that is NOT 1,000 pages long — one that makes you think about the irrational side of human nature.</div>
 <a href="https://www.amazon.com/dp/0679734525?tag=poorbjorn-20" target="_blank" class="btn-amazon">📚 Get on Amazon</a>
+<a href="/reviews/notes-from-the-underground-dostoevsky" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
 </div>
 </div>
 
@@ -351,31 +327,9 @@ footer .links a{color:var(--gold)}
 
 </div>
 
-<footer>
-<p>© 2026 BookLab by Bjorn</p>
-<div class="links">
-<a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
-</div>
-</footer>
+<!-- INCLUDE:footer -->
 
-<script>
-(function(){
-var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
-btn.addEventListener('click',toggle);
-bg.addEventListener('click',toggle);
-ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
-})();
-</script>
+<!-- INCLUDE:nav-js -->
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -118,28 +118,28 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 <div class="nav-inner">
 <a href="/" class="nav-brand">📚 BookLab</a>
 <a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
 <a href="/monthly/">Monthly Releases</a>
-<a href="/#browse">Topics</a>
-<a href="/#about">About</a>
-<a href="/submit-book">Submit a Book</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
 <a href="/work-with-us">Work With Us</a>
-<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
 <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <div class="nav-overlay-bg"></div>
-<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
+<div class="nav-overlay">
 <a href="/">Home</a>
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
 <a href="/monthly/">Monthly Releases</a>
 <a href="/great-books-list">Great Books List</a>
 <a href="/reading-list-2026">Reading List 2026</a>
@@ -147,6 +147,7 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 <a href="/submit-book">Submit a Book</a>
 <a href="/#about">About</a>
 </div>
+
 
 <section class="hero">
 <h1>The Best Nonfiction Book Reviews &amp; Recommendations</h1>
@@ -267,7 +268,7 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 <p>The books that changed how I think about money, investing, and building wealth.</p>
 <span class="card-link">Read article →</span>
 </a>
-<a href="articles/biographies-you-should-read-asap" class="browse-card" style="text-decoration:none">
+<a href="articles/best-biographies" class="browse-card" style="text-decoration:none">
 <h3>Biographies You Should Read ASAP</h3>
 <p>The lives that will inspire, humble, and push you to think bigger.</p>
 <span class="card-link">Read article →</span>
@@ -289,7 +290,7 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 <p>A curated selection of the 30 best nonfiction books that will change your life. From Stoic philosophy to evolutionary psychology.</p>
 <span class="card-link">Explore the list →</span>
 </a>
-<a href="monthly/index" class="browse-card" style="text-decoration:none">
+<a href="/monthly/" class="browse-card" style="text-decoration:none">
 <h3>📅 Monthly Releases</h3>
 <p>Every month I highlight the most interesting new nonfiction releases. Don't miss the next great book.</p>
 <span class="card-link">See this month →</span>
@@ -409,17 +410,17 @@ async function handleSubscribe(e){
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
 <a href="/monthly/">Monthly Releases</a>
-<a href="/submit-book">Submit a Book</a>
 <a href="/work-with-us">Work With Us</a>
 <a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
 <a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
 </div>
 </footer>
 
+
 <script>
 (function(){
 var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
 btn.addEventListener('click',toggle);
 bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});

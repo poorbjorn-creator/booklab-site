@@ -76,6 +76,8 @@ footer .links a{color:var(--gold)}
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
 <a href="/monthly/">Monthly Releases</a>
 <a href="/great-books-list">Great Books List</a>
 <a href="/reading-list-2026">Reading List 2026</a>
@@ -86,11 +88,13 @@ footer .links a{color:var(--gold)}
 </div>
 </nav>
 <div class="nav-overlay-bg"></div>
-<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
+<div class="nav-overlay">
 <a href="/">Home</a>
 <a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
 <a href="/reviews">Reviews</a>
 <a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
 <a href="/monthly/">Monthly Releases</a>
 <a href="/great-books-list">Great Books List</a>
 <a href="/reading-list-2026">Reading List 2026</a>
@@ -98,6 +102,7 @@ footer .links a{color:var(--gold)}
 <a href="/submit-book">Submit a Book</a>
 <a href="/#about">About</a>
 </div>
+
 
 <div class="article">
 <div class="breadcrumb"><a href="/">Home</a> → Reading Tips</div>
@@ -178,10 +183,11 @@ footer .links a{color:var(--gold)}
 </div>
 </footer>
 
+
 <script>
 (function(){
 var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');ov.setAttribute('aria-hidden',!o);}
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
 btn.addEventListener('click',toggle);
 bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});

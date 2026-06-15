@@ -77,39 +77,7 @@ footer .links a{color:var(--gold)}
 </style>
 </head>
 <body>
-<nav>
-<div class="nav-inner">
-<a href="/" class="nav-brand">📚 BookLab</a>
-<a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/#browse">Topics</a>
-<a href="/#about">About</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/#newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
-<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-</nav>
-<div class="nav-overlay-bg"></div>
-<div class="nav-overlay" aria-hidden="true" role="navigation" aria-label="Mobile menu">
-<a href="/">Home</a>
-<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/reading-list-2026">Reading List 2026</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/#about">About</a>
-</div>
+<!-- INCLUDE:nav -->
 <div class="page">
 <h1>Nonfiction Book Reviews</h1>
 <p class="subtitle">Every book I've reviewed on BookLab — nonfiction, philosophy, psychology, classics, and more.</p>
@@ -132,22 +100,7 @@ footer .links a{color:var(--gold)}
 <div class="review-list" id="reviewList"></div>
 </div>
 
-<footer>
-<p>© 2026 BookLab by Bjorn</p>
-<div class="links">
-<a href="/">Home</a>
-<a href="/great-books-list">Great Books List</a>
-<a href="/recommend">Book Picker</a>
-<a href="/reading-list-2026">2026 Reading List</a>
-<a href="/reviews">Reviews</a>
-<a href="/articles">Articles</a>
-<a href="/monthly/">Monthly Releases</a>
-<a href="/submit-book">Submit a Book</a>
-<a href="/work-with-us">Work With Us</a>
-<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
-<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
-</div>
-</footer>
+<!-- INCLUDE:footer -->
 
 <script>
 /* ============================================================
@@ -156,8 +109,14 @@ footer .links a{color:var(--gold)}
    one key to each object. That's it.
    ============================================================ */
 var REVIEWS = [
+  {slug:"behave-robert-sapolsky",title:"Behave: The Biology of Humans at Our Best and Worst",author:"Robert Sapolsky",cover:"/images/covers/9780143110918.jpg",rating:4,tags:["psychology","science"],snippet:"What is long, and hard, and full of baboon references? Sapolsky's magnum opus on why humans do what we do — from neurons to culture."},
+  {slug:"the-fourth-turning-william-strauss-neil-howe",title:"The Fourth Turning",author:"William Strauss & Neil Howe",cover:"/images/covers/9780767900461.jpg",rating:4,tags:["history","philosophy"],snippet:"History runs in 80-year cycles — and winter is coming. A bold, provocative theory of generational upheaval that feels eerily relevant right now."},
+  {slug:"steve-jobs-walter-isaacson",title:"Steve Jobs",author:"Walter Isaacson",cover:"/images/covers/9781451648539.jpg",rating:5,tags:["biography","technology","business"],snippet:"Asshole, crybaby, smelly hippie — and the man who bent reality to create the future. Probably my favorite biography of all time."},
+  {slug:"the-third-chimpanzee-jared-diamond",title:"The Third Chimpanzee",author:"Jared Diamond",cover:"/images/covers/9780060984709.jpg",rating:5,tags:["science","psychology","history"],snippet:"We share 98.4% of our DNA with chimpanzees. Diamond's landmark book asks what that tiny gap actually means — and whether humanity's rise is as permanent as we'd like to believe."},
+  {slug:"the-righteous-mind-jonathan-haidt",title:"The Righteous Mind",author:"Jonathan Haidt",cover:"/images/covers/9780307455772.jpg",rating:5,tags:["psychology","philosophy"],snippet:"Why good people are divided by politics and religion. Haidt's moral psychology classic — intuition first, reasoning second, and we're all more tribal than we think."},
   {slug:"the-autobiography-of-benjamin-franklin",title:"The Autobiography of Benjamin Franklin",author:"Benjamin Franklin",cover:"/images/covers/autobiography-of-benjamin-franklin.jpg",rating:4,tags:["biography","classics","self-improvement"],snippet:"The original self-help book — written by the man who invented the genre before it existed. Franklin's own account of curiosity, self-improvement, and the 13 virtues experiment."},
   {slug:"benjamin-franklin-an-american-life-walter-isaacson",title:"Benjamin Franklin: An American Life",author:"Walter Isaacson",cover:"/images/covers/9780743258074.jpg",rating:4,tags:["biography","history"],snippet:"Isaacson does for Franklin what he did for Jobs and Einstein — turns a myth back into a man. The definitive modern biography of America's most versatile founding father."},
+  {slug:"how-to-live-sarah-bakewell",title:"How to Live: A Life of Montaigne",author:"Sarah Bakewell",cover:"/images/covers/9781590514832.jpg",rating:4,tags:["biography","philosophy"],snippet:"Not a traditional biography — a philosophical portrait structured around twenty attempts to answer the question Montaigne spent his life asking: how should you live?"},
   {slug:"drinking-a-love-story-caroline-knapp",title:"Drinking: A Love Story",author:"Caroline Knapp",cover:"/images/covers/9780385315548.jpg",rating:4,tags:["memoir","psychology"],snippet:"The most common kind of alcoholic is the one nobody suspects. A raw, honest memoir about high-functioning alcoholism and the invisible slide into addiction."},
   {slug:"american-prometheus-kai-bird-martin-sherwin",title:"American Prometheus",author:"Kai Bird & Martin J. Sherwin",cover:"/images/covers/9780375726262.jpg",rating:4,tags:["biography","history"],snippet:"The definitive biography of J. Robert Oppenheimer — father of the atomic bomb, destroyer of worlds, and a warning about what happens when innovation outpaces ethics."},
   {slug:"superintelligence-nick-bostrom",title:"Superintelligence",author:"Nick Bostrom",cover:"/images/covers/9780198739838.jpg",rating:4,tags:["technology"],snippet:"The more you learn about general AI, the scarier it gets. Bostrom's landmark book maps the paths, dangers, and strategies for humanity's biggest challenge."},
@@ -324,15 +283,7 @@ var REVIEWS = [
 })();
 </script>
 
-<script>
-(function(){
-var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
-function toggle(){ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
-btn.addEventListener('click',toggle);
-bg.addEventListener('click',toggle);
-ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
-})();
-</script>
+<!-- INCLUDE:nav-js -->
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
