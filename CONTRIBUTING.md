@@ -15,7 +15,8 @@
    - Check for orphan files (output files missing from `_src/`) and abort if found
    - Back up all output HTML before overwriting
    - Build from `_src/` → output
-3. Deploy with wrangler (see deploy instructions)
+3. Deploy: `CLOUDFLARE_API_TOKEN=<token> CLOUDFLARE_ACCOUNT_ID=<id> npx wrangler pages deploy . --project-name=booklab-site --branch=main`
+   - **Always use `--branch=main`** — without it, wrangler deploys to a preview branch and the custom domain won't update.
 
 ## Editing Checklist
 
@@ -24,10 +25,11 @@ Before making changes:
 - [ ] Edits go in `_src/`, not the output files
 
 After making changes:
-- [ ] Run `build.py` successfully (no orphan warnings)
+- [ ] Run `build.py` successfully (no orphan warnings, no sitemap gaps)
 - [ ] Verify the live page renders correctly
 - [ ] Check mobile rendering
-- [ ] Update `sitemap.xml` if pages were added/changed (update `<lastmod>` dates)
+- [ ] **Update `sitemap.xml`** if pages were added/changed (update `<lastmod>` dates)
+- [ ] **Sitemap audit must pass** — `build.py` will warn if any `_src/` page is missing from sitemap.xml. Fix before deploying.
 
 ## New Reviews
 
@@ -104,6 +106,18 @@ Review pages use a **custom hero image** — NOT the book cover. These are edito
 - The meta block should just be: `<div class="meta">by AUTHOR</div>`
 
 ## Crosslinking
+
+### Contextual Inline Links
+
+When a review or article **mentions another book by name** that has its own page on the site, **always link it inline** within the body text. These in-context links are the highest-value internal links for SEO — they signal topical relevance to search engines and keep readers clicking deeper.
+
+Example: `I picked this up after reading Nassim Taleb's <em><a href="/reviews/antifragile-nassim-taleb">Antifragile</a></em>`
+
+- Check `_src/reviews/` for existing review pages before publishing
+- Link naturally within the sentence — don't force it
+- One link per mention is enough (don't re-link every occurrence)
+
+### "Read Review →" Buttons
 
 When an article mentions a book that has a full review on the site (`/reviews/`), **always add a visible "Read Review →" button** next to the Amazon affiliate link. Use this standard style:
 
@@ -190,6 +204,31 @@ The monthly hub is a pillar page. When adding a new month:
 - No emojis on cards. Match the gradient background style of the hero module.
 
 **Low-maintenance rule:** When a new month is published, only the hub page needs editing — no redesign, just add a card block and update the hero. Keep it mechanical.
+
+## Internal Links
+
+**All internal `href` and `src` attributes MUST be root-relative (leading `/`) or absolute URLs.**
+
+- ✅ `href="/reviews/flow-mihaly-csikszentmihalyi"`
+- ✅ `src="/images/covers/9780060984709.jpg"`
+- ❌ `href="reviews/flow-mihaly-csikszentmihalyi"` (relative — will stack paths when crawled from subdirectories)
+- ❌ `src="images/covers/9780060984709.jpg"` (relative)
+- ❌ `href="../favicon.ico"` (relative)
+
+`build.py` will flag violations in the relative link audit. Fix before deploying.
+
+**Canonical and og:url MUST match the page's actual URL path.** Both should be identical. If you move a page, update both.
+
+## Redirects (`_redirects`)
+
+When renaming or moving a page, add a 301 redirect in `_redirects` (Cloudflare Pages format):
+
+```
+/old-path /new-path 301
+/old-path.html /new-path 301
+```
+
+Always add both extensionless and `.html` variants.
 
 ## URL Format
 

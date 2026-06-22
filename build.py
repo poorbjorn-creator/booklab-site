@@ -224,6 +224,150 @@ def build():
     else:
         print('✅ Link lint passed (no /monthly/index)')
 
+    # Relative link audit
+    relative_link_audit()
+
+    # Canonical / og:url consistency
+    canonical_og_audit()
+
+    # Sitemap coverage audit
+    sitemap_audit()
+
+
+def relative_link_audit():
+    """Flag any href/src in _src/ (or _includes/) that isn't root-relative, absolute, or anchor-only."""
+    import re
+    violations = []
+    SAFE = ('/','#','https://','http://','mailto:','tel:','javascript:','${','data:','\'')
+    ATTR_RE = re.compile(r'(?:href|src)="([^"]*)"')
+    # Check _includes/
+    for fname in os.listdir(INCLUDES_DIR):
+        if not fname.endswith('.html'):
+            continue
+        fpath = os.path.join(INCLUDES_DIR, fname)
+        with open(fpath, 'r', encoding='utf-8') as f:
+            for i, line in enumerate(f, 1):
+                for m in ATTR_RE.finditer(line):
+                    val = m.group(1)
+                    if val.startswith(SAFE):
+                        continue
+                    violations.append((os.path.join('_includes', fname), i, val))
+    # Check _src/
+    for root, dirs, files in os.walk(SRC_DIR):
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        for fname in files:
+            if not fname.endswith('.html'):
+                continue
+            fpath = os.path.join(root, fname)
+            rel = os.path.relpath(fpath, SITE_DIR)
+            with open(fpath, 'r', encoding='utf-8') as f:
+                for i, line in enumerate(f, 1):
+                    for m in ATTR_RE.finditer(line):
+                        val = m.group(1)
+                        if val.startswith(SAFE):
+                            continue
+                        # Allow INCLUDE markers (they get replaced)
+                        if 'INCLUDE:' in line:
+                            continue
+                        violations.append((rel, i, val))
+    if violations:
+        print(f'\n⚠️  Relative link audit: {len(violations)} non-root-relative href/src found:')
+        for path, line, val in violations[:20]:
+            print(f'   {path}:{line} → href="{val}"')
+        if len(violations) > 20:
+            print(f'   ... and {len(violations) - 20} more')
+        print('All internal hrefs should start with / (root-relative) or be absolute URLs.')
+    else:
+        print('✅ Relative link audit passed (all href/src root-relative or absolute)')
+
+
+def canonical_og_audit():
+    """Check that canonical and og:url match on every page."""
+    import re
+    DOMAIN = 'https://booklabbybjorn.com'
+    mismatches = []
+    for root, dirs, files in os.walk(SRC_DIR):
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        for fname in files:
+            if not fname.endswith('.html') or fname.startswith('_'):
+                continue
+            fpath = os.path.join(root, fname)
+            rel = os.path.relpath(fpath, SITE_DIR)
+            content = read_file(fpath)
+            canon = re.search(r'rel="canonical"\s+href="([^"]*)"', content)
+            og = re.search(r'property="og:url"\s+content="([^"]*)"', content)
+            if not canon or not og:
+                continue  # pages without both tags are fine
+            c_path = canon.group(1).replace(DOMAIN, '')
+            o_path = og.group(1).replace(DOMAIN, '')
+            if c_path.rstrip('/') != o_path.rstrip('/'):
+                mismatches.append((rel, canon.group(1), og.group(1)))
+    if mismatches:
+        print(f'\n⚠️  Canonical/og:url mismatch on {len(mismatches)} page(s):')
+        for path, c, o in mismatches[:10]:
+            print(f'   {path}: canonical={c}  og:url={o}')
+    else:
+        print('✅ Canonical/og:url audit passed (all matching)')
+
+
+def sitemap_audit():
+    """Warn about _src/ pages that are missing from sitemap.xml."""
+    import xml.etree.ElementTree as ET
+
+    sitemap_path = os.path.join(SITE_DIR, 'sitemap.xml')
+    if not os.path.exists(sitemap_path):
+        print('⚠️  No sitemap.xml found — skipping sitemap audit')
+        return
+
+    ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+    tree = ET.parse(sitemap_path)
+    locs = {u.find('s:loc', ns).text for u in tree.getroot().findall('s:url', ns)}
+
+    # Normalize sitemap URLs to paths: https://booklabbybjorn.com/foo → /foo
+    sitemap_paths = set()
+    for loc in locs:
+        path = loc.replace('https://booklabbybjorn.com', '')
+        # Normalize: /foo/ → /foo, but keep / as /
+        sitemap_paths.add(path.rstrip('/') or '/')
+
+    # Walk _src/ and find pages not in sitemap
+    # Skip: _TEMPLATE files, partials
+    missing = []
+    for root, dirs, files in os.walk(SRC_DIR):
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        for fname in files:
+            if not fname.endswith('.html'):
+                continue
+            if fname.startswith('_'):
+                continue  # templates, partials
+
+            src_path = os.path.join(root, fname)
+            rel = os.path.relpath(src_path, SRC_DIR)
+
+            # Convert to URL path: reviews/foo.html → /reviews/foo
+            # index.html → /dirname/ (or / for top-level)
+            if fname == 'index.html':
+                dir_rel = os.path.dirname(rel)
+                if dir_rel == '' or dir_rel == '.':
+                    url_path = '/'
+                else:
+                    url_path = '/' + dir_rel.replace(os.sep, '/')
+            else:
+                url_path = '/' + rel.replace(os.sep, '/').replace('.html', '')
+
+            if url_path not in sitemap_paths:
+                missing.append(url_path)
+
+    if missing:
+        missing.sort()
+        print(f'\n⚠️  Sitemap gap: {len(missing)} page(s) in _src/ but NOT in sitemap.xml:')
+        for m in missing:
+            print(f'   {m}')
+        print('Add these to sitemap.xml or this is intentional (e.g. landing pages).')
+    else:
+        print('✅ Sitemap coverage: all _src/ pages found in sitemap.xml')
+
+
 if __name__ == '__main__':
     force = '--force' in sys.argv
 

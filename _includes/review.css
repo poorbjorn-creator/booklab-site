@@ -6,7 +6,7 @@
 h1{font-size:2.2rem;margin-bottom:8px;line-height:1.2}
 .tagline{font-size:1.15rem;color:var(--cream);margin:-4px 0 12px;font-style:italic;opacity:.85}
 .meta{color:var(--muted);font-size:.95rem;margin-bottom:28px}
-.hero-img{width:100%;max-width:720px;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.hero-img{width:100%;max-width:720px;max-height:70vh;object-fit:contain;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
 h2{font-size:1.4rem;margin:36px 0 14px;color:var(--gold)}
 p{margin-bottom:16px}
 blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;background:rgba(230,169,25,.05);border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:var(--cream)}
