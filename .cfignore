@@ -1,0 +1,8 @@
+.backups/
+__pycache__/
+_src/
+_archive/
+.git/
+*.py
+*.md
+*.txt
