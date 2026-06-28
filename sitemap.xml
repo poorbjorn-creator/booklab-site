@@ -2,10 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://booklabbybjorn.com/</loc><lastmod>2026-05-01</lastmod><priority>1.0</priority></url>
-  <url><loc>https://booklabbybjorn.com/great-books-list</loc><lastmod>2026-06-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://booklabbybjorn.com/great-books-list</loc><lastmod>2026-06-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://booklabbybjorn.com/articles</loc><lastmod>2026-06-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/highlights</loc><lastmod>2026-06-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews</loc><lastmod>2026-06-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/the-rational-optimist-matt-ridley</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/think-again-adam-grant</loc><lastmod>2026-06-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/into-the-wild-jon-krakauer</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-stranger-in-the-woods-michael-finkel</loc><lastmod>2026-06-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-fourth-turning-william-strauss-neil-howe</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority></url>
@@ -19,7 +21,8 @@
   <url><loc>https://booklabbybjorn.com/reviews/parallel-universes-of-self-frederick-dodson</loc><lastmod>2026-05-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-compound-effect-darren-hardy</loc><lastmod>2026-05-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/work-with-us</loc><lastmod>2026-02-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://booklabbybjorn.com/reading-list-2026</loc><lastmod>2026-05-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/reading-list-2026</loc>
+    <lastmod>2026-06-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/</loc><lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/january-2026</loc><lastmod>2026-01-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/february-2026</loc><lastmod>2026-02-01</lastmod><priority>0.7</priority></url>
@@ -201,4 +204,6 @@
   <url><loc>https://booklabbybjorn.com/reviews/walden-henry-david-thoreau</loc><lastmod>2026-06-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/straw-dogs-john-gray</loc><lastmod>2026-06-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-selfish-gene-richard-dawkins</loc><lastmod>2026-06-22</lastmod><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/reviews/six-easy-pieces-richard-feynman</loc><lastmod>2026-06-22</lastmod><priority>0.8</priority></url>
+<url><loc>https://booklabbybjorn.com/reviews/right-thing-right-now-ryan-holiday</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
