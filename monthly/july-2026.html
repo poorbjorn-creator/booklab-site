@@ -57,7 +57,7 @@ header{text-align:center;padding:80px 20px 60px;background:linear-gradient(180de
 header h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-1px}
 header p.subtitle{font-size:clamp(.95rem,2.5vw,1.2rem);color:var(--cream);margin-bottom:12px;font-family:'Playfair Display',serif;font-style:italic}
 header .month-tag{display:inline-block;background:rgba(230,169,25,.15);color:var(--gold);font-size:.85rem;padding:6px 18px;border-radius:20px;font-weight:600;margin-bottom:14px}
-header .early-preview{display:inline-block;background:rgba(255,107,53,.15);color:#ff6b35;font-size:.85rem;padding:8px 20px;border-radius:20px;font-weight:600;margin-bottom:24px;border:1px solid rgba(255,107,53,.3)}
+
 header .intro{max-width:700px;margin:0 auto;font-size:.95rem;color:var(--muted);line-height:1.8}
 header .last-updated{color:var(--muted);font-size:.8rem;margin-top:12px;font-style:italic}
 .divider{width:60px;height:3px;background:var(--gold);margin:30px auto;border-radius:2px}
@@ -65,8 +65,7 @@ header .last-updated{color:var(--muted);font-size:.8rem;margin-top:12px;font-sty
 .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);margin-bottom:10px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 .video-caption{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:40px}
-.video-placeholder{background:var(--card);border-radius:var(--radius);padding:40px 20px;text-align:center;margin-bottom:40px;border:2px dashed rgba(230,169,25,.2)}
-.video-placeholder p{color:var(--muted);font-size:.9rem}
+
 .container{max-width:900px;margin:0 auto;padding:0 20px}
 section{padding:40px 0}
 .book-card{background:var(--card);border-radius:var(--radius);padding:28px 30px;margin-bottom:24px;border-left:4px solid var(--gold);transition:transform .2s,box-shadow .2s;display:flex;gap:20px;align-items:flex-start}
@@ -75,7 +74,7 @@ section{padding:40px 0}
 .book-card.community-pick{border-left:4px solid #2dd4bf;box-shadow:0 0 20px rgba(45,212,191,.12)}
 .pick-badge{display:inline-block;background:linear-gradient(135deg,#ff6b35,#e6a919);color:#1a1a2e;font-size:.72rem;padding:4px 12px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
 .community-badge{display:inline-block;background:linear-gradient(135deg,#2dd4bf,#06b6d4);color:#1a1a2e;font-size:.72rem;padding:4px 12px;border-radius:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
-.book-cover{width:110px;min-width:110px;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);object-fit:cover}
+.book-cover{width:160px;min-width:160px;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);object-fit:cover}
 .book-card-content{flex:1;min-width:0}
 .book-num{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:rgba(230,169,25,.35);letter-spacing:.05em;margin-bottom:6px}
 .book-title{font-size:1.25rem;font-weight:700;color:var(--cream);margin-bottom:2px}
@@ -102,26 +101,11 @@ section{padding:40px 0}
 .month-pill:hover{background:rgba(230,169,25,.15);text-decoration:none;transform:translateY(-1px)}
 .month-pill.special{background:rgba(230,169,25,.12);border-color:var(--gold)}
 
-.hype-check{margin-top:16px;padding-top:14px;border-top:1px solid rgba(230,169,25,.1)}
-.hype-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
-.hype-buttons{display:flex;flex-wrap:wrap;gap:6px}
-.hype-btn{padding:6px 12px;border-radius:6px;border:1px solid rgba(230,169,25,.2);background:transparent;cursor:pointer;font-size:.8rem;font-family:'Inter',sans-serif;font-weight:500;color:var(--text);transition:all .15s;display:flex;align-items:center;gap:5px}
-.hype-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(230,169,25,.08)}
-.hype-btn.selected{border-color:var(--gold);color:var(--gold);background:rgba(230,169,25,.12)}
-.hype-results{display:flex;flex-direction:column;gap:5px}
-.hype-bar-row{display:flex;align-items:center;gap:8px;font-size:.78rem}
-.hype-bar-row .emoji{width:18px;text-align:center}
-.hype-bar-bg{flex:1;height:20px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden;position:relative}
-.hype-bar-fill{height:100%;border-radius:3px;transition:width .6s cubic-bezier(.22,1,.36,1)}
-.hype-bar-fill.fire{background:rgba(232,69,14,.35)}
-.hype-bar-fill.curious{background:rgba(2,132,199,.35)}
-.hype-bar-fill.pass{background:rgba(107,114,128,.3)}
-.hype-pct{width:42px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted);font-size:.75rem}
-.hype-bar-row .check{font-size:.65rem;color:var(--gold);width:14px}
+
 
 @media(max-width:600px){
   .book-card{padding:20px 18px;gap:14px;flex-direction:column}
-  .book-cover{width:120px;min-width:120px}
+  .book-cover{width:140px;min-width:140px}
   .book-num{font-size:1.8rem}
   header{padding:60px 16px 40px}
 }
@@ -260,15 +244,18 @@ section{padding:40px 0}
 </div>
 
 
+<div style="max-width:900px;margin:0 auto;padding:20px 20px 0">
+<div style="font-size:.85rem;color:var(--muted)"><a href="/" style="color:var(--muted)">Home</a> → <a href="/monthly/" style="color:var(--muted)">Monthly Releases</a> → July 2026</div>
+</div>
+
 <header>
 <h1>Best Nonfiction Releases — July 2026</h1>
 <p class="subtitle">The most interesting nonfiction books coming out this month</p>
 <span class="month-tag">📅 July 2026</span>
-<br>
-<span class="early-preview">⚠️ Early Preview — Books may be added or removed as July approaches</span>
+
 <div class="divider"></div>
 <p class="intro">What happens when a bioweapon goes wrong? What did Marx actually say — and does it matter now? How do you become the kind of person who just… does things? Why are half the world's languages about to die? Can Thoreau cure what's wrong with us? How did surveillance capitalism start in Mesopotamia? And what happens when your own mind invents the people standing next to you? Seven books. No filler. Let's go.</p>
-<p class="last-updated">Last updated: June 17, 2026 · The final list and video will drop at the end of June / start of July. Think we missed a great book? <a href="/submit-book">Submit it here →</a></p>
+<p class="last-updated">Last updated: July 3, 2026 · Final list — watch the full breakdown below. Think we missed a great book? <a href="/submit-book">Submit it here →</a></p>
 </header>
 
 <div class="authority-intro">
@@ -278,18 +265,20 @@ section{padding:40px 0}
 </div>
 
 <div class="video-section">
-<div class="video-placeholder">
-<p>📺 Video coming soon — the full breakdown will drop at the end of June / start of July.</p>
+<div class="video-wrapper">
+<iframe src="https://www.youtube-nocookie.com/embed/lc25p0aNTI4" title="7 Best Nonfiction Books Coming Out in July 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
+<p class="video-caption">Watch the full July 2026 breakdown on YouTube</p>
 </div>
 
 <section>
 <div class="container">
 
 <!-- BOOK 1 -->
-<div class="book-card" id="book-1" data-book-id="jul26-1">
+<div class="book-card pick-of-month" id="book-1" data-book-id="jul26-1">
 <img src="/images/covers/9798217046034.jpg" alt="Biological War by Annie Jacobsen" class="book-cover" loading="lazy">
 <div class="book-card-content">
+<span class="pick-badge">🏆 Bjorn's Pick of the Month</span>
 <span class="book-num">01</span>
 <div class="book-title">Biological War: A Scenario</div>
 <div class="book-author">Annie Jacobsen</div>
@@ -306,14 +295,15 @@ section{padding:40px 0}
 <li>You want to understand the biological threats that most people prefer not to think about</li>
 </ul></div>
 <a href="https://www.amazon.com/dp/B0FY5WRTVC?tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
-<div class="hype-check"></div>
+
 </div>
 </div>
 
 <!-- BOOK 2 -->
-<div class="book-card" id="book-2" data-book-id="jul26-2">
+<div class="book-card community-pick" id="book-2" data-book-id="jul26-2">
 <img src="/images/covers/9780063488458.jpg" alt="You Can Just Do Things by Cate Hall" class="book-cover" loading="lazy">
 <div class="book-card-content">
+<span class="community-badge">🗳️ Community Pick of the Month</span>
 <span class="book-num">02</span>
 <div class="book-title">You Can Just Do Things: How High-Agency People Get What They Want Out of Life</div>
 <div class="book-author">Cate Hall &amp; Sasha Chapin</div>
@@ -330,7 +320,7 @@ section{padding:40px 0}
 <li>You enjoyed <em>Zero to One</em>, <em>The Almanack of Naval Ravikant</em>, or <em>Antifragile</em></li>
 </ul></div>
 <a href="https://www.amazon.com/dp/0063488450?tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
-<div class="hype-check"></div>
+
 </div>
 </div>
 
@@ -354,7 +344,7 @@ section{padding:40px 0}
 <li>You enjoy intellectual tension — read this alongside <em>Human Action</em> for maximum sparks</li>
 </ul></div>
 <a href="https://www.amazon.com/dp/166260341X?tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
-<div class="hype-check"></div>
+
 </div>
 </div>
 
@@ -378,7 +368,7 @@ section{padding:40px 0}
 <li>You enjoyed <em>Sapiens</em>, <em>The Dawn of Everything</em>, or <em>Guns, Germs, and Steel</em></li>
 </ul></div>
 <a href="https://www.amazon.com/dp/B0FV7R8P7L?tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
-<div class="hype-check"></div>
+
 </div>
 </div>
 
@@ -402,7 +392,7 @@ section{padding:40px 0}
 <li>You're looking for contemplative nonfiction that doesn't try to optimize you</li>
 </ul></div>
 <a href="https://www.amazon.com/dp/B0FXBDJWX9?tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
-<div class="hype-check"></div>
+
 </div>
 </div>
 
@@ -426,7 +416,7 @@ section{padding:40px 0}
 <li>You want historical context for the AI and data debates happening right now</li>
 </ul></div>
 <a href="https://www.amazon.com/s?k=Data+Empire+Roopika+Risam&tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
-<div class="hype-check"></div>
+
 </div>
 </div>
 
@@ -450,7 +440,7 @@ section{padding:40px 0}
 <li>You want narrative nonfiction that reads like a thriller but teaches you something real</li>
 </ul></div>
 <a href="https://www.amazon.com/s?k=American+Alt+Chris+Lockhart+9781639735785&tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
-<div class="hype-check"></div>
+
 </div>
 </div>
 
@@ -459,7 +449,7 @@ section{padding:40px 0}
 
 <div style="background:rgba(230,169,25,.06);border:1px solid rgba(230,169,25,.15);border-radius:12px;padding:28px;margin:40px auto;max-width:700px;text-align:center">
 <h3 style="font-family:Playfair Display,serif;color:#f0e6d3;font-size:1.2rem;margin-bottom:8px">📖 Know a Book We Missed?</h3>
-<p style="font-size:.9rem;color:#d4c5a9;margin-bottom:16px">This is an early preview — books may be added or removed before the final list drops. Are you an author, publisher, or reader who knows about an upcoming July nonfiction title? We want to hear about it — submissions are free and every one is reviewed personally.</p>
+<p style="font-size:.9rem;color:#d4c5a9;margin-bottom:16px">Are you an author, publisher, or reader with a great nonfiction title? We want to hear about it — submissions are free and every one is reviewed personally.</p>
 <a href="/submit-book" style="display:inline-block;background:#e6a919;color:#1a1a2e;font-weight:700;font-size:.95rem;padding:12px 28px;border-radius:8px;text-decoration:none;transition:.2s">Submit a Book →</a>
 </div>
 
@@ -502,107 +492,7 @@ bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
 })();
 </script>
-<script>
-// Hype Check — Cloudflare Worker backend
-(function(){
-var API = 'https://booklab-hype-check.poorbjorn.workers.dev';
-var EDITION = 'jul-2026';
-var OPTIONS = [
-  {key:'preorder', label:'Pre-ordering', emoji:'🔥', cls:'fire'},
-  {key:'curious', label:'Curious', emoji:'🤔', cls:'curious'},
-  {key:'notforme', label:'Not for me', emoji:'🙅', cls:'pass'}
-];
-var LOCAL_KEY = 'booklab_hype_' + EDITION;
-function getLocal(){ try { return JSON.parse(localStorage.getItem(LOCAL_KEY)) || {}; } catch(e){ return {}; } }
-function setLocal(bookId, choice){ var v = getLocal(); v[bookId] = choice; localStorage.setItem(LOCAL_KEY, JSON.stringify(v)); }
-function renderButtons(container, bookId){
-  container.innerHTML = '';
-  var label = document.createElement('div');
-  label.className = 'hype-label';
-  label.textContent = '🔥 Hype Check — What\'s your move?';
-  container.appendChild(label);
-  var btns = document.createElement('div');
-  btns.className = 'hype-buttons';
-  OPTIONS.forEach(function(opt){
-    var b = document.createElement('button');
-    b.className = 'hype-btn';
-    b.innerHTML = '<span>'+opt.emoji+'</span> '+opt.label;
-    b.addEventListener('click', function(){
-      btns.querySelectorAll('button').forEach(function(btn){ btn.disabled = true; btn.style.opacity='.5'; });
-      b.classList.add('selected');
-      setLocal(bookId, opt.key);
-      fetch(API + '/vote', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({edition: EDITION, book: bookId, choice: opt.key})
-      }).then(function(r){ return r.json(); }).then(function(data){
-        if(data.votes) renderResults(container, bookId, data.votes, opt.key);
-      }).catch(function(){
-        var fallback = {}; fallback[opt.key] = 1;
-        renderResults(container, bookId, fallback, opt.key);
-      });
-    });
-    btns.appendChild(b);
-  });
-  container.appendChild(btns);
-}
-function renderResults(container, bookId, votes, userChoice){
-  container.innerHTML = '';
-  var label = document.createElement('div');
-  label.className = 'hype-label';
-  label.textContent = '🔥 Hype Check — Results';
-  container.appendChild(label);
-  var total = (votes.preorder||0) + (votes.curious||0) + (votes.notforme||0);
-  var results = document.createElement('div');
-  results.className = 'hype-results';
-  OPTIONS.forEach(function(opt){
-    var count = votes[opt.key] || 0;
-    var pct = total > 0 ? (count/total*100) : 0;
-    var row = document.createElement('div');
-    row.className = 'hype-bar-row';
-    row.innerHTML = '<span class="emoji">'+opt.emoji+'</span>' +
-      '<div class="hype-bar-bg"><div class="hype-bar-fill '+opt.cls+'" style="width:0%"></div></div>' +
-      '<span class="hype-pct">'+pct.toFixed(0)+'%</span>' +
-      '<span class="check">'+(userChoice===opt.key?'✓':'')+'</span>';
-    results.appendChild(row);
-    setTimeout(function(){ row.querySelector('.hype-bar-fill').style.width = pct + '%'; }, 50);
-  });
-  container.appendChild(results);
-}
-function init(){
-  var cards = document.querySelectorAll('.book-card[data-book-id]');
-  var localVotes = getLocal();
-  fetch(API + '/votes?edition=' + EDITION).then(function(r){ return r.json(); }).then(function(data){
-    var serverVotes = data.votes || {};
-    var serverVoted = data.voted || {};
-    cards.forEach(function(card){
-      var bookId = card.getAttribute('data-book-id');
-      var container = card.querySelector('.hype-check');
-      if(!container) return;
-      if(serverVoted[bookId] || localVotes[bookId]){
-        var votes = serverVotes[bookId] || {preorder:0,curious:0,notforme:0};
-        renderResults(container, bookId, votes, localVotes[bookId] || null);
-      } else {
-        renderButtons(container, bookId);
-      }
-    });
-  }).catch(function(){
-    cards.forEach(function(card){
-      var bookId = card.getAttribute('data-book-id');
-      var container = card.querySelector('.hype-check');
-      if(!container) return;
-      if(localVotes[bookId]){
-        renderResults(container, bookId, {preorder:0,curious:0,notforme:0}, localVotes[bookId]);
-      } else {
-        renderButtons(container, bookId);
-      }
-    });
-  });
-}
-if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-else init();
-})();
-</script>
+
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -116,6 +116,7 @@ Example: `I picked this up after reading Nassim Taleb's <em><a href="/reviews/an
 - Check `_src/reviews/` for existing review pages before publishing
 - Link naturally within the sentence — don't force it
 - One link per mention is enough (don't re-link every occurrence)
+- **Only link to existing pages on the site** — do NOT add Amazon affiliate links inline in body text. Amazon links belong in the "Buy on Amazon" buttons only. This keeps navigation behavior predictable: inline links = our site, buttons = Amazon.
 
 ### "Read Review →" Buttons
 
@@ -182,6 +183,24 @@ A highlight page is a dedicated page for a highlighted/submitted book. Structure
 7. Add to `_src/highlights.html` index (newest first)
 8. Add to "Featured This Month" on landing page when actively promoting
 9. Update `sitemap.xml`
+
+## Breadcrumbs
+
+Every content page needs a breadcrumb trail at the top (after nav, before header). Format:
+
+- **Reviews:** `Home → Reviews → [Title]`
+- **Monthly:** `Home → Monthly Releases → [Month Year]`
+- **Articles:** `Home → Articles → [Title]`
+- **Behind the Book:** `Home → Behind the Book → [Title]`
+- **Highlights:** `Home → Highlight → [Title]`
+
+For monthly pages, use inline styles (since they don't include `review.css`):
+
+```html
+<div style="max-width:900px;margin:0 auto;padding:20px 20px 0">
+<div style="font-size:.85rem;color:var(--muted)"><a href="/" style="color:var(--muted)">Home</a> → <a href="/monthly/" style="color:var(--muted)">Monthly Releases</a> → August 2026</div>
+</div>
+```
 
 ## Monthly Hub Page (/monthly/)
 
