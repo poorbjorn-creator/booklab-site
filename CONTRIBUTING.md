@@ -15,8 +15,10 @@
    - Check for orphan files (output files missing from `_src/`) and abort if found
    - Back up all output HTML before overwriting
    - Build from `_src/` → output
-3. Deploy: `CLOUDFLARE_API_TOKEN=<token> CLOUDFLARE_ACCOUNT_ID=<id> npx wrangler pages deploy . --project-name=booklab-site --branch=main`
-   - **Always use `--branch=main`** — without it, wrangler deploys to a preview branch and the custom domain won't update.
+3. Deploy: `bash scripts/deploy.sh`
+   - **ALWAYS use the deploy script** — never run `wrangler pages deploy` directly.
+   - The script builds a clean temp directory (excluding `_src/`, dev files, etc.), deploys from there, and cleans up.
+   - This is the ONLY way to prevent `_src/` duplicates from going live (`.cfignore` does NOT work with direct wrangler uploads).
 
 ## Editing Checklist
 
