@@ -101,6 +101,30 @@ Review pages use a **custom hero image** — NOT the book cover. These are edito
 3. **Wait for approval** — do not implement until Bjorn says go
 4. If multiple approaches exist, present them. Don't pick silently.
 
+## Review Page Styling Rules
+
+- **Book title (h1) must be gold** (`var(--gold)`) on all review pages. This is set in `review.css`.
+- **Breadcrumb links must be gold** (`var(--gold)`), not muted. Set in `review.css`.
+- **Every review must link to a pillar page** (e.g. the Great Books List) in the "You Might Also Like" section. Don't leave readers in a dead end — always give them a path to a bigger collection.
+
+## Lists & Bullet Points
+
+**Avoid plain `<ul>` bullet lists on review pages** — they look flat and unpolished, especially on mobile.
+
+Instead, use a **styled card grid** for short-item lists (keywords, behaviors, traits, principles):
+
+```html
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:20px 0 28px">
+<div style="background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:8px;padding:12px 16px;font-size:.95rem">⚡ Item text</div>
+<!-- repeat for each item -->
+</div>
+```
+
+- 2-column on desktop, stacks to 1 on mobile
+- Use a relevant emoji prefix (⚡, 📝, 🔸, etc.) to match the section's tone
+- Best for: lists of 4–10 short items (behaviors, components, principles)
+- For longer descriptive lists (with explanations per item), use `<p><strong>Label</strong> — Description</p>` blocks instead (like the 3 Life Traps pattern)
+
 ## Star Ratings
 
 - **NEVER put star ratings in the `<div class="meta">` block at the top of a review.**
@@ -140,10 +164,33 @@ When creating a weekly newsletter:
 1. Receive draft/notes from Bjorn (usually a .docx)
 2. Verify all links: review pages exist and return 200, Amazon affiliate links use `?tag=poorbjorn-20`
 3. Check book titles, authors, and facts (search if unsure)
-4. **Output as a single `.html` file** in `/home/bjorn/shared/content/` — raw HTML that can be pasted directly into Beehiiv's code editor
+4. **Output as a single `.html` file** in `content/` (workspace) — raw HTML that can be pasted directly into Beehiiv's code editor
 5. Use semantic HTML: `<h2>` for sections, `<p>` for text, `<em>` for book titles, `<strong>` for emphasis, `<a>` for links, `<hr>` for section dividers
 6. Mark image/video insertion points with `<strong>[BJORN: description]</strong>` — Bjorn adds these manually in Beehiiv
-7. Send the file via Discord (message tool with filePath)
+7. **Send the file via Discord** (message tool with filePath) — Bjorn picks it up there
+
+### Title Structure
+
+Format: `BookLab Weekly — [Topic 1], [Topic 2] & [Topic 3]`
+
+- Always starts with `BookLab Weekly —` (em dash)
+- Lists 2–3 key highlights from the issue, comma-separated with `&` before the last
+- Short, punchy noun phrases — not full sentences
+- Examples:
+  - `BookLab Weekly — Bioweapons, 100 Reviews & the Tribe That Broke Linguistics`
+  - `BookLab Weekly — Life on Fire, 16 Best Biographies & Tech Books in the Forest`
+  - `BookLab Weekly — Toxic Relationships, the Founders of AI & the first episode of Behind the Book`
+
+### Subtitle Structure
+
+Format: A single sentence (or two short ones) that teases the content with specifics.
+
+- Conversational, intriguing — makes you want to open the email
+- References concrete details from the newsletter (not vague summaries)
+- Examples:
+  - `A scenario you'll read with the lights on, 100 nonfiction reviews in one place, and the people who have no word for worry.`
+  - `Three men who walked into the woods — one on purpose, one who never came back — and a new video on why biographies are my favorite genre.`
+  - `A passage that stopped me cold, the best biographies I've ever read, and a lunch break with six books in my backpack`
 
 ## New Articles / Pillar Pages
 
@@ -260,6 +307,44 @@ Always add both extensionless and `.html` variants.
 - ❌ `/monthly/index.html` or `/monthly/index`
 
 Cloudflare Pages resolves both, but consistent extensionless links preserve crawl equity.
+
+## New Concept Pages
+
+A concept page explains a big idea from the books BookLab reviews, built as a **curated reading path** — not an encyclopedia entry. The Drama Triangle page is the gold standard.
+
+**Gold standard:** [`/concepts/drama-triangle`](https://booklabbybjorn.com/concepts/drama-triangle) — use this as the blueprint for all concept pages.
+
+1. **URL:** `/concepts/slug/`
+2. **Source:** `_src/concepts/slug.html`
+3. **Breadcrumb:** `Home → Concepts → Title`
+4. **Schema:** Article JSON-LD (not Review, not FAQPage)
+5. **Structure (in order):**
+   - Intro explaining the concept in Bjorn's voice
+   - The core model/framework (use styled cards, callouts, or visual elements to make it digestible — experiment per concept)
+   - Where the model came from (intellectual lineage)
+   - **The reading path** — the heart of the page. Each book gets a styled step card with:
+     - Step label ("Start here" / "Then read" / "Skip unless you're a completist")
+     - Book photo floated right (600px max, optimized)
+     - Title, subtitle, editorial description
+     - "Read Review →" button (internal, gold-bordered) + "Get on Amazon →" button (solid gold)
+     - For external resources (papers, PDFs): use a clearly distinct link style ("🔗 Read the original paper (external PDF) →") so it's obviously not Amazon or internal
+   - "Where it goes next" section (in verdict-style blue box) — connects to the broader reading universe + links to relevant pillar page
+   - Closing line (italic, centered, memorable)
+6. **No "← Back to Reviews"** — concept pages are their own thing
+7. **No `/concepts/` index page yet** — build it when there are 3+ concept pages
+8. **Images:**
+   - Hero/OG image: `images/og-{slug}-concept.jpg` (1200px wide, JPEG q80)
+   - Book photos: `images/{slug}-{book-identifier}.jpg` (600px wide, JPEG q80)
+9. **UTM tracking:** Add `?utm_source=concept-{slug}` to all internal review links and append `&utm_source=concept-{slug}` to Amazon links
+10. **Reciprocal internal linking (after publish):**
+    - Add a "📐 Go deeper" link to each review page mentioned in the reading path (before "You Might Also Like")
+    - Add an editorial link from the relevant pillar page (e.g., human nature) — position where it reads naturally
+11. **Sitemap:** Add new URL, update `<lastmod>` on edited review pages
+12. **Verify:** `curl` for 200 + correct canonical after deploy
+
+**CSS:** Concept pages use `<!-- INCLUDE:head-css -->` and `<!-- INCLUDE:review-css -->` for base styling, plus a `<style>` block for concept-specific styles (role cards, reading steps, etc.). Each concept may have unique visual elements — that's intentional. Experiment with presentation to match the concept.
+
+**Voice:** Do NOT rewrite content for tone — it arrives in Bjorn's voice and is pre-approved. Flag awkward lines back rather than silently editing.
 
 ## Surgical Changes
 

@@ -10,6 +10,11 @@
 <meta property="og:description" content="Book review of The Wall Dancers: Searching for Freedom and Connection on the Chinese Internet by Yi-Ling Liu. BookLab by Bjorn.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://booklabbybjorn.com/reviews/the-wall-dancers-yi-ling-liu">
+<meta property="og:image" content="https://booklabbybjorn.com/images/og-the-wall-dancers-yi-ling-liu.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Wall Dancers by Yi-Ling Liu — Book Review | BookLab by Bjorn">
+<meta name="twitter:description" content="Book review of The Wall Dancers: Searching for Freedom and Connection on the Chinese Internet by Yi-Ling Liu. BookLab by Bjorn.">
+<meta name="twitter:image" content="https://booklabbybjorn.com/images/og-the-wall-dancers-yi-ling-liu.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -44,30 +49,38 @@ footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-
 footer .links a{color:var(--gold)}
 </style>
 <style>
+/* Review page shared styles — based on Fahrenheit 451 (gold standard) */
 .article{max-width:720px;margin:0 auto;padding:60px 20px 40px}
 .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:24px}
 .breadcrumb a{color:var(--gold)}
-.article h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-0.5px}
-.meta{font-size:.9rem;color:var(--muted);margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid rgba(230,169,25,.15)}
-.hero-img{width:100%;max-width:500px;display:block;margin:0 auto 32px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.article h2{font-size:1.4rem;color:var(--cream);margin:32px 0 12px}
-.article h3{font-size:1.1rem;color:var(--cream);margin:24px 0 8px;font-style:italic}
-.article p{margin-bottom:16px;font-size:1.05rem;line-height:1.8}
-.article ul,.article ol{margin:12px 0 20px 24px}
-.article li{margin-bottom:6px;font-size:1.05rem}
-.article blockquote{border-left:3px solid var(--gold);padding:12px 20px;margin:20px 0;font-style:italic;color:var(--cream);background:rgba(230,169,25,.06);border-radius:0 var(--radius) var(--radius) 0}
-.takeaway{background:var(--card);border:1px solid rgba(230,169,25,.2);border-radius:var(--radius);padding:24px;margin:32px 0}
-.takeaway h2{margin-top:0;color:var(--gold);font-size:1.2rem}
-.verdict{background:rgba(230,169,25,.08);border-radius:var(--radius);padding:24px;margin:32px 0;border:1px solid rgba(230,169,25,.15)}
-.verdict h2{margin-top:0;color:var(--gold);font-size:1.2rem}
-.rating{font-size:1.5rem;text-align:center;margin:24px 0}
+.breadcrumb a:hover{color:var(--gold)}
+h1{font-size:2.2rem;margin-bottom:8px;line-height:1.2;color:var(--gold)}
+.tagline{font-size:1.15rem;color:var(--cream);margin:-4px 0 12px;font-style:italic;opacity:.85}
+.meta{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+.hero-img{width:100%;max-width:720px;max-height:70vh;object-fit:contain;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+h2{font-size:1.4rem;margin:36px 0 14px;color:var(--gold)}
+p{margin-bottom:16px}
+blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;background:rgba(230,169,25,.05);border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:var(--cream)}
+.takeaway{background:rgba(230,169,25,.08);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);padding:24px;margin:32px 0}
+.takeaway h2{margin-top:0}
+.verdict{background:rgba(15,52,96,.3);border:1px solid rgba(230,169,25,.1);border-radius:var(--radius);padding:24px;margin:32px 0}
+.verdict h2{margin-top:0}
+.rating{text-align:center;font-size:1.5rem;margin:24px 0}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
 .stat{background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:8px;padding:10px 14px;font-size:.9rem}
-.cta{text-align:center;margin:32px 0}
-.btn-buy{display:inline-block;background:var(--gold);color:#1a1a2e;font-weight:600;font-size:.95rem;padding:14px 32px;border-radius:8px;transition:.2s}
-.btn-buy:hover{background:#d4990f;text-decoration:none;transform:scale(1.03)}
-.back-link{text-align:center;margin:40px 0 16px}
-.back-link a{color:var(--gold);font-weight:500}
+.stat-positive{color:#5cb85c}
+.stat-negative{color:var(--gold)}
+.cta{text-align:center;margin:24px 0}
+.btn-buy{display:inline-block;background:var(--gold);color:#1a1a2e;padding:14px 32px;border-radius:var(--radius);font-weight:600;font-size:1rem;transition:.2s}
+.btn-buy:hover{background:#d4990f;text-decoration:none;transform:translateY(-2px)}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.might-also-like{margin:40px 0;padding:30px;background:rgba(230,169,25,.05);border-radius:var(--radius);border:1px solid rgba(230,169,25,.12)}
+.might-also-like h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.3rem;margin-bottom:16px}
+.might-also-like .links{display:flex;flex-direction:column;gap:10px}
+.might-also-like a{color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem}
+.might-also-like a:hover{background:rgba(34,34,68,.9);color:var(--gold)}
+.back-link{margin-top:40px;font-size:.9rem}
 @media(max-width:600px){.article{padding:40px 16px 30px}.stats{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
@@ -104,6 +117,7 @@ footer .links a{color:var(--gold)}
   }
 }
 </script>
+<meta property="og:site_name" content="BookLab by Bjorn">
 </head>
 <body>
 <nav>
@@ -141,12 +155,11 @@ footer .links a{color:var(--gold)}
 </div>
 
 <div class="article">
-<div class="breadcrumb"><a href="/">Home</a> → <a href="/">Reviews</a> → The Wall Dancers</div>
-<a href="/articles">Articles</a>
+<div class="breadcrumb"><a href="/">Home</a> → <a href="/reviews">Reviews</a> → The Wall Dancers</div>
 <h1>The Wall Dancers: Searching for Freedom and Connection on the Chinese Internet</h1>
 <p class="tagline">A vivid, human portrait of Chinese internet culture — told through the people living it.</p>
-<div class="meta">by Yi-Ling Liu · ⭐⭐⭐⭐</div>
-<img src="/images/the-wall-dancers.jpg" alt="The Wall Dancers by Yi-Ling Liu" class="hero-img">
+<div class="meta">by Yi-Ling Liu</div>
+<img src="/images/og-the-wall-dancers-yi-ling-liu.jpg" alt="The Wall Dancers by Yi-Ling Liu — BookLab by Bjorn" class="hero-img">
 
 <h2>A Taste of Freedom, Then a Cage</h2>
 <p>Imagine growing up believing that the internet would set you free — and then slowly watching it turn into a cage. In 2017, there were an estimated 5.3 million Chinese websites. By 2022, that number had dropped to 3.9 million. A third of the pages were gone.</p>
@@ -178,7 +191,7 @@ footer .links a{color:var(--gold)}
 </div>
 
 <h2>Video Review</h2>
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)"><iframe src="https://www.youtube.com/embed/r12ernG_sQ0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen></iframe></div>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/r12ernG_sQ0" title="The Wall Dancers by Yi-Ling Liu — Book Review" allowfullscreen loading="lazy"></iframe></div>
 
 <div class="verdict">
 <h2>⚖️ Verdict</h2>
@@ -189,16 +202,16 @@ footer .links a{color:var(--gold)}
 <div class="rating">⭐⭐⭐⭐</div>
 <div class="cta"><a href="https://www.amazon.com/dp/1541605136?tag=poorbjorn-20" target="_blank" rel="noopener" class="btn-buy">Get the Book on Amazon →</a></div>
 
-<div class="might-also-like" style="margin:40px 0;padding:30px;background:rgba(230,169,25,.05);border-radius:12px;border:1px solid rgba(230,169,25,.12)">
-<h2 style="font-family:Playfair Display,serif;color:var(--gold);font-size:1.3rem;margin-bottom:16px">📚 You Might Also Like</h2>
-<div style="display:flex;flex-direction:column;gap:10px">
-<a href="/reviews/21-lessons-for-the-21st-century-yuval-noah-harari" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ 21 Lessons for the 21st Century — Yuval Noah Harari</a>
-<a href="/reviews/ishmael-daniel-quinn" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ Ishmael — Daniel Quinn</a>
-<a href="/reviews/escape-from-freedom-erich-fromm" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ Escape from Freedom — Erich Fromm</a>
-<a href="/articles/great-books-on-human-nature" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ Great Books on Human Nature</a>
+<div class="might-also-like">
+<h2>📚 You Might Also Like</h2>
+<div class="links">
+<a href="/reviews/21-lessons-for-the-21st-century-yuval-noah-harari">→ 21 Lessons for the 21st Century — Yuval Noah Harari</a>
+<a href="/reviews/ishmael-daniel-quinn">→ Ishmael — Daniel Quinn</a>
+<a href="/reviews/escape-from-freedom-erich-fromm">→ Escape from Freedom — Erich Fromm</a>
+<a href="/great-books-list">→ The Great Books List</a>
 </div>
 </div>
-<div class="back-link"><a href="/">← Back to Home</a></div>
+<div class="back-link"><a href="/reviews">← Back to Reviews</a></div>
 </div>
 <footer>
 <p>© 2026 BookLab by Bjorn</p>

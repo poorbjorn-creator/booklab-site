@@ -178,6 +178,10 @@ def build():
                 marker = f'<!-- INCLUDE:{key} -->'
                 content = content.replace(marker, value)
 
+            # Inject og:site_name if not already present
+            if 'og:site_name' not in content and '</head>' in content:
+                content = content.replace('</head>', '<meta property="og:site_name" content="BookLab by Bjorn">\n</head>')
+
             # Pre-render reviews page for SEO
             if fname == 'reviews.html' and root == SRC_DIR:
                 content = prerender_reviews(content)

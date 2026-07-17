@@ -11,6 +11,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://booklabbybjorn.com/reviews/trust-me-im-lying-ryan-holiday">
 <meta property="og:image" content="https://booklabbybjorn.com/images/og-trust-me-im-lying.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trust Me, I'm Lying by Ryan Holiday — Book Review | BookLab by Bjorn">
+<meta name="twitter:description" content="Confessions of a media manipulator — how click-based media distorts reality.">
+<meta name="twitter:image" content="https://booklabbybjorn.com/images/og-trust-me-im-lying.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,6 +26,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
 a{color:var(--gold);text-decoration:none}
 a:hover{text-decoration:underline}
+
 nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
 .nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
 .nav-inner a:not(.nav-brand){display:none}
@@ -38,40 +43,45 @@ nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-fil
 .nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
 .nav-overlay-bg.open{display:block}
 body.nav-open{overflow:hidden}
+
 footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
 footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
 footer .links a{color:var(--gold)}
 </style>
 <style>
+/* Review page shared styles — based on Fahrenheit 451 (gold standard) */
 .article{max-width:720px;margin:0 auto;padding:60px 20px 40px}
 .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:24px}
 .breadcrumb a{color:var(--gold)}
-.article h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:var(--gold);margin-bottom:8px;letter-spacing:-0.5px}
-.meta{font-size:.9rem;color:var(--muted);margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid rgba(230,169,25,.15)}
-.article h2{font-size:1.4rem;color:var(--cream);margin:32px 0 12px}
-.article h3{font-size:1.1rem;color:var(--cream);margin:24px 0 8px;font-style:italic}
-.article p{margin-bottom:16px;font-size:1.05rem;line-height:1.8}
-.article ul,.article ol{margin:12px 0 20px 24px}
-.article li{margin-bottom:6px;font-size:1.05rem}
-.article blockquote{border-left:3px solid var(--gold);padding:12px 20px;margin:20px 0;font-style:italic;color:var(--cream);background:rgba(230,169,25,.06);border-radius:0 var(--radius) var(--radius) 0}
-.takeaway{background:var(--card);border:1px solid rgba(230,169,25,.2);border-radius:var(--radius);padding:24px;margin:32px 0}
-.takeaway h2{margin-top:0;color:var(--gold);font-size:1.2rem}
-.verdict{background:rgba(230,169,25,.08);border-radius:var(--radius);padding:24px;margin:32px 0;border:1px solid rgba(230,169,25,.15)}
-.verdict h2{margin-top:0;color:var(--gold);font-size:1.2rem}
-.rating{font-size:1.5rem;text-align:center;margin:24px 0}
-.cta{text-align:center;margin:32px 0}
-.btn-buy{display:inline-block;background:var(--gold);color:#1a1a2e;font-weight:600;font-size:.95rem;padding:14px 32px;border-radius:8px;transition:.2s}
-.btn-buy:hover{background:#d4990f;text-decoration:none;transform:scale(1.03)}
-.back-link{text-align:center;margin:40px 0 16px}
-.back-link a{color:var(--gold);font-weight:500}
-@media(max-width:600px){.article{padding:40px 16px 30px}}
-.related-section{max-width:720px;margin:32px auto 0;padding:0 20px}
-.related-section h2{font-family:"Playfair Display",serif;color:var(--cream);font-size:1.3rem;margin-bottom:16px}
-.related-grid{display:grid;grid-template-columns:1fr;gap:12px}
-.related-card{display:block;background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);padding:16px 20px;color:var(--text);text-decoration:none;transition:.2s}
-.related-card:hover{border-color:var(--gold);background:rgba(230,169,25,.06);text-decoration:none;transform:translateY(-2px)}
-.related-title{color:var(--cream);font-family:"Playfair Display",serif;font-size:1.05rem}
-@media(min-width:500px){.related-grid{grid-template-columns:1fr 1fr}}
+.breadcrumb a:hover{color:var(--gold)}
+h1{font-size:2.2rem;margin-bottom:8px;line-height:1.2;color:var(--gold)}
+.tagline{font-size:1.15rem;color:var(--cream);margin:-4px 0 12px;font-style:italic;opacity:.85}
+.meta{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+.hero-img{width:100%;max-width:720px;max-height:70vh;object-fit:contain;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+h2{font-size:1.4rem;margin:36px 0 14px;color:var(--gold)}
+p{margin-bottom:16px}
+blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;background:rgba(230,169,25,.05);border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:var(--cream)}
+.takeaway{background:rgba(230,169,25,.08);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);padding:24px;margin:32px 0}
+.takeaway h2{margin-top:0}
+.verdict{background:rgba(15,52,96,.3);border:1px solid rgba(230,169,25,.1);border-radius:var(--radius);padding:24px;margin:32px 0}
+.verdict h2{margin-top:0}
+.rating{text-align:center;font-size:1.5rem;margin:24px 0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
+.stat{background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:8px;padding:10px 14px;font-size:.9rem}
+.stat-positive{color:#5cb85c}
+.stat-negative{color:var(--gold)}
+.cta{text-align:center;margin:24px 0}
+.btn-buy{display:inline-block;background:var(--gold);color:#1a1a2e;padding:14px 32px;border-radius:var(--radius);font-weight:600;font-size:1rem;transition:.2s}
+.btn-buy:hover{background:#d4990f;text-decoration:none;transform:translateY(-2px)}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.might-also-like{margin:40px 0;padding:30px;background:rgba(230,169,25,.05);border-radius:var(--radius);border:1px solid rgba(230,169,25,.12)}
+.might-also-like h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.3rem;margin-bottom:16px}
+.might-also-like .links{display:flex;flex-direction:column;gap:10px}
+.might-also-like a{color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem}
+.might-also-like a:hover{background:rgba(34,34,68,.9);color:var(--gold)}
+.back-link{margin-top:40px;font-size:.9rem}
+@media(max-width:600px){.article{padding:40px 16px 30px}.stats{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
 {
@@ -79,6 +89,7 @@ footer .links a{color:var(--gold)}
   "@type": "Review",
   "name": "Trust Me, I'm Lying: Confessions of a Media Manipulator — Book Review",
   "description": "Book review of Trust Me, I'm Lying by Ryan Holiday. Confessions of a media manipulator — how click-based media distorts reality. BookLab by Bjorn.",
+  "datePublished": "2025-01-01",
   "url": "https://booklabbybjorn.com/reviews/trust-me-im-lying-ryan-holiday",
   "author": {
     "@type": "Person",
@@ -97,7 +108,8 @@ footer .links a{color:var(--gold)}
       "@type": "Person",
       "name": "Ryan Holiday"
     },
-    "isbn": "1591846285"
+    "isbn": "1591846285",
+    "image": "https://booklabbybjorn.com/images/covers/1591846285.jpg"
   },
   "reviewRating": {
     "@type": "Rating",
@@ -107,6 +119,24 @@ footer .links a{color:var(--gold)}
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Trust Me, I'm Lying by Ryan Holiday — Book Review | BookLab by Bjorn",
+  "description": "Confessions of a media manipulator — how click-based media distorts reality.",
+  "thumbnailUrl": "https://booklabbybjorn.com/images/og-trust-me-im-lying.jpg",
+  "uploadDate": "2025-01-01T00:00:00+01:00",
+  "contentUrl": "https://www.youtube.com/watch?v=_zit3WETrNA",
+  "embedUrl": "https://www.youtube.com/embed/_zit3WETrNA",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BookLab by Bjorn",
+    "url": "https://booklabbybjorn.com"
+  }
+}
+</script>
+<meta property="og:site_name" content="BookLab by Bjorn">
 </head>
 <body>
 <nav>
@@ -146,39 +176,70 @@ footer .links a{color:var(--gold)}
 <div class="article">
 <div class="breadcrumb"><a href="/">Home</a> → <a href="/reviews">Reviews</a> → Trust Me, I'm Lying</div>
 <h1>Trust Me, I'm Lying: Confessions of a Media Manipulator</h1>
-<div class="meta">by Ryan Holiday · ⏱ 3 min read · ⭐⭐⭐⭐</div>
+<p class="tagline">Ryan Holiday spent years gaming the media — then wrote a book confessing exactly how he did it. I thought I was immune. I was wrong.</p>
+<div class="meta">by Ryan Holiday</div>
 
-<h2>About the Book</h2>
-<p>Trust Me, I'm Lying left me humbled. I thought I was on top of my media game and was able to separate the wheat from the chaff, so to speak. I was wrong.</p>
-<p>I knew the situation was bad. I even quit following "the news" three years ago because I thought it misrepresented reality to a larger degree than it represented it (and for the sake of my own wellbeing). But Ryan Holiday's confessions from his career as a media manipulator paint a darker picture than I could ever imagine.</p>
+<img src="/images/og-trust-me-im-lying.jpg" alt="Trust Me, I'm Lying by Ryan Holiday — BookLab by Bjorn" class="hero-img">
 
-<h2>Notes &amp; Highlights</h2>
-<p>📝 The constraints of blogging create artificial content (shamings, planted stories, sensational speculations, etc.), which is made real and impacts the outcome of real-world events.</p>
-<p>📝 <strong>Trading up the chain:</strong> How to turn nothing into something! Send stories to small, traffic-hungry blogs with non-existing editorial standards and have them being picked up by bigger and bigger outlets until your fabricated story is national news.</p>
-<blockquote>"The world is boring, but the news is exciting. It's a paradox of modern life."</blockquote>
-<p>📝 Top stories always polarize people. Threaten people's belonging, belief, or behavior and you will have a hit that spreads!</p>
-<p>📝 The economics of the web has made it impossible to portray the complex situation of Detroit accurately. Photographs of abandoned houses were shared like crazy while photos of the same houses with their despairing residents included were "too sad to share," creating less incentive for media. Simple narratives beat complex realities.</p>
-<p>📝 <strong>On User Engagement:</strong> Provoke a person enough for them to be motivated to leave a comment. In the process of registering to be eligible to comment, a user has to go through up to 10 pageviews. That's a lot of ads (and ad revenue!).</p>
+<h2>This Book Left Me Humbled</h2>
+<p>I thought I was on top of my media game and was able to separate the wheat from the chaff, so to speak. I was wrong.</p>
+<p>I knew the situation was bad. I even quit following "the news" three years ago because I thought it misrepresented reality to a larger degree than it represented it — and for the sake of my own wellbeing. But Ryan Holiday's confessions from his career as a media manipulator paint a darker picture than I could ever imagine.</p>
+<p>Holiday worked as a media strategist — the guy behind the curtain pulling levers you didn't know existed. This book is his confession. And it's uncomfortable reading, because the more he explains, the more you realize how completely the system is rigged.</p>
+
+<h2>How the Machine Works</h2>
+<p>The core insight is this: the constraints of blogging create artificial content — shamings, planted stories, sensational speculations — which then gets made real and impacts actual events in the real world. It's not that journalists are evil. It's that the system they operate inside makes good journalism almost impossible.</p>
+<p>Deadlines are tight, margins razor thin. Nobody can afford to do a good job. It's professional wrestling — a corrupt system operated by a few at the expense of the rest of us.</p>
+
+<h3>Trading Up the Chain</h3>
+<p>One of the most eye-opening mechanics Holiday describes is what he calls <strong>Trading Up the Chain</strong>: how to turn nothing into something. You send a story to small, traffic-hungry blogs with non-existing editorial standards. They pick it up. Then slightly bigger outlets pick it up from them. Eventually your fabricated story is national news — quoted, cited, treated as fact. Nobody checked the original source. Nobody had time.</p>
+<p>Holiday used this technique professionally. He planted stories. He watched them travel up the media food chain until they were real. And the scary part? It worked every time.</p>
+
+<h3>Anger Is the Algorithm</h3>
+<p>Top stories always polarize people. Threaten people's belonging, beliefs, or behavior — and you have a hit that spreads. Jonah Berger, a virality expert, puts it bluntly: <em>"The most powerful predictor of virality is how much anger an article evokes."</em> Extreme positivity works too. But anger is faster and more reliable.</p>
+<p>This isn't a bug. It's the business model.</p>
+
+<h3>Simple Narratives Beat Complex Realities</h3>
+<p>The economics of the web made it impossible to portray the complex situation of Detroit accurately. Photographs of abandoned houses were shared like crazy — while photos of the same houses with their despairing residents included were "too sad to share," creating less incentive for media. Simple narratives win. Complex realities lose. Every time.</p>
+
+<h3>The Comment Section Scam</h3>
+<p>Here's a detail that stuck with me: provoke a person enough for them to be motivated to leave a comment. In the process of registering to be eligible to comment, a user has to go through up to ten pageviews. That's a lot of ads. That's a lot of revenue. Your outrage isn't a side effect — it's the product.</p>
+
+<blockquote>"The world is boring, but the news is exciting. It's a paradox of modern life." — Ryan Holiday</blockquote>
+
+<h2>📺 Video Review</h2>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/_zit3WETrNA" title="Trust Me, I'm Lying by Ryan Holiday — Book Review" allowfullscreen loading="lazy"></iframe></div>
+
+<h2>The Medium Is the Message</h2>
+<p>This book reminded me of a quote I first encountered in Nicholas Carr's <em><a href="/reviews/the-shallows-nicholas-carr">The Shallows</a></em>: <em>"The medium is the message."</em></p>
+<p>It's an expression coined by Canadian educator Marshall McLuhan, and it's often interpreted to mean that the forms and methods used to communicate information — Instagram, blogs, TV — have a significant impact on the kind of messages they deliver. Holiday's whole book is essentially a detailed case study proving McLuhan right.</p>
+<p>How many times have I neglected sharing interesting aspects and thoughts about a book because I knew the word limit on Instagram — and modern attention spans — wouldn't allow for nuance and depth? More than once. The platform dictates the content. Always has.</p>
 
 <div class="takeaway">
-<h2>⭐️ Takeaway</h2>
-<p>Sensational and fear-mongering headlines have always made me sad. Understanding the structure and constraints of click-based media is essential. These structures explain almost everything they do. It's the nature of the system.</p>
-<blockquote>"The medium is the message" — Marshall McLuhan</blockquote>
-<p>It points towards the fact that forms and methods (Instagram, Blogs, TV, etc.) used to communicate information have a nontrivial impact on the kind of messages being delivered.</p>
+<h2>💡 Key Takeaway</h2>
+<p>Sensational and fear-mongering headlines have always made me sad. Understanding the structure and constraints of click-based media is essential — these structures explain almost everything they do. It's not malice. It's the nature of the system. Once you understand how the machine is built, the output stops being surprising and starts being predictable.</p>
+<p>I'm not surprised. I'm used to asking myself: <em>"Who is this benefiting? How is this generating money, and for whom?"</em> whenever I'm exposed to media messaging. This book gave me the vocabulary to explain why that question matters.</p>
+</div>
+
+<div class="verdict">
+<h2>⚖️ Verdict</h2>
+<p>The first half of this book is exceptional — probably mandatory reading. Holiday lays out the mechanics of media manipulation with the precision of someone who actually did it for a living. The appendix with interviews from other manipulators is a bonus.</p>
+<p>The second half is more of a personal rant — some targeted attacks on individual bloggers that feel more like score-settling than insight. Stop after part one. Pick up <em>So You've Been Publicly Shamed</em> by Jon Ronson or <em>The Madness of Crowds</em> instead of grinding through the last 150 pages.</p>
+<p>But that first half? One of the most influential books I read that year.</p>
 </div>
 
 <div class="rating">⭐⭐⭐⭐</div>
 <div class="cta"><a href="https://www.amazon.com/dp/1591846285?tag=poorbjorn-20" target="_blank" rel="noopener" class="btn-buy">Get the Book on Amazon →</a></div>
-<div class="might-also-like" style="margin:40px 0;padding:30px;background:rgba(230,169,25,.05);border-radius:12px;border:1px solid rgba(230,169,25,.12)">
-<h2 style="font-family:Playfair Display,serif;color:var(--gold);font-size:1.3rem;margin-bottom:16px">📚 You Might Also Like</h2>
-<div style="display:flex;flex-direction:column;gap:10px">
-<a href="/reviews/courage-is-calling-ryan-holiday" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ Courage is Calling — Ryan Holiday</a>
-<a href="/reviews/building-a-storybrand-donald-miller" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ Building a StoryBrand — Donald Miller</a>
-<a href="/reviews/21-lessons-for-the-21st-century-yuval-noah-harari" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ 21 Lessons for the 21st Century — Yuval Noah Harari</a>
-<a href="/great-books-list" style="color:var(--cream);text-decoration:none;padding:10px 14px;border-radius:8px;background:rgba(34,34,68,.6);transition:.2s;font-size:.92rem">→ The Great Books List</a>
+
+<div class="might-also-like">
+<h2>📚 You Might Also Like</h2>
+<div class="links">
+<a href="/reviews/the-shallows-nicholas-carr">→ The Shallows — Nicholas Carr</a>
+<a href="/reviews/courage-is-calling-ryan-holiday">→ Courage is Calling — Ryan Holiday</a>
+<a href="/reviews/21-lessons-for-the-21st-century-yuval-noah-harari">→ 21 Lessons for the 21st Century — Yuval Noah Harari</a>
+<a href="/great-books-list">→ The Great Books List</a>
 </div>
 </div>
-<div class="back-link"><a href="/reviews">← Back to All Reviews</a></div>
+<div class="back-link"><a href="/reviews">← Back to Reviews</a></div>
 </div>
 <footer>
 <p>© 2026 BookLab by Bjorn</p>
@@ -205,7 +266,6 @@ bg.addEventListener('click',toggle);
 ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
 })();
 </script>
-<script src="/js/related-books.js"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

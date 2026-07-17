@@ -52,9 +52,9 @@ footer .links a{color:var(--gold)}
 /* Review page shared styles — based on Fahrenheit 451 (gold standard) */
 .article{max-width:720px;margin:0 auto;padding:60px 20px 40px}
 .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:24px}
-.breadcrumb a{color:var(--muted)}
+.breadcrumb a{color:var(--gold)}
 .breadcrumb a:hover{color:var(--gold)}
-h1{font-size:2.2rem;margin-bottom:8px;line-height:1.2}
+h1{font-size:2.2rem;margin-bottom:8px;line-height:1.2;color:var(--gold)}
 .tagline{font-size:1.15rem;color:var(--cream);margin:-4px 0 12px;font-style:italic;opacity:.85}
 .meta{color:var(--muted);font-size:.95rem;margin-bottom:28px}
 .hero-img{width:100%;max-width:720px;max-height:70vh;object-fit:contain;border-radius:var(--radius);margin:0 0 32px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
@@ -82,6 +82,12 @@ blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;bac
 .might-also-like a:hover{background:rgba(34,34,68,.9);color:var(--gold)}
 .back-link{margin-top:40px;font-size:.9rem}
 @media(max-width:600px){.article{padding:40px 16px 30px}.stats{grid-template-columns:1fr}}
+</style>
+<style>
+.moral-foundations{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:20px 0 28px}
+.foundation-card{background:var(--card);border:1px solid rgba(230,169,25,.2);border-radius:10px;padding:14px 16px}
+.foundation-card strong{display:block;color:var(--gold);font-size:.95rem;margin-bottom:4px}
+.foundation-card span{font-size:.88rem;color:var(--muted);line-height:1.5}
 </style>
 <script type="application/ld+json">
 {
@@ -137,6 +143,7 @@ blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;bac
   }
 }
 </script>
+<meta property="og:site_name" content="BookLab by Bjorn">
 </head>
 <body>
 <nav>
@@ -200,14 +207,14 @@ blockquote{border-left:3px solid var(--gold);padding:16px 20px;margin:24px 0;bac
 <h2>The Moral Foundations — More Than You Think</h2>
 <p>Most research on morality has been done on WEIRD subjects: Western, Educated, Industrialized, Rich, Democratic. Haidt shows that this is a serious problem, because WEIRD people have a narrow moral palette — focused mainly on harm and fairness. But across cultures and throughout human history, morality draws on at least six foundations:</p>
 
-<ul>
-  <li><strong>Care / Harm</strong> — protecting the vulnerable</li>
-  <li><strong>Fairness / Cheating</strong> — proportionality and reciprocity</li>
-  <li><strong>Loyalty / Betrayal</strong> — solidarity with the in-group</li>
-  <li><strong>Authority / Subversion</strong> — respect for hierarchy and tradition</li>
-  <li><strong>Sanctity / Degradation</strong> — purity, the sacred, the disgusting</li>
-  <li><strong>Liberty / Oppression</strong> — resistance to domination</li>
-</ul>
+<div class="moral-foundations">
+  <div class="foundation-card"><strong>Care / Harm</strong><span>Protecting the vulnerable</span></div>
+  <div class="foundation-card"><strong>Fairness / Cheating</strong><span>Proportionality and reciprocity</span></div>
+  <div class="foundation-card"><strong>Loyalty / Betrayal</strong><span>Solidarity with the in-group</span></div>
+  <div class="foundation-card"><strong>Authority / Subversion</strong><span>Respect for hierarchy and tradition</span></div>
+  <div class="foundation-card"><strong>Sanctity / Degradation</strong><span>Purity, the sacred, the disgusting</span></div>
+  <div class="foundation-card"><strong>Liberty / Oppression</strong><span>Resistance to domination</span></div>
+</div>
 
 <p>Left-leaning moral matrices tend to emphasise care and fairness almost exclusively. Right-leaning matrices use all six, though often with different emphases. This isn't a value judgment about who is right — it's a description of why each side finds the other incomprehensible. They are literally playing by different rules, using different parts of the moral keyboard.</p>
 
