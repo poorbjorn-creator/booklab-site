@@ -158,6 +158,46 @@ This gives a solid dark background with gold border and gold text — visible an
 - Only add the button for books that actually have a review page — don't link to pages that don't exist.
 - This applies to all article types: listicles, topic pages, and recommendation articles.
 
+### "Go Deeper" Callout Blocks
+
+When an article groups multiple books around a theme (e.g. "3 Books About Voluntary Discomfort"), **add a "Go Deeper" callout block on each review page** that links back to the article. This creates two-way crosslinking — the article links to the reviews, and the reviews link back to the article.
+
+Place the block **before the "You Might Also Like" section.** Use this pattern:
+
+```html
+<div style="background:rgba(15,52,96,.4);border:1px solid rgba(230,169,25,.15);border-radius:12px;padding:24px;margin:32px 0">
+<h2 style="font-family:Playfair Display,serif;color:var(--gold);font-size:1.2rem;margin-bottom:8px">🔥 Go Deeper: TOPIC</h2>
+<p style="margin-bottom:12px">Description mentioning the other books with inline links to their reviews (e.g. <em><a href="/reviews/SLUG">Title</a></em>).</p>
+<a href="/articles/SLUG" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read the Article →</a>
+</div>
+```
+
+- **Always inline-link** the other book titles to their review pages within the description text
+- Same pattern works for "Lasting Impressions" articles linking back from the original review
+- One callout per article connection is enough — don't stack multiple
+
+### "Also by" Inline Book Cards
+
+When a pillar page or article features an author who has another reviewed book on the site, add a compact inline card below the Amazon button. This pairs related books visually without cluttering the main entry.
+
+```html
+<div style="margin-top:20px;display:flex;align-items:center;gap:16px;padding:16px 20px;background:linear-gradient(135deg,rgba(15,52,96,.45),rgba(15,52,96,.2));border:1px solid rgba(230,169,25,.2);border-radius:10px">
+<img src="/images/covers/ISBN.jpg" alt="BOOK_TITLE" style="width:52px;height:auto;border-radius:6px;flex-shrink:0;border:1px solid rgba(230,169,25,.15)">
+<div style="flex:1;min-width:0">
+<div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:4px">Also by AUTHOR_LAST_NAME</div>
+<a href="/reviews/SLUG" style="color:var(--cream);font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;text-decoration:none">BOOK_TITLE</a>
+<div style="color:var(--muted);font-size:.88rem;margin-top:2px">by AUTHOR · STAR_EMOJIS</div>
+<div style="color:var(--muted);font-size:.88rem;margin-top:4px;line-height:1.4">One-line description.</div>
+</div>
+<a href="/reviews/SLUG" style="color:var(--gold);font-size:.85rem;white-space:nowrap;text-decoration:none;flex-shrink:0">Read Review →</a>
+</div>
+```
+
+- Use the label "Also by AUTHOR" (or "Also about SUBJECT" for same-subject books by different authors)
+- Place inside the `<div class="book-card-content">`, after the Amazon button
+- Cover thumbnail at 52px width — small enough to not compete with the main entry's cover
+- One card per related book — don't stack multiples
+
 ## Newsletter Creation (Beehiiv)
 
 When creating a weekly newsletter:
