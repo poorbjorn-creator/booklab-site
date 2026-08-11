@@ -232,6 +232,29 @@ Format: A single sentence (or two short ones) that teases the content with speci
   - `Three men who walked into the woods — one on purpose, one who never came back — and a new video on why biographies are my favorite genre.`
   - `A passage that stopped me cold, the best biographies I've ever read, and a lunch break with six books in my backpack`
 
+## Article / Pillar Page Visual Standard
+
+All article and pillar pages (book lists, topic pages, etc.) must follow the **AI Founders page style** as the visual baseline:
+
+### Book Cards
+- **Cover size:** `160px` wide on desktop, `140px` on mobile
+- **Mobile layout:** Cards stack vertically (`flex-direction: column`) — cover on top, text below. Never side-by-side on mobile; text gets too cramped.
+- **Numbered entries:** Use `<span class="book-num">01</span>` etc. for ordered lists
+- **Genre tags:** Include `<span class="genre-tag">` for each book
+- **"What to expect" bullets:** Add a `<div class="read-if">` section with 3–4 arrow-prefixed bullet points
+- **Dual buttons:** Amazon button (solid gold) + "Read Review →" button (gold border) when a review exists
+
+### Page Structure
+- **Header section:** Full-width hero image, gold `<h1>`, divider bar, intro paragraph
+- **Section groupings:** Use `<h2 class="section-title">` + `<p class="section-desc">` to introduce groups of books
+- **Essay blocks:** Use `<div class="essay-block">` for editorial commentary sections
+- **Related articles grid** at the bottom
+- **Newsletter CTA** + "Last updated" date at the bottom
+
+### Reference Pages
+- **Gold standard:** `_src/articles/best-books-by-ai-founders.html`
+- **Also good:** `_src/monthly/september-2026.html` (same card style)
+
 ## New Articles / Pillar Pages
 
 When creating a new article or pillar page, you MUST also:

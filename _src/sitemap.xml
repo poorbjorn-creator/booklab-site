@@ -30,7 +30,7 @@
   <url><loc>https://booklabbybjorn.com/work-with-us</loc><lastmod>2026-02-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reading-list-2026</loc>
     <lastmod>2026-07-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://booklabbybjorn.com/monthly/</loc><lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://booklabbybjorn.com/monthly/</loc><lastmod>2026-08-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/january-2026</loc><lastmod>2026-07-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/february-2026</loc><lastmod>2026-02-01</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/march-2026</loc><lastmod>2026-03-01</lastmod><priority>0.7</priority></url>
@@ -40,6 +40,8 @@
   <url><loc>https://booklabbybjorn.com/monthly/july-2026</loc><lastmod>2026-06-17</lastmod><priority>0.7</priority></url>
 <url><loc>https://booklabbybjorn.com/monthly/august-2026</loc><lastmod>2026-07-17</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/monthly/june-2026</loc><lastmod>2026-07-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/monthly/september-2026</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://booklabbybjorn.com/monthly/october-2026</loc><lastmod>2026-08-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/the-psychology-of-money-morgan-housel</loc><lastmod>2026-05-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/a-guide-to-the-good-life-william-irvine</loc><lastmod>2026-05-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://booklabbybjorn.com/reviews/among-the-thugs-bill-buford</loc><lastmod>2026-07-08</lastmod><priority>0.8</priority></url>
@@ -241,4 +243,5 @@
 <url><loc>https://booklabbybjorn.com/reviews/the-accidental-president-aj-baime</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://booklabbybjorn.com/reviews/radical-honesty-brad-blanton</loc><lastmod>2026-08-07</lastmod><priority>0.8</priority></url>
 <url><loc>https://booklabbybjorn.com/reviews/so-youve-been-publicly-shamed-jon-ronson</loc><lastmod>2026-08-07</lastmod><priority>0.8</priority></url>
+<url><loc>https://booklabbybjorn.com/reviews/the-road-to-serfdom-fa-hayek</loc><lastmod>2026-08-11</lastmod><priority>0.8</priority></url>
 </urlset>
