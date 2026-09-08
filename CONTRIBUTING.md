@@ -409,6 +409,10 @@ A concept page explains a big idea from the books BookLab reviews, built as a **
 
 **Voice:** Do NOT rewrite content for tone — it arrives in Bjorn's voice and is pre-approved. Flag awkward lines back rather than silently editing.
 
+## Punctuation
+
+- **Never use em dashes (—)** in any content. Use regular dashes (-) or rewrite the sentence instead.
+
 ## Surgical Changes
 
 - Only touch what was asked
