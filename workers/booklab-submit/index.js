@@ -1,5 +1,6 @@
 // BookLab Book Submission Worker
-// Receives submissions from submit-book.html, stores in KV, notifies via email
+// Receives submissions from submit-book.html, stores in KV, notifies via Discord + email
+import { EmailMessage } from "cloudflare:email";
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': 'https://booklabbybjorn.com',
@@ -81,9 +82,46 @@ export default {
         console.error('Discord webhook failed:', discordErr.message);
       }
 
-      console.log('New book submission:', JSON.stringify(submission), 'KV stored:', kvStored);
+      // Send email notification
+      let emailSent = false;
+      try {
+        if (env.EMAIL) {
+          const subject = `📚 New Book Submission: ${submission.title} by ${submission.author}`;
+          const body = [
+            `New book submission received on BookLab!\n`,
+            `Title: ${submission.title}`,
+            `Author: ${submission.author}`,
+            `Category: ${submission.category}`,
+            `Pub Date: ${submission.pubDate}`,
+            `Publisher: ${submission.publisher || 'N/A'}`,
+            `Link: ${submission.link || 'N/A'}`,
+            `\nPitch:\n${submission.pitch || 'N/A'}`,
+            `\nSubmitted By: ${submission.submitterName || 'Anonymous'} (${submission.submitterRole || 'unknown'})`,
+            `Email: ${submission.submitterEmail || 'N/A'}`,
+            `Country: ${submission.country || 'N/A'}`,
+            `Submitted At: ${submission.submittedAt}`,
+          ].join('\n');
 
-      return new Response(JSON.stringify({ ok: true, message: 'Submission received', kvStored }), {
+          const rawEmail = [
+            `From: booklab@booklabbybjorn.com`,
+            `To: teambooklab@gmail.com`,
+            `Subject: ${subject}`,
+            `Content-Type: text/plain; charset=utf-8`,
+            ``,
+            body,
+          ].join('\r\n');
+
+          const msg = new EmailMessage('booklab@booklabbybjorn.com', 'teambooklab@gmail.com', rawEmail);
+          await env.EMAIL.send(msg);
+          emailSent = true;
+        }
+      } catch (emailErr) {
+        console.error('Email send failed:', emailErr.message, emailErr.stack);
+      }
+
+      console.log('New book submission:', JSON.stringify(submission), 'KV stored:', kvStored, 'emailSent:', emailSent);
+
+      return new Response(JSON.stringify({ ok: true, message: 'Submission received', kvStored, emailSent }), {
         status: 200, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' }
       });
 
