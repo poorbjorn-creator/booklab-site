@@ -411,7 +411,7 @@ A concept page explains a big idea from the books BookLab reviews, built as a **
 
 ## Punctuation
 
-- **Never use em dashes (—)** in any content. Use regular dashes (-) or rewrite the sentence instead.
+- **Never use em dashes (—) in visible text** that readers see. Use regular dashes (-) or rewrite the sentence instead. Em dashes in code, URLs, or encoded strings are fine as long as they're properly percent-encoded.
 
 ## Surgical Changes
 
