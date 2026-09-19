@@ -125,6 +125,14 @@ Instead, use a **styled card grid** for short-item lists (keywords, behaviors, t
 - Best for: lists of 4–10 short items (behaviors, components, principles)
 - For longer descriptive lists (with explanations per item), use `<p><strong>Label</strong> — Description</p>` blocks instead (like the 3 Life Traps pattern)
 
+## Review Categories (Tags)
+
+**The approved categories on `/reviews` are fixed.** Do NOT create new categories or tags without Bjorn's explicit approval.
+
+Current approved tags: `philosophy`, `psychology`, `self-improvement`, `history`, `classics`, `science`, `biography`, `economics`, `fiction`, `tech-ai`, `health`
+
+When adding a new review, use only tags from this list. If none fit well, ask Bjorn before inventing a new one.
+
 ## Star Ratings
 
 - **NEVER put star ratings in the `<div class="meta">` block at the top of a review.**
