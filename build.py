@@ -314,8 +314,11 @@ def canonical_og_audit():
         print('✅ Canonical/og:url audit passed (all matching)')
 
 
+SITEMAP_EXEMPT = {'/404', '/links'}  # intentionally not in sitemap
+
+
 def sitemap_audit():
-    """Warn about _src/ pages that are missing from sitemap.xml."""
+    """Fail the build if _src/ pages are missing from sitemap.xml."""
     import xml.etree.ElementTree as ET
 
     sitemap_path = os.path.join(SITE_DIR, 'sitemap.xml')
@@ -359,7 +362,7 @@ def sitemap_audit():
             else:
                 url_path = '/' + rel.replace(os.sep, '/').replace('.html', '')
 
-            if url_path not in sitemap_paths:
+            if url_path not in sitemap_paths and url_path not in SITEMAP_EXEMPT:
                 missing.append(url_path)
 
     if missing:
@@ -367,7 +370,8 @@ def sitemap_audit():
         print(f'\n⚠️  Sitemap gap: {len(missing)} page(s) in _src/ but NOT in sitemap.xml:')
         for m in missing:
             print(f'   {m}')
-        print('Add these to sitemap.xml or this is intentional (e.g. landing pages).')
+        print('Add these to sitemap.xml (or SITEMAP_EXEMPT in build.py if intentional).')
+        sys.exit(1)
     else:
         print('✅ Sitemap coverage: all _src/ pages found in sitemap.xml')
 
