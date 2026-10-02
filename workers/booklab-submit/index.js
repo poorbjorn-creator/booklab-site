@@ -24,7 +24,7 @@ export default {
       const data = await request.json();
 
       // Validate required fields
-      if (!data.title || !data.author || !data.pubDate || !data.category || !data.pitch) {
+      if (!data.title || !data.author || !data.pubDate || !data.category || !data.pitch || !data.submitterEmail) {
         return new Response(JSON.stringify({ error: 'Missing required fields' }), {
           status: 400, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' }
         });
@@ -67,6 +67,7 @@ export default {
               { name: 'Link', value: submission.link || 'N/A' },
               { name: 'Submitted By', value: `${submission.submitterName || 'Anonymous'} (${submission.submitterRole || 'unknown'})` },
               { name: 'Email', value: submission.submitterEmail || 'N/A', inline: true },
+              { name: 'How they found BookLab', value: (submission.source || 'N/A') + (submission.sourceDetail ? ': ' + String(submission.sourceDetail).slice(0, 500) : ''), inline: true },
             ],
             timestamp: submission.submittedAt,
           }],

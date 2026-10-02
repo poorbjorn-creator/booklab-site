@@ -8,7 +8,7 @@
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Submit a Book — BookLab by Bjorn</title>
-<meta name="description" content="Have a nonfiction book coming out? Submit it for consideration in BookLab's monthly nonfiction releases — reaching 60,000+ serious readers.">
+<meta name="description" content="Have a nonfiction book coming out? Submit it for consideration in BookLab's monthly nonfiction releases.">
 <meta property="og:title" content="Submit a Book — BookLab by Bjorn">
 <meta property="og:description" content="Have a nonfiction book coming out? Submit it for consideration in BookLab's monthly releases.">
 <meta property="og:type" content="website">
@@ -99,7 +99,7 @@ header .intro{max-width:650px;margin:0 auto;font-size:.92rem;color:var(--text);l
 <h1>📖 Submit a Book</h1>
 <p class="subtitle">Help us discover the best new nonfiction</p>
 <div class="divider"></div>
-<p class="intro">Every month, BookLab highlights the most interesting new nonfiction releases for 60,000+ readers. We're always looking for great books we might have missed. If you're an author, publisher, or reader who knows about an upcoming nonfiction title — tell us about it.</p>
+<p class="intro">Every month, BookLab highlights the most interesting new nonfiction releases. We're always looking for great books we might have missed. If you're an author, publisher, or reader who knows about an upcoming nonfiction title — tell us about it.</p>
 </header>
 
 <div class="container">
@@ -188,9 +188,9 @@ header .intro{max-width:650px;margin:0 auto;font-size:.92rem;color:var(--text);l
 </div>
 
 <div class="field">
-<label>Your Email</label>
-<input type="email" name="submitterEmail" placeholder="your@email.com">
-<p class="hint">Optional. We'll only use this to follow up about your submission.</p>
+<label>Your Email <span class="req">*</span></label>
+<input type="email" name="submitterEmail" required placeholder="your@email.com">
+<p class="hint">We'll only use this to follow up about your submission.</p>
 </div>
 
 <div class="field">
@@ -204,6 +204,21 @@ header .intro{max-width:650px;margin:0 auto;font-size:.92rem;color:var(--text);l
 </select>
 </div>
 
+<div class="field">
+<label>How did you find BookLab?</label>
+<select name="source">
+<option value="">Select…</option>
+<option value="X">X</option>
+<option value="YouTube">YouTube</option>
+<option value="Google">Google</option>
+<option value="ChatGPT or another AI">ChatGPT or another AI</option>
+<option value="Newsletter">Newsletter</option>
+<option value="Another author">Another author</option>
+<option value="Other">Other</option>
+</select>
+<input type="text" name="sourceDetail" placeholder="Anything to add? (optional)" style="margin-top:8px">
+</div>
+
 <button type="submit" class="btn-submit" id="submit-btn">📬 Submit Book</button>
 <p id="form-msg" class="form-msg"></p>
 
@@ -211,7 +226,7 @@ header .intro{max-width:650px;margin:0 auto;font-size:.92rem;color:var(--text);l
 </div>
 
 <div class="note-box">
-<strong>Looking for guaranteed coverage?</strong> This form is for free submissions to our monthly discovery pipeline. If you want a dedicated book spotlight or featured release with guaranteed coverage across all BookLab channels, check out our <a href="/work-with-us">Work With Us</a> page.
+<strong>Want a reserved spot?</strong> See <a href="/work-with-us">Work With Us</a>. This form is for free submissions to our monthly discovery pipeline.
 </div>
 
 </div>
