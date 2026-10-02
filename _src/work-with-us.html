@@ -118,6 +118,39 @@ section h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:8px;color:var(--gold);
 .worked-with div{background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:8px;padding:12px 16px;font-size:.92rem}
 .breadcrumb-wrap{max-width:900px;margin:0 auto;padding:20px 20px 0}
 .step h3{font-family:'Playfair Display',serif}
+
+/* readability pass: CSS only */
+body{font-size:17px;line-height:1.75}
+header .intro{max-width:680px;font-size:1.05rem;line-height:1.8;text-align:left;color:var(--cream)}
+.prose{font-size:1.05rem;line-height:1.8}
+.prose-list{max-width:700px}
+.prose-list li{font-size:1.02rem;line-height:1.75;padding:16px 0 16px 30px}
+.prose-list li::before{top:16px}
+section{padding:64px 0}
+section h2{margin-bottom:12px}
+.steps{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.step{text-align:left;padding:28px 24px}
+.step h3{font-size:1.15rem;line-height:1.35;margin-bottom:10px}
+.step p{font-size:1rem;line-height:1.7;color:var(--text)}
+.price-card{padding:34px 30px}
+.price-card li{font-size:1rem;line-height:1.65;padding:8px 0 8px 26px}
+.price-card p{line-height:1.7;color:var(--text)}
+.price-best{font-size:.92rem;line-height:1.65;color:var(--text)}
+.note-line{font-size:1rem;color:var(--text)}
+.slot-table th,.slot-table td{font-size:1rem;padding:14px 20px}
+.worked-with div{font-size:1rem;line-height:1.55;padding:14px 18px}
+.contact-card p,.contact-card .contact-items{font-size:1rem;line-height:1.7}
+.contact-items li{padding:6px 0;color:var(--text)}
+@media(max-width:600px){
+  body{font-size:17px}
+  section{padding:48px 0}
+  header{padding:48px 18px 36px}
+  .steps{grid-template-columns:1fr}
+  .container{padding:0 22px}
+  .prose-list li{padding:14px 0 14px 28px}
+  .price-card{padding:26px 22px}
+  .slot-table th,.slot-table td{padding:12px 16px}
+}
 </style>
 </head>
 <body>
