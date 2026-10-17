@@ -10,6 +10,11 @@
 <meta property="og:description" content="All book reviews by BookLab by Bjorn. Nonfiction, philosophy, psychology, classics and more.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://booklabbybjorn.com/reviews">
+<meta property="og:image" content="https://booklabbybjorn.com/images/og-reviews.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://booklabbybjorn.com/images/og-reviews.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -130,8 +135,10 @@ footer .links a{color:var(--gold)}
 
 <div class="filter-tags" id="filterTags"></div>
 
-<p class="review-count" id="reviewCount">165 reviews</p>
+<p class="review-count" id="reviewCount">167 reviews</p>
 <div class="review-list" id="reviewList">
+<a href="/reviews/raising-lions-joe-newman" class="review-card"><img src="/images/covers/raising-lions-joe-newman.jpg" alt="Raising Lions"><div class="review-info"><div class="review-title">Raising Lions</div><div class="review-author">Joe Newman</div><div class="review-rating">⭐⭐⭐</div><div class="review-snippet">Today&#x27;s kids leave the omnipotence phase later. Joe Newman&#x27;s answer: firm boundaries, immediate consequences, and always doing what you say.</div></div></a>
+<a href="/reviews/oversubscribed-daniel-priestley" class="review-card"><img src="/images/covers/oversubscribed-daniel-priestley.jpg" alt="Oversubscribed"><div class="review-info"><div class="review-title">Oversubscribed</div><div class="review-author">Daniel Priestley</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Why having more customers than you can serve is the best problem a business can have. My favorite marketing book.</div></div></a>
 <a href="/reviews/hold-on-to-your-kids-gordon-neufeld-gabor-mate" class="review-card"><img src="/images/covers/9781785042195.jpg" alt="Hold On to Your Kids"><div class="review-info"><div class="review-title">Hold On to Your Kids</div><div class="review-author">Gordon Neufeld &amp; Gabor Maté</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">Kids haven&#x27;t changed, the culture they grow up in has. Why parents need to matter more than peers.</div></div></a>
 <a href="/reviews/how-to-win-friends-and-influence-people-dale-carnegie" class="review-card"><img src="/images/covers/9780091906351.jpg" alt="How to Win Friends and Influence People"><div class="review-info"><div class="review-title">How to Win Friends and Influence People</div><div class="review-author">Dale Carnegie</div><div class="review-rating">⭐⭐⭐⭐</div><div class="review-snippet">The perfect gateway drug into nonfiction. Carnegie&#x27;s 1936 classic is a beginner&#x27;s book — and that is exactly why it is so good.</div></div></a>
 <a href="/reviews/the-road-to-wigan-pier-george-orwell" class="review-card"><img src="/images/covers/9780141185293.jpg" alt="The Road to Wigan Pier"><div class="review-info"><div class="review-title">The Road to Wigan Pier</div><div class="review-author">George Orwell</div><div class="review-rating">⭐⭐⭐⭐⭐</div><div class="review-snippet">Orwell goes underground with England&#x27;s miners and confronts uncomfortable truths about class, comfort, and the smell that separates us.</div></div></a>
@@ -324,6 +331,8 @@ footer .links a{color:var(--gold)}
    one key to each object. That's it.
    ============================================================ */
 var REVIEWS = [
+  {slug:"raising-lions-joe-newman",title:"Raising Lions",author:"Joe Newman",cover:"/images/covers/raising-lions-joe-newman.jpg",rating:3,tags:["psychology","self-improvement"],snippet:"Today's kids leave the omnipotence phase later. Joe Newman's answer: firm boundaries, immediate consequences, and always doing what you say."},
+  {slug:"oversubscribed-daniel-priestley",title:"Oversubscribed",author:"Daniel Priestley",cover:"/images/covers/oversubscribed-daniel-priestley.jpg",rating:5,tags:["economics"],snippet:"Why having more customers than you can serve is the best problem a business can have. My favorite marketing book."},
   {slug:"hold-on-to-your-kids-gordon-neufeld-gabor-mate",title:"Hold On to Your Kids",author:"Gordon Neufeld & Gabor Maté",cover:"/images/covers/9781785042195.jpg",rating:4,tags:["psychology","self-improvement"],snippet:"Kids haven't changed, the culture they grow up in has. Why parents need to matter more than peers."},
   {slug:"how-to-win-friends-and-influence-people-dale-carnegie",title:"How to Win Friends and Influence People",author:"Dale Carnegie",cover:"/images/covers/9780091906351.jpg",rating:4,tags:["self-improvement","psychology"],snippet:"The perfect gateway drug into nonfiction. Carnegie's 1936 classic is a beginner's book — and that is exactly why it is so good."},
   {slug:"the-road-to-wigan-pier-george-orwell",title:"The Road to Wigan Pier",author:"George Orwell",cover:"/images/covers/9780141185293.jpg",rating:5,tags:["history","classics"],snippet:"Orwell goes underground with England's miners and confronts uncomfortable truths about class, comfort, and the smell that separates us."},
