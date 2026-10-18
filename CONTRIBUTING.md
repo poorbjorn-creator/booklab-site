@@ -20,6 +20,17 @@
    - The script builds a clean temp directory (excluding `_src/`, dev files, etc.), deploys from there, and cleans up.
    - This is the ONLY way to prevent `_src/` duplicates from going live (`.cfignore` does NOT work with direct wrangler uploads).
 
+## Commit After Every Verified Deploy
+
+`deploy.sh` publishes the working tree, not git. A deployed but uncommitted change leaves the tree dirty, and the next deploy cannot tell finished work from half-done work. So every production deploy ends with a commit:
+
+1. Commit only after the live checks pass (page 200, canonical matches, index and sitemap updated). If the deploy failed or could not be verified, do not commit, report instead.
+2. `git status --porcelain`, then `git add` this task's files by explicit path (`_src/` pages, built output, images, sitemap). **Never `git add -A`.**
+3. Leave build leftovers and strays out of the commit and name them in the report. Delete or move strays (e.g. downloaded `.vtt` subtitles) once the task is done.
+4. Commit message names what shipped, in the existing style: `reviews: add <Title> (<Author>) page, cover, hero image, index card, sitemap entry`.
+5. Report the commit hash and finish with `git status --short`. The tree should be clean.
+6. **Do not push.** Pushing to GitHub (this repo, and the Sunday workspace backup) happens only when Bjorn asks.
+
 ## Editing Checklist
 
 Before making changes:
