@@ -59,7 +59,7 @@ footer .links a{color:var(--gold)}
 .article ul,.article ol{margin:12px 0 20px 24px}
 .article li{margin-bottom:6px;font-size:1.05rem}
 .book-entry{background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:var(--radius);padding:28px;margin:28px 0;display:flex;gap:24px;align-items:flex-start}
-.book-entry img{width:100px;height:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);flex-shrink:0}
+.book-entry img{width:160px;min-width:160px;height:auto;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);flex-shrink:0;object-fit:cover}
 .book-entry-content{flex:1;min-width:0}
 .book-entry-content h2{margin:0 0 4px;font-size:1.3rem;color:var(--gold)}
 .book-entry-content .author{color:var(--muted);font-size:.95rem;margin-bottom:4px;font-style:italic}
@@ -73,7 +73,19 @@ footer .links a{color:var(--gold)}
 .cta-box h2{margin-top:0;color:var(--gold);font-size:1.2rem}
 .cta-box a{display:inline-block;background:var(--gold);color:#1a1a2e;font-weight:600;font-size:.95rem;padding:10px 24px;border-radius:8px;margin-top:12px}
 .cta-box a:hover{background:#d4990f;text-decoration:none}
-@media(max-width:600px){.article{padding:40px 16px 30px}.book-entry{flex-direction:column;padding:20px;gap:16px}.book-entry img{width:80px}}
+.book-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(230,169,25,.2);float:right;line-height:1;margin-left:10px}
+.genre-tag{display:inline-block;background:rgba(230,169,25,.12);color:var(--gold);font-size:.75rem;padding:3px 10px;border-radius:12px;margin-bottom:10px;font-weight:500}
+.article .section-title{font-size:1.6rem;color:var(--gold);margin:44px 0 8px}
+.section-desc{color:var(--muted);font-size:.92rem;margin-bottom:8px;line-height:1.7}
+.jump-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:20px 0 8px}
+.jump-list a{display:block;background:var(--card);border:1px solid rgba(230,169,25,.15);border-radius:8px;padding:10px 14px;font-size:.9rem;color:var(--cream)}
+.jump-list a:hover{border-color:var(--gold);text-decoration:none}
+.jump-list a span{color:var(--gold);font-weight:700;margin-right:8px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 8px}
+.related-grid a{display:block;background:var(--card);border:1px solid rgba(230,169,25,.2);border-radius:var(--radius);padding:16px 18px;color:var(--cream);font-weight:500;line-height:1.4}
+.related-grid a:hover{border-color:var(--gold);text-decoration:none}
+.related-grid a small{display:block;color:var(--muted);font-weight:400;font-size:.8rem;margin-top:4px}
+@media(max-width:600px){.article{padding:40px 16px 30px}.book-entry{flex-direction:column;padding:20px;gap:16px}.book-entry img{width:140px;min-width:140px}.book-num{font-size:1.8rem}}
 </style>
 <script type="application/ld+json">
 {
@@ -145,12 +157,30 @@ footer .links a{color:var(--gold)}
 
 <p>This is my personal ranking of the best Stoicism books — a mix of ancient primary sources and modern interpretations. Every book on this list I've read myself, most of them more than once. If you're new to Stoicism, start at #1. If you've already read the basics, skip to #5 and beyond.</p>
 
+<h2>Jump to a Book</h2>
+<div class="jump-list">
+<a href="#1"><span>1</span>A Guide to the Good Life</a>
+<a href="#2"><span>2</span>Meditations</a>
+<a href="#3"><span>3</span>Letters from a Stoic</a>
+<a href="#4"><span>4</span>On the Shortness of Life</a>
+<a href="#5"><span>5</span>Discourses</a>
+<a href="#6"><span>6</span>Discipline Is Destiny</a>
+<a href="#7"><span>7</span>Stillness Is the Key</a>
+<a href="#8"><span>8</span>Courage Under Fire</a>
+<a href="#9"><span>9</span>The Obstacle Is the Way</a>
+<a href="#10"><span>10</span>Stoicism and the Art of Happiness</a>
+</div>
+
+<h2 class="section-title">Start Here</h2>
+<p class="section-desc">The one book I would hand to a complete beginner.</p>
 <!-- Book 1 -->
 <div id="1"></div>
 <div class="book-entry">
 <img src="/images/covers/9780195374612.jpg" alt="A Guide to the Good Life by William B. Irvine" loading="lazy">
 <div class="book-entry-content">
-<h2>1. A Guide to the Good Life</h2>
+<span class="book-num">01</span>
+<span class="genre-tag">Modern Stoicism</span>
+<h2>A Guide to the Good Life</h2>
 <div class="author">William B. Irvine</div>
 <p>This is one of my all-time favorite books. I've reread it more times than I can count. Irvine does something that most Stoicism books fail at: he takes the ancient philosophy and makes it genuinely practical for modern life. No academic jargon. No pretension. Just clear, useful wisdom.</p>
 <p>You'll learn about negative visualization — imagining the loss of what you have to appreciate it more. The dichotomy of control — distinguishing between what you can and can't influence. How to deal with insults, setbacks, desire, and anger. These aren't abstract exercises. They're tools you can start using today.</p>
@@ -161,12 +191,16 @@ footer .links a{color:var(--gold)}
 </div>
 </div>
 
+<h2 class="section-title">The Ancient Sources</h2>
+<p class="section-desc">The original voices. Read them in any order once the basics click.</p>
 <!-- Book 2 -->
 <div id="2"></div>
 <div class="book-entry">
 <img src="/images/covers/9780140449334.jpg" alt="Meditations by Marcus Aurelius" loading="lazy">
 <div class="book-entry-content">
-<h2>2. Meditations</h2>
+<span class="book-num">02</span>
+<span class="genre-tag">Ancient Source</span>
+<h2>Meditations</h2>
 <div class="author">Marcus Aurelius</div>
 <p>The philosopher king's own journal. Marcus Aurelius was the Emperor of Rome — arguably the most powerful man in the ancient world — and he spent his private moments writing reminders to himself about how to be a better person. He never intended for anyone to read this. That's what makes it so powerful.</p>
 <p><em>Meditations</em> isn't a structured book. It's raw, unfiltered, sometimes repetitive. It reads like the internal monologue of a man wrestling with his own ego, impatience, and mortality. And because of that, it feels timeless. You'll find yourself nodding along to passages written nearly 2,000 years ago as if Marcus was sitting across from you at a coffee shop.</p>
@@ -181,7 +215,9 @@ footer .links a{color:var(--gold)}
 <div class="book-entry">
 <img src="/images/covers/9780140442106.jpg" alt="Letters from a Stoic by Seneca" loading="lazy">
 <div class="book-entry-content">
-<h2>3. Letters from a Stoic</h2>
+<span class="book-num">03</span>
+<span class="genre-tag">Ancient Source</span>
+<h2>Letters from a Stoic</h2>
 <div class="author">Seneca</div>
 <p>Seneca was a Roman statesman, dramatist, and tutor to Emperor Nero — a complicated man living in complicated times. His letters to his friend Lucilius are some of the most beautiful and practical philosophical writing ever produced. Where Marcus is terse and internal, Seneca is warm, conversational, and persuasive.</p>
 <p>The letters cover everything: how to spend your time wisely, how to deal with grief, how to think about wealth, how to prepare for death. Seneca doesn't moralize from a distance — he's in the arena himself, struggling with the same things you and I struggle with. He was wealthy and politically entangled, and his Stoicism was forged under real pressure, not in an ivory tower.</p>
@@ -197,7 +233,9 @@ footer .links a{color:var(--gold)}
 <div class="book-entry">
 <img src="/images/covers/9780143036326.jpg" alt="On the Shortness of Life by Seneca" loading="lazy">
 <div class="book-entry-content">
-<h2>4. On the Shortness of Life</h2>
+<span class="book-num">04</span>
+<span class="genre-tag">Ancient Source</span>
+<h2>On the Shortness of Life</h2>
 <div class="author">Seneca</div>
 <p>A short essay — you can read it in an afternoon. But it packs more wisdom per page than most 400-page books. Seneca's core argument: life isn't too short. We waste it. We spend it on things that don't matter, we postpone the things that do, and then we complain that we didn't have enough time.</p>
 <p>This one hits differently depending on where you are in life. I first read it in my late twenties and it was a wake-up call. I've reread it several times since. Every time, a different passage grabs me. It's the kind of book that grows with you.</p>
@@ -213,7 +251,9 @@ footer .links a{color:var(--gold)}
 <div class="book-entry">
 <img src="/images/covers/9780140449464.jpg" alt="Discourses by Epictetus" loading="lazy">
 <div class="book-entry-content">
-<h2>5. Discourses</h2>
+<span class="book-num">05</span>
+<span class="genre-tag">Ancient Source</span>
+<h2>Discourses</h2>
 <div class="author">Epictetus</div>
 <p>Epictetus was born a slave. Think about that. The man who articulated one of the most powerful philosophies of personal freedom — "Some things are within our power, while others are not" — was himself a slave for much of his life. His philosophy wasn't theoretical. It was survival.</p>
 <p>The <em>Discourses</em> are lecture notes compiled by his student Arrian. They're more direct and confrontational than Seneca or Marcus. Epictetus doesn't coddle you. He challenges you. He asks hard questions about whether you're actually living by your principles or just talking about them.</p>
@@ -223,18 +263,22 @@ footer .links a{color:var(--gold)}
 </div>
 </div>
 
+<h2 class="section-title">The Modern Voices</h2>
+<p class="section-desc">Stoicism through stories, survival and psychology.</p>
 <!-- Book 6 -->
 <div id="6"></div>
 <div class="book-entry">
 <img src="/images/covers/9780593191699.jpg" alt="Discipline Is Destiny by Ryan Holiday" loading="lazy">
 <div class="book-entry-content">
-<h2>6. Discipline Is Destiny</h2>
+<span class="book-num">06</span>
+<span class="genre-tag">Modern Stoicism</span>
+<h2>Discipline Is Destiny</h2>
 <div class="author">Ryan Holiday</div>
 <p>Ryan Holiday has done more to popularize Stoicism than probably anyone in the modern era. Some purists don't love his work, but I think he's excellent at making philosophy accessible without dumbing it down.</p>
 <p><em>Discipline Is Destiny</em> focuses on self-discipline as a virtue — told through stories of people like Queen Elizabeth II, Lou Gehrig, Eisenhower, and Angela Merkel. It's the second book in Holiday's virtue series (after <em>Courage is Calling</em>), and I think it's the strongest of the bunch. The writing is tight, the stories are well-chosen, and the message lands: freedom requires discipline.</p>
 <div class="read-if">📖 Read if you like learning philosophy through biography and historical storytelling.</div>
 <a href="https://www.amazon.com/dp/0593191692?tag=poorbjorn-20" target="_blank" class="btn-amazon">📚 Get on Amazon</a>
-<a href="/reviews/discipline-is-destiny-ryan-holiday" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
+<a href="/reviews/discipline-is-destiny-ryan-holiday" class="btn-review">📝 Read My Review</a>
 </div>
 </div>
 
@@ -243,13 +287,15 @@ footer .links a{color:var(--gold)}
 <div class="book-entry">
 <img src="/images/covers/9780525538585.jpg" alt="Stillness Is the Key by Ryan Holiday" loading="lazy">
 <div class="book-entry-content">
-<h2>7. Stillness Is the Key</h2>
+<span class="book-num">07</span>
+<span class="genre-tag">Modern Stoicism</span>
+<h2>Stillness Is the Key</h2>
 <div class="author">Ryan Holiday</div>
 <p>Another Holiday entry, but this one stands on its own. It's less about Stoicism specifically and more about the Stoic ideal of inner calm — what the Greeks called <em>ataraxia</em>. Holiday draws from Stoicism, Buddhism, Confucianism, and modern psychology to make the case that stillness is a competitive advantage, not a luxury.</p>
 <p>The book is organized into three parts — mind, spirit, body — and each chapter profiles someone who embodied stillness under pressure. I found it especially useful during periods of high stress and information overload. Sometimes you need a book that tells you to slow down and be quiet. This is that book.</p>
 <div class="read-if">📖 Read if you're overwhelmed, overstimulated, or just need permission to stop scrolling and start thinking.</div>
 <a href="https://www.amazon.com/dp/0525538585?tag=poorbjorn-20" target="_blank" class="btn-amazon">📚 Get on Amazon</a>
-<a href="/reviews/stillness-is-the-key-ryan-holiday" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
+<a href="/reviews/stillness-is-the-key-ryan-holiday" class="btn-review">📝 Read My Review</a>
 </div>
 </div>
 
@@ -258,13 +304,15 @@ footer .links a{color:var(--gold)}
 <div class="book-entry">
 <img src="/images/covers/9780817936921.jpg" alt="Courage Under Fire by James Stockdale" loading="lazy">
 <div class="book-entry-content">
-<h2>8. Courage Under Fire</h2>
+<span class="book-num">08</span>
+<span class="genre-tag">Applied Stoicism</span>
+<h2>Courage Under Fire</h2>
 <div class="author">James Stockdale</div>
 <p>At just 21 pages, this is the shortest book on the list — and one of the most powerful. James Stockdale was a fighter pilot who discovered Epictetus at 38. A few years later, he was shot down over Vietnam and held as a prisoner of war for eight years, enduring torture and isolation. Everything he'd learned from the <em>Enchiridion</em> became his survival tool.</p>
 <p>Stockdale proved that Stoicism isn't a self-help trend or an intellectual exercise — it's a philosophy that works when everything else is stripped away. The dichotomy of control, the rejection of shame over pain, the insistence on inner freedom when outer freedom is gone. This is Stoicism tested in the most extreme laboratory imaginable.</p>
 <div class="read-if">📖 Read if you want proof that philosophy isn't abstract — it's survival. The most concentrated dose of applied Stoicism you'll ever find.</div>
 <a href="https://www.amazon.com/s?k=Courage+Under+Fire+Stockdale&tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">📚 Get on Amazon</a>
-<a href="/reviews/courage-under-fire-james-stockdale" class="btn-amazon" style="background:var(--card);border:2px solid var(--gold);color:var(--gold);">Read Review →</a>
+<a href="/reviews/courage-under-fire-james-stockdale" class="btn-review">📝 Read My Review</a>
 </div>
 </div>
 
@@ -273,7 +321,9 @@ footer .links a{color:var(--gold)}
 <div class="book-entry">
 <img src="/images/covers/9781591846352.jpg" alt="The Obstacle Is the Way by Ryan Holiday" loading="lazy">
 <div class="book-entry-content">
-<h2>9. The Obstacle Is the Way</h2>
+<span class="book-num">09</span>
+<span class="genre-tag">Modern Stoicism</span>
+<h2>The Obstacle Is the Way</h2>
 <div class="author">Ryan Holiday</div>
 <p>Holiday's first major Stoicism book, and the one that kicked off the modern Stoicism revival. The core idea comes from Marcus Aurelius: "The impediment to action advances action. What stands in the way becomes the way."</p>
 <p>It's structured around perception, action, and will — three disciplines for turning obstacles into advantages. Holiday illustrates each with historical examples: Amelia Earhart, Ulysses S. Grant, Steve Jobs, Thomas Edison. It's motivational without being shallow, philosophical without being academic.</p>
@@ -288,12 +338,15 @@ footer .links a{color:var(--gold)}
 <div class="book-entry">
 <img src="/images/covers/9781473674783.jpg" alt="Stoicism and the Art of Happiness by Donald Robertson" loading="lazy">
 <div class="book-entry-content">
-<h2>10. Stoicism and the Art of Happiness</h2>
+<span class="book-num">10</span>
+<span class="genre-tag">Stoicism and Psychology</span>
+<h2>Stoicism and the Art of Happiness</h2>
 <div class="author">Donald Robertson</div>
 <p>This is the most "textbook" entry on the list, but in the best possible way. Robertson is a cognitive behavioral therapist, and he draws a direct line between ancient Stoicism and modern CBT — the idea that our thoughts shape our emotions, and that we can train ourselves to think differently.</p>
 <p>If you've read the ancient texts and Holiday's popular interpretations, Robertson fills in the gaps. He explains the theory behind the practice. Why does negative visualization work? What's the psychological mechanism behind the dichotomy of control? How does Stoicism compare to other therapeutic approaches?</p>
 <div class="read-if">📖 Read if you want to understand the psychology behind why Stoicism works — not just what to do, but why it works on your brain.</div>
 <a href="https://www.amazon.com/dp/1473674786?tag=poorbjorn-20" target="_blank" class="btn-amazon">📚 Get on Amazon</a>
+<a href="/reviews/stoicism-and-the-art-of-happiness-donald-robertson" class="btn-review">📝 Read My Review</a>
 </div>
 </div>
 
@@ -312,6 +365,22 @@ footer .links a{color:var(--gold)}
 <p>This list is part of my <strong>Great Books List</strong> — a curated collection based on 10+ years and 300+ books of nonfiction reading.</p>
 <a href="/great-books-list">Browse the Great Books List →</a>
 </div>
+
+<div class="cta-box">
+<h2>Get New Reviews in Your Inbox</h2>
+<p>One email a week with the best nonfiction I am reading, new reviews and videos.</p>
+<a href="/newsletter">📬 Subscribe to the Newsletter →</a>
+</div>
+
+<h2>Keep Reading</h2>
+<div class="related-grid">
+<a href="/articles/philosophy-books-for-beginners">8 Philosophy Books for Beginners<small>Where to go beyond Stoicism</small></a>
+<a href="/articles/best-books-for-overthinkers">10 Best Books for Overthinkers<small>Stop thinking, start living</small></a>
+<a href="/articles/3-books-about-voluntary-discomfort">3 Books About Voluntary Discomfort<small>Stoic practice in action</small></a>
+<a href="/articles/great-books-on-human-nature">15 Best Books on Human Nature<small>Ranked after 370+ books</small></a>
+</div>
+
+<p style="text-align:center;margin-top:24px;color:var(--muted);font-size:.85rem;font-style:italic;">Last updated: October 18, 2026</p>
 
 </div>
 
