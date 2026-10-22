@@ -350,10 +350,25 @@ The monthly hub is a pillar page. When adding a new month:
 
 **Card structure:** Each month card has:
 - Upper section: gold month label (uppercase), Playfair Display title, description, "See the full [Month] list →" CTA
-- Lower section: Bjorn's Pick (gold label) on the left, Community Pick (teal label) on the right (if applicable). 60px cover thumbnails.
-- No emojis on cards. Match the gradient background style of the hero module.
+- Lower section: Bjorn's Pick on the left (class `bjorn-pick` on the `month-pick-item`: 140px cover, gold border and glow, gold Playfair title, solid gold label), Community Pick on the right (teal label, 100px cover) if applicable. On mobile the picks stack and the covers sit above the text.
+- Every pick is labelled "⭐ Bjorn's Pick" (not "Pick of the Month"). A month with no pick yet simply has no `month-picks` block.
+- Pick images carry real `width`/`height` attributes (get them with `identify`). Covers stay under 400px wide / 100KB.
+- No emojis on cards except the pick labels. Match the gradient background style of the hero module.
+
+**Spotlight:** the "Latest Pick of the Month" block at the top of the hub (`.spotlight`) shows the most recent decided pick with a large cover. When a new month's pick is decided, swap its cover, title, author, blurb and links (the comment above it says what to change). Do not point it at a month whose pick is not decided.
 
 **Low-maintenance rule:** When a new month is published, only the hub page needs editing — no redesign, just add a card block and update the hero. Keep it mechanical.
+
+## Central Audience Stats (YouTube / X numbers)
+
+Audience numbers live in **one file: `_includes/stats.json`** (`youtube_subscribers`, `x_followers`). Never type "18k subscribers" or "47k followers" into a page.
+
+- In any `_src/` page, write the marker `<!-- STAT:x_followers -->` or `<!-- STAT:youtube_subscribers -->` where the number goes, e.g. `(<!-- STAT:youtube_subscribers --> subscribers)`. Put the "k" in the JSON value (`"47k"`), not in the page.
+- `build.py` replaces the markers on every page. An unknown key aborts the build with a clear message.
+- **To update the numbers:** edit `_includes/stats.json`, run `python3 build.py`, deploy. Every page updates at once. Check the live counts first (the tracker only logs through August).
+- To add a new stat, add a key to the JSON and use `<!-- STAT:new_key -->`.
+- New monthly pages: copy the authority-intro line from the latest monthly page so it already uses the markers.
+- Not covered on purpose: numbers that are not the channel audience (e.g. "10k followers" inside a review's text).
 
 ## Internal Links
 

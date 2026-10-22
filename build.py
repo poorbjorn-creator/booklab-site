@@ -6,6 +6,8 @@ in _src/. Aborts if orphan files would be overwritten/lost. Run with --force to 
 """
 
 import os
+import re
+import json
 import sys
 import shutil
 from datetime import datetime
@@ -37,6 +39,19 @@ def load_includes():
         'footer': read_file(os.path.join(INCLUDES_DIR, 'footer.html')),
         'nav-js': read_file(os.path.join(INCLUDES_DIR, 'nav.js')),
     }
+
+def load_stats():
+    """Central audience numbers (_includes/stats.json), used by <!-- STAT:key --> markers."""
+    return json.loads(read_file(os.path.join(INCLUDES_DIR, 'stats.json')))
+
+def apply_stats(content, stats, label):
+    """Replace <!-- STAT:key --> markers with values from stats.json. Unknown key aborts the build."""
+    def sub(m):
+        key = m.group(1)
+        if key not in stats:
+            raise SystemExit(f'STAT marker "{key}" in {label} is not in _includes/stats.json')
+        return str(stats[key])
+    return re.sub(r'<!-- STAT:(\w+) -->', sub, content)
 
 def check_orphans():
     """Find HTML files in output that don't exist in _src/. These would be lost."""
@@ -159,6 +174,7 @@ def prerender_reviews(content):
 
 def build():
     includes = load_includes()
+    stats = load_stats()
     count = 0
 
     for root, dirs, files in os.walk(SRC_DIR):
@@ -177,6 +193,8 @@ def build():
             for key, value in includes.items():
                 marker = f'<!-- INCLUDE:{key} -->'
                 content = content.replace(marker, value)
+
+            content = apply_stats(content, stats, rel_path)
 
             # Inject og:site_name if not already present
             if 'og:site_name' not in content and '</head>' in content:
