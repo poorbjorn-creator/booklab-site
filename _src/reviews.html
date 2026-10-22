@@ -250,3 +250,137 @@ var REVIEWS = [
   {slug:"stumbling-on-happiness-daniel-gilbert",title:"Stumbling on Happiness",author:"Daniel Gilbert",cover:"/images/stumbling-on-happiness-cover.jpg",rating:4,tags:["psychology"],snippet:"We\'re terrible at predicting what will make us happy. Gilbert explains why with wit and science."},
   {slug:"the-courage-to-be-disliked-kishimi-koga",title:"The Courage to Be Disliked",author:"Ichiro Kishimi & Fumitake Koga",cover:"/images/covers/176063073X.jpg",rating:4,tags:["psychology","philosophy"],snippet:"Adlerian psychology served as a Socratic dialogue. All problems are interpersonal relationship problems."},
   {slug:"the-moral-animal-robert-wright",title:"The Moral Animal",author:"Robert Wright",cover:"/images/moral-animal-cover.jpg",rating:5,tags:["psychology","science"],snippet:"Evolutionary psychology explained through Darwin\'s own life. Why we love, lie, and compete the way we do."},
+  {slug:"top-five-regrets-of-the-dying-bronnie-ware",title:"The Top Five Regrets of the Dying",author:"Bronnie Ware",cover:"/images/top-five-regrets-cover.jpg",rating:5,tags:["philosophy","biography"],snippet:"A palliative care nurse reveals what people wish they\'d done differently. Life-changing perspective."},
+  {slug:"trust-me-im-lying-ryan-holiday",title:"Trust Me, I'm Lying",author:"Ryan Holiday",cover:"/images/trust-me-im-lying-cover.jpg",rating:4,tags:["economics","psychology"],snippet:"A media manipulator confesses how the news really works. You\'ll never read headlines the same way."},
+  {slug:"slaughterhouse-five-kurt-vonnegut",title:"Slaughterhouse-Five",author:"Kurt Vonnegut",cover:"/images/covers/slaughterhouse-five.jpg",rating:3,tags:["fiction","classics"],snippet:"Billy Pilgrim becomes unstuck in time. Vonnegut\'s anti-war masterpiece — absurd, sad, and unforgettable."},
+  {slug:"fahrenheit-451-ray-bradbury",title:"Fahrenheit 451",author:"Ray Bradbury",cover:"/images/fahrenheit-451-cover.jpg",rating:4,tags:["fiction","classics"],snippet:"A future where books are burned and thinking is dangerous. Bradbury\'s warning feels more urgent every year."},
+  {slug:"among-the-thugs-bill-buford",title:"Among the Thugs",author:"Bill Buford",cover:"/images/among-the-thugs-cover.jpg",rating:5,tags:["biography","psychology"],snippet:"An American journalist embeds with English football hooligans. Visceral, terrifying, and impossible to put down."},
+  {slug:"lost-connections-johann-hari",title:"Lost Connections",author:"Johann Hari",cover:"/images/lost-connections-cover.jpg",rating:5,tags:["psychology","health"],snippet:"Depression isn\'t just a chemical imbalance. Hari traces it to nine causes — most of them social."},
+  {slug:"when-the-body-says-no-gabor-mate",title:"When the Body Says No",author:"Gabor Maté",cover:"/images/when-the-body-says-no-cover.jpg",rating:5,tags:["psychology","health"],snippet:"The hidden link between stress, repressed emotions, and disease. Maté at his most powerful."},
+  {slug:"a-guide-to-the-good-life-william-irvine",title:"A Guide to the Good Life",author:"William B. Irvine",cover:"/images/guide-to-good-life.jpg",rating:5,tags:["philosophy"],snippet:"The most practical introduction to Stoicism you\'ll find. Ancient wisdom made actionable."},
+  {slug:"the-laws-of-human-nature-robert-greene",title:"The Laws of Human Nature",author:"Robert Greene",cover:"/images/the-laws-of-human-nature.jpg",rating:5,tags:["psychology","self-improvement"],snippet:"A masterclass in reading people — their motivations, blind spots, and hidden patterns."},
+  {slug:"the-almanack-of-naval-ravikant-eric-jorgenson",title:"The Almanack of Naval Ravikant",author:"Eric Jorgenson",cover:"/images/the-almanack-of-naval-ravikant.jpg",rating:5,tags:["philosophy","economics"],snippet:"Wealth, happiness, and clear thinking distilled from one of Silicon Valley\'s sharpest minds."},
+  {slug:"the-coming-wave-mustafa-suleyman",title:"The Coming Wave",author:"Mustafa Suleyman",cover:"/images/the-coming-wave-cover.jpg",rating:4,tags:["tech-ai"],snippet:"AI and synthetic biology are coming fast. Suleyman asks whether we can contain what we\'ve created."},
+  {slug:"the-beginning-of-infinity-david-deutsch",title:"The Beginning of Infinity",author:"David Deutsch",cover:"/images/beginning-of-infinity-cover.jpg",rating:5,tags:["philosophy","science"],snippet:"All problems are solvable. Deutsch makes the case for infinite human progress through good explanations."},
+  {slug:"the-sovereign-individual-davidson-rees-mogg",title:"The Sovereign Individual",author:"Davidson & Rees-Mogg",cover:"/images/sovereign-individual-cover.jpg",rating:5,tags:["economics","philosophy"],snippet:"Written in 1997, it predicted crypto, remote work, and the decline of the nation-state. Eerily accurate."},
+  {slug:"the-bitcoin-standard-saifedean-ammous",title:"The Bitcoin Standard",author:"Saifedean Ammous",cover:"/images/bitcoin-standard-cover.jpg",rating:5,tags:["economics"],snippet:"The history of money, why fiat is broken, and the case for Bitcoin as sound money."},
+  {slug:"double-review-good-to-great-and-autobiography-of-a-yogi",title:"Good to Great & Autobiography of a Yogi",author:"Jim Collins / Yogananda",cover:"https://covers.openlibrary.org/b/isbn/0066620996-M.jpg",rating:2,tags:["economics","philosophy"],snippet:"Two very different books, one video. Business strategy meets spiritual autobiography."},
+  {slug:"understanding-human-nature-alfred-adler",title:"Understanding Human Nature",author:"Alfred Adler",cover:"/images/understanding-human-nature.jpg",rating:4,tags:["psychology"],snippet:"Adler\'s original work on inferiority, compensation, and what drives human behavior."},
+  {slug:"the-denial-of-death-ernest-becker",title:"The Denial of Death",author:"Ernest Becker",cover:"/images/denial-of-death.jpg",rating:5,tags:["psychology","philosophy"],snippet:"Everything we do is a defense against the terror of death. Becker\'s Pulitzer-winning bombshell."},
+  {slug:"spiral-dynamics-don-beck-christopher-cowan",title:"Spiral Dynamics: Mastering Values, Leadership and Change",author:"Don Edward Beck & Christopher C. Cowan",cover:"/images/spiral-dynamics.jpg",rating:5,tags:["psychology","philosophy"],snippet:"Maslow's hierarchy on steroids. A map of how cultures and people evolve — and why they keep talking past each other."},
+  {slug:"the-wall-dancers-yi-ling-liu",title:"The Wall Dancers",author:"Yi-Ling Liu",cover:"/images/the-wall-dancers.jpg",rating:4,tags:["biography"],snippet:"China\'s underground climbing scene as a lens into freedom, rebellion, and modern Chinese society."},
+  {slug:"determined-robert-sapolsky",title:"Determined: A Science of Life Without Free Will",author:"Robert Sapolsky",cover:"/images/determined.jpg",rating:5,tags:["psychology","science"],snippet:"Free will is an illusion. Sapolsky brings the full weight of neuroscience to prove it."},
+  {slug:"flow-mihaly-csikszentmihalyi",title:"Flow: The Psychology of Optimal Experience",author:"Mihaly Csikszentmihalyi",cover:"/images/flow.jpg",rating:5,tags:["psychology"],snippet:"The psychology of optimal experience. How losing yourself in a task is the key to happiness."},
+  {slug:"notes-from-the-underground-dostoevsky",title:"Notes from the Underground",author:"Fyodor Dostoevsky",cover:"/images/notes-from-the-underground.jpg",rating:5,tags:["fiction","classics","philosophy"],snippet:"The original anti-hero rants against rationalism from his basement. Dark, brilliant, and uncomfortably relatable."},
+  {slug:"demian-synchronicity-carl-jung",title:"Demian, Synchronicity & Carl Jung",author:"Hermann Hesse",cover:"https://covers.openlibrary.org/b/isbn/0486414132-M.jpg",rating:5,tags:["philosophy","psychology"],snippet:"Hesse, Jung, and the strange connections between fiction, psychology, and meaningful coincidence."},
+  {slug:"escape-from-freedom-erich-fromm",title:"Escape From Freedom",author:"Erich Fromm",cover:"/images/escape-from-freedom.jpg",rating:4,tags:["psychology","philosophy"],snippet:"Why do people flee from freedom into authoritarianism? Fromm\'s 1941 answer still haunts."},
+  {slug:"letters-from-a-stoic-seneca",title:"Letters from a Stoic",author:"Seneca",cover:"/images/covers/9780140442106.jpg",rating:4,tags:["philosophy","classics"],snippet:"Timeless advice on anger, grief, wealth, and time — from Rome\'s greatest Stoic writer."},
+  {slug:"shoe-dog-phil-knight",title:"Shoe Dog",author:"Phil Knight",cover:"/images/shoe-dog.jpg",rating:4,tags:["biography","economics"],snippet:"The wild, messy, against-all-odds origin story of Nike. One of the best business memoirs ever written."},
+  {slug:"the-stranger-albert-camus",title:"The Stranger",author:"Albert Camus",cover:"/images/the-stranger.jpg",rating:4,tags:["fiction","philosophy","classics"],snippet:"A man kills someone on a beach and feels nothing. Camus\' existentialist classic in under 100 pages."},
+  {slug:"boundaries-henry-cloud-john-townsend",title:"Boundaries",author:"Henry Cloud & John Townsend",cover:"/images/boundaries.jpg",rating:3,tags:["psychology","self-improvement"],snippet:"Learning to say no. A Christian framework for healthy relationships that applies to everyone."},
+  {slug:"futureproof-kevin-roose",title:"Futureproof: 9 Rules for Humans in the Age of Automation",author:"Kevin Roose",cover:"/images/futureproof.jpg",rating:3,tags:["tech-ai"],snippet:"Nine rules for staying human and relevant in the age of AI and automation."},
+  {slug:"life-of-pythagoras-iamblichus",title:"The Life of Pythagoras",author:"Iamblichus",cover:"/images/life-of-pythagoras.jpg",rating:3,tags:["philosophy","classics"],snippet:"An ancient biography of the legendary mathematician-mystic. More myth than history, and a tough read."},
+  {slug:"so-good-they-cant-ignore-you-cal-newport",title:"So Good They Can't Ignore You",author:"Cal Newport",cover:"/images/so-good-they-cant-ignore-you.jpg",rating:3,tags:["self-improvement","economics"],snippet:"Forget following your passion. Build rare skills first, and passion will follow."},
+  {slug:"bhagavad-gita-video-game-development-and-outcome-independence",title:"The Bhagavad Gita",author:"Ancient Text",cover:"https://covers.openlibrary.org/b/isbn/1586380192-M.jpg",rating:0,tags:["philosophy","classics"],snippet:"Ancient Hindu wisdom on detachment from outcomes — and what it has to do with making video games."},
+  {slug:"why-we-sleep-matthew-walker",title:"Why We Sleep",author:"Matthew Walker",cover:"/images/covers/9781501144325.jpg",rating:5,tags:["health","science"],snippet:"Sleep is the most underrated performance enhancer. Walker\'s research will terrify you into better habits."},
+  {slug:"the-psychology-of-money-morgan-housel",title:"The Psychology of Money",author:"Morgan Housel",cover:"/images/covers/9780857197689.jpg",rating:4,tags:["economics","psychology"],snippet:"Your relationship with money is shaped by your unique experiences — not spreadsheets or logic."}
+];
+
+/* ============================================================
+   RENDER ENGINE — don't touch this unless changing layout
+   ============================================================ */
+(function(){
+  var list = document.getElementById('reviewList');
+  var countEl = document.getElementById('reviewCount');
+  var searchBox = document.getElementById('searchBox');
+  var sortSelect = document.getElementById('sortSelect');
+  var filterContainer = document.getElementById('filterTags');
+  var activeTag = 'all';
+
+  // Build tag list from data
+  var tagSet = new Set();
+  REVIEWS.forEach(function(r){ r.tags.forEach(function(t){ tagSet.add(t); }); });
+  var allTags = Array.from(tagSet).sort();
+
+  // Render filter tags
+  var tagHtml = '<span class="filter-tag active" data-tag="all">All</span>';
+  allTags.forEach(function(t){
+    var displayNames = {"tech-ai":"Tech/AI","self-improvement":"Self-improvement"};
+    var label = displayNames[t] || t.charAt(0).toUpperCase()+t.slice(1);
+    tagHtml += '<span class="filter-tag" data-tag="'+t+'">'+label+'</span>';
+  });
+  filterContainer.innerHTML = tagHtml;
+
+  function stars(n){
+    if(n===0) return '<div class="review-rating">Personal Reflection</div>';
+    var s='';for(var i=0;i<n;i++)s+='⭐';
+    return '<div class="review-rating">'+s+'</div>';
+  }
+
+  function render(){
+    var q = searchBox.value.toLowerCase().trim();
+    var sort = sortSelect.value;
+
+    // Filter
+    var filtered = REVIEWS.filter(function(r){
+      var matchTag = activeTag==='all' || r.tags.indexOf(activeTag)!==-1;
+      var matchSearch = !q || r.title.toLowerCase().indexOf(q)!==-1 || r.author.toLowerCase().indexOf(q)!==-1;
+      return matchTag && matchSearch;
+    });
+
+    // Sort
+    filtered.sort(function(a,b){
+      switch(sort){
+        case 'newest': return 0; // preserve original order (newest first)
+        case 'oldest': return 0; // we'd need dates for true oldest — reverse for now
+        case 'rating-high': return b.rating - a.rating;
+        case 'rating-low': return a.rating - b.rating;
+        case 'title-az': return a.title.localeCompare(b.title);
+        case 'title-za': return b.title.localeCompare(a.title);
+        default: return 0;
+      }
+    });
+    if(sort==='oldest') filtered.reverse();
+
+    countEl.textContent = filtered.length + ' review' + (filtered.length!==1?'s':'');
+
+    if(filtered.length===0){
+      list.innerHTML = '<div class="no-results">No reviews match your search.</div>';
+      return;
+    }
+
+    var html = '';
+    filtered.forEach(function(r){
+      html += '<a href="/reviews/'+r.slug+'" class="review-card">';
+      html += '<img src="'+r.cover+'" alt="'+r.title+'" onerror="this.outerHTML=\'<span style=\\\'width:60px;height:90px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;border-radius:6px;flex-shrink:0;background:linear-gradient(135deg,#222244,rgba(15,52,96,.3));border:1px solid rgba(230,169,25,.15)\\\'>📚</span>\'">';
+      html += '<div class="review-info">';
+      html += '<div class="review-title">'+r.title+'</div>';
+      html += '<div class="review-author">'+r.author+'</div>';
+      html += stars(r.rating);
+      if(r.snippet) html += '<div class="review-snippet">'+r.snippet+'</div>';
+      html += '</div></a>';
+    });
+    list.innerHTML = html;
+  }
+
+  // Events
+  searchBox.addEventListener('input', render);
+  sortSelect.addEventListener('change', render);
+  filterContainer.addEventListener('click', function(e){
+    var tag = e.target.dataset.tag;
+    if(!tag) return;
+    activeTag = tag;
+    filterContainer.querySelectorAll('.filter-tag').forEach(function(el){
+      el.classList.toggle('active', el.dataset.tag===tag);
+    });
+    render();
+  });
+
+  render();
+})();
+</script>
+
+<!-- INCLUDE:nav-js -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
