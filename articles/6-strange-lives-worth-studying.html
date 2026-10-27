@@ -59,7 +59,7 @@ section{padding:40px 0}
 .section-title{font-size:1.6rem;color:var(--gold);margin-bottom:8px}
 .section-desc{color:var(--muted);font-size:.92rem;margin-bottom:28px;line-height:1.7}
 .book-card{background:var(--card);border-radius:var(--radius);padding:28px 30px;margin-bottom:24px;border-left:4px solid var(--gold);transition:transform .2s,box-shadow .2s;display:flex;gap:20px;align-items:flex-start}
-.book-cover{width:90px;min-width:90px;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);object-fit:cover}
+.book-cover{width:240px;min-width:240px;height:auto;align-self:flex-start;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4)}
 .book-card-content{flex:1;min-width:0}
 .book-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
 .book-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(230,169,25,.2);float:right;line-height:1;margin-left:10px}
@@ -87,8 +87,8 @@ section{padding:40px 0}
 .coming-up li{padding-left:18px;position:relative;margin-bottom:6px;font-size:.9rem}
 .coming-up li::before{content:'📖';position:absolute;left:0}
 @media(max-width:600px){
-  .book-card{padding:20px 18px;gap:14px}
-  .book-cover{width:70px;min-width:70px}
+  .book-card{padding:20px 18px;gap:14px;flex-direction:column}
+  .book-cover{width:210px;min-width:210px;align-self:center}
   .book-num{font-size:1.8rem}
   header{padding:60px 16px 40px}
 }

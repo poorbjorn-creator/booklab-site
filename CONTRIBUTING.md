@@ -256,7 +256,7 @@ Format: A single sentence (or two short ones) that teases the content with speci
 All article and pillar pages (book lists, topic pages, etc.) must follow the **AI Founders page style** as the visual baseline:
 
 ### Book Cards
-- **Cover size:** `160px` wide on desktop, `140px` on mobile
+- **Cover size:** `240px` wide on desktop, `210px` centered on mobile (CSS: `.book-cover{width:240px;min-width:240px;height:auto;align-self:flex-start}`, mobile `.book-card{flex-direction:column}` + `.book-cover{width:210px;min-width:210px;align-self:center}`). Bjorn wants big covers, same as the November 2026 monthly page (Oct 27 2026). Do not use the old 90px/70px thumbnails from the AI Founders CSS when copying it as a base. Check that the source cover file is at least ~400px wide so it is not blurry at 240px; if it is smaller, flag it to Bjorn.
 - **Mobile layout:** Cards stack vertically (`flex-direction: column`) — cover on top, text below. Never side-by-side on mobile; text gets too cramped.
 - **Numbered entries:** Use `<span class="book-num">01</span>` etc. for ordered lists
 - **Genre tags:** Include `<span class="genre-tag">` for each book
