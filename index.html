@@ -124,6 +124,29 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
   .browse-grid{grid-template-columns:1fr}
   .stats{gap:24px}
 }
+
+/* ===== READABILITY PASS (Nov 2 2026): remove this block to revert ===== */
+:root{--muted:#cfc3a6;--text:#e6dcc4}
+body{font-size:17px}
+.hero h1{text-transform:uppercase;letter-spacing:.04em}
+.hero .tagline{font-size:clamp(1.05rem,2.6vw,1.35rem)}
+.hero .sub{font-size:1rem;text-transform:uppercase;letter-spacing:.12em}
+section h2{text-transform:uppercase;letter-spacing:.08em}
+.section-desc{font-size:1rem;color:var(--text)}
+.pick-card{padding:30px 32px;gap:28px}
+.pick-card img{width:150px;min-width:150px}
+.pick-card .pick-title{text-transform:uppercase;letter-spacing:.04em;font-size:1.4rem;line-height:1.25}
+.pick-card .pick-author{text-transform:uppercase;letter-spacing:.1em;font-weight:600;font-size:.95rem}
+.pick-card .pick-desc{font-size:1.02rem;line-height:1.75;max-width:64ch;color:var(--text)}
+.browse-card h3{text-transform:uppercase;letter-spacing:.05em;font-size:1.15rem;line-height:1.3}
+.browse-card p{font-size:.98rem;line-height:1.7;color:var(--text)}
+.browse-card .card-link{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
+.btn{font-size:.9rem}
+.about-section p{font-size:1.02rem;color:var(--text)}
+.stat .label{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+.video-caption{font-size:.9rem}
+@media(max-width:600px){.pick-card img{width:170px;min-width:170px}.pick-card{padding:22px 18px}}
+/* ===== END READABILITY PASS ===== */
 </style>
 <meta property="og:site_name" content="BookLab by Bjorn">
 </head>
@@ -177,9 +200,9 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 <div class="video-section">
 <h2 style="text-align:center;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--gold);margin-bottom:20px">Latest Video</h2>
 <div class="video-wrapper">
-<iframe id="latest-video" src="https://www.youtube-nocookie.com/embed/qG4UUAOHYFU" title="Latest BookLab Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<iframe id="latest-video" src="https://www.youtube-nocookie.com/embed/AutuCt7O7ns" title="Latest BookLab Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
-<p id="latest-video-caption" class="video-caption">October 2026 Nonfiction Releases — Latest from BookLab</p>
+<p id="latest-video-caption" class="video-caption">9 Best New Nonfiction Books - November 2026 (Robert Greene, Hawking &amp; More)</p>
 </div>
 <!-- Video ID updated automatically by YouTube checker cron job -->
 
@@ -207,15 +230,15 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 </div>
 </div>
 
-<h2 style="margin-top:40px">🏆 October 2026 Pick of the Month</h2>
+<h2 style="margin-top:40px">🏆 November 2026 Pick of the Month</h2>
 <div class="divider"></div>
 <div class="pick-card" style="border-color:#e8450e;margin-bottom:20px">
-<img src="/images/covers/9780593655276.jpg" alt="Sleeping Beauties by David Byrne">
+<img src="/images/covers/9781984881045.jpg" alt="The Law of the Sublime by Robert Greene">
 <div>
-<div class="pick-title">⭐ Bjorn's Pick: Sleeping Beauties</div>
-<div class="pick-author">David Byrne</div>
-<p class="pick-desc">Why do brilliant ideas go dormant - sometimes for centuries - before suddenly waking up and changing the world? David Byrne (yes, the Talking Heads frontman) explores how creativity, timing, and culture collide to bring sleeping ideas back to life.</p>
-<a href="/monthly/october-2026" class="btn btn-primary" style="font-size:.85rem;padding:8px 20px">See October releases →</a>
+<div class="pick-title">⭐ Bjorn's Pick: The Law of the Sublime</div>
+<div class="pick-author">Robert Greene</div>
+<p class="pick-desc">After seven years, the author of <em>The 48 Laws of Power</em> turns from power and strategy to awe - reconnecting with nature, art, science and the way we perceive the world. The book I am most anticipating this month.</p>
+<a href="/monthly/november-2026" class="btn btn-primary" style="font-size:.85rem;padding:8px 20px">See November releases →</a>
 </div>
 </div>
 </div>
@@ -227,27 +250,27 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 <div class="divider"></div>
 <p class="section-desc">Honest nonfiction reviews — what's worth your time and why.</p>
 <div class="browse-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
-<a href="/reviews/the-road-to-wigan-pier-george-orwell" class="browse-card" style="text-decoration:none;display:flex;gap:16px;align-items:flex-start">
-<img src="/images/covers/9780141185293.jpg" alt="The Road to Wigan Pier by George Orwell" style="width:70px;min-width:70px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.4);object-fit:cover">
+<a href="/reviews/the-science-of-scaling-benjamin-hardy" class="browse-card" style="text-decoration:none;display:flex;gap:16px;align-items:flex-start">
+<img src="/images/covers/the-science-of-scaling-benjamin-hardy.jpg" alt="The Science of Scaling by Benjamin Hardy &amp; Blake Erickson" style="width:70px;min-width:70px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.4);object-fit:cover">
 <div>
-<h3>The Road to Wigan Pier</h3>
-<p>George Orwell · Before 1984, Orwell went north to document poverty. Half brutal journalism, half political essay - the book that made him Orwell.</p>
+<h3>The Science of Scaling</h3>
+<p>Benjamin Hardy &amp; Blake Erickson · Your goal is probably too small. Frame, Floor and Focus: a goal 10x bigger forces you to cut everything that does not belong.</p>
 <span class="card-link">Read review →</span>
 </div>
 </a>
-<a href="/reviews/the-marathon-monks-of-mount-hiei-john-stevens" class="browse-card" style="text-decoration:none;display:flex;gap:16px;align-items:flex-start">
-<img src="/images/covers/9781570621635.jpg" alt="The Marathon Monks of Mount Hiei by John Stevens" style="width:70px;min-width:70px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.4);object-fit:cover">
+<a href="/reviews/stoicism-and-the-art-of-happiness-donald-robertson" class="browse-card" style="text-decoration:none;display:flex;gap:16px;align-items:flex-start">
+<img src="/images/covers/stoicism-and-the-art-of-happiness-donald-robertson.jpg" alt="Stoicism and the Art of Happiness by Donald Robertson" style="width:70px;min-width:70px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.4);object-fit:cover">
 <div>
-<h3>The Marathon Monks of Mount Hiei</h3>
-<p>John Stevens · Monks who run 1,000 marathons in 1,000 days - or die trying. The most extreme spiritual practice on Earth.</p>
+<h3>Stoicism and the Art of Happiness</h3>
+<p>Donald Robertson · One Stoic principle, caring only about what is in your control, raised my baseline happiness. A practical Stoicism primer with real exercises.</p>
 <span class="card-link">Read review →</span>
 </div>
 </a>
-<a href="/reviews/fahrenheit-451-ray-bradbury" class="browse-card" style="text-decoration:none;display:flex;gap:16px;align-items:flex-start">
-<img src="/images/covers/fahrenheit-451.jpg" alt="Fahrenheit 451 by Ray Bradbury" style="width:70px;min-width:70px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.4);object-fit:cover">
+<a href="/reviews/the-grid-gretchen-bakke" class="browse-card" style="text-decoration:none;display:flex;gap:16px;align-items:flex-start">
+<img src="/images/covers/the-grid-gretchen-bakke.jpg" alt="The Grid by Gretchen Bakke" style="width:70px;min-width:70px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.4);object-fit:cover">
 <div>
-<h3>Fahrenheit 451</h3>
-<p>Ray Bradbury · The dystopian classic that wasn't about censorship - it was about a society that chose to stop reading. Sound familiar?</p>
+<h3>The Grid</h3>
+<p>Gretchen Bakke · Worried about AI? The 1880s power grid buildout had rival standards, fires, a PR war and bankrupt tycoons - and it all worked out.</p>
 <span class="card-link">Read review →</span>
 </div>
 </a>
@@ -274,9 +297,9 @@ section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px;color:var(--gold
 <p>The lives that will inspire, humble, and push you to think bigger — from Franklin to Musk.</p>
 <span class="card-link">Read guide →</span>
 </a>
-<a href="/articles/great-books-on-human-nature" class="browse-card" style="text-decoration:none;border-left-color:#8b5cf6">
-<h3>🧠 Best Books on Human Nature</h3>
-<p>Why we do what we do — the essential reading on psychology, evolution, and what makes us human.</p>
+<a href="/articles/6-strange-lives-worth-studying" class="browse-card" style="text-decoration:none;border-left-color:#8b5cf6">
+<h3>🔍 6 Strange Lives Worth Studying</h3>
+<p>Six unconventional lives, and the books that tell their stories.</p>
 <span class="card-link">Read guide →</span>
 </a>
 </div>

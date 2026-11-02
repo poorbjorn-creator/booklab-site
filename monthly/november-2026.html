@@ -125,6 +125,53 @@ section{padding:24px 0}
   .book-num{font-size:1.8rem}
   header{padding:60px 16px 40px}
 }
+
+/* ===== READABILITY EXPERIMENT (Nov 2 2026): remove this block to revert ===== */
+:root{--muted:#cfc3a6;--text:#e6dcc4}
+html{scroll-padding-top:70px}
+body{font-size:17px}
+header h1{text-transform:uppercase;letter-spacing:.06em;font-size:clamp(2rem,5vw,3.2rem)}
+header p.subtitle{font-size:clamp(1.05rem,2.6vw,1.3rem)}
+header .intro{font-size:1.08rem;color:var(--cream);line-height:1.8;max-width:640px}
+header .last-updated{font-size:.85rem;color:var(--muted)}
+header .month-tag{text-transform:uppercase;letter-spacing:.1em;font-size:.8rem}
+.authority-intro p{font-style:normal;font-size:1rem;color:var(--text);max-width:640px;line-height:1.75}
+.video-caption{font-size:.9rem}
+.authority-intro{padding:0 20px;margin:-20px 0 24px}
+.about-bjorn{max-width:640px;margin:0 auto}
+.about-bjorn summary{cursor:pointer;list-style:none;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--muted)}
+.about-bjorn summary::-webkit-details-marker{display:none}
+.about-bjorn summary::after{content:' +';color:var(--gold)}
+.about-bjorn[open] summary::after{content:' -'}
+.about-bjorn p{margin-top:12px}
+/* cards */
+.book-card{padding:32px 34px;gap:28px}
+.book-num{color:var(--gold);opacity:.75;font-size:1rem;letter-spacing:.15em;display:block}
+.book-title{text-transform:uppercase;letter-spacing:.04em;font-size:1.45rem;line-height:1.25;color:var(--cream);margin-bottom:6px}
+.book-title .book-sub{display:block;text-transform:none;letter-spacing:0;font-weight:400;font-size:1rem;color:var(--text);margin-top:4px;line-height:1.4}
+.book-author{font-size:1rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:12px}
+.genre-tag,.release-date{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;padding:4px 12px;margin-bottom:18px}
+.release-date{color:var(--cream)}
+.book-desc{font-size:1.02rem;line-height:1.75;max-width:64ch;margin-bottom:20px;color:var(--text)}
+.bjorn-take{font-style:normal;font-size:1rem;line-height:1.75;max-width:64ch;padding:16px 20px;margin-bottom:20px;background:rgba(230,169,25,.1)}
+.bjorn-take em{font-style:italic}
+.bjorn-take strong{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;margin-bottom:8px}
+.read-if{padding-top:4px;margin-bottom:22px}
+.read-if strong{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--gold);margin-bottom:8px}
+.read-if li{font-size:.96rem;line-height:1.6;color:var(--text);margin-bottom:6px;padding-left:22px}
+.pick-badge,.sponsored-pick-badge{letter-spacing:.1em}
+.btn-amazon{font-size:.9rem;padding:10px 22px}
+.hype-label{font-size:.75rem;color:var(--muted)}
+.browse-months h3,.container h3{text-transform:uppercase;letter-spacing:.08em}
+/* back to top: mobile only */
+.back-top{display:none}
+@media(max-width:700px){
+.back-top{display:block;position:fixed;right:14px;bottom:16px;z-index:150;background:var(--gold);color:#1a1a2e;font-weight:700;font-size:.8rem;padding:10px 16px;border-radius:24px;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.back-top:hover{text-decoration:none}
+.book-card{padding:22px 18px}
+.book-title{font-size:1.3rem}
+}
+/* ===== END READABILITY EXPERIMENT ===== */
 </style>
 <script type="application/ld+json">
 {
@@ -350,36 +397,38 @@ section{padding:24px 0}
 </div>
 
 <header>
-<h1>📅 November 2026</h1>
-<p class="subtitle">The most interesting nonfiction books coming out this month</p>
-<span class="month-tag">📅 November 2026 · 9 Books</span>
+<h1>November 2026</h1>
+<p class="subtitle">The most anticipated nonfiction books coming out this month</p>
+<span class="month-tag">November 2026 · 9 Books</span>
 
 <div class="divider"></div>
-<p class="intro">November is about instruments and the minds that use them: Greene on awe, Pal on the end of the economic operating system, Gleick on the telephone, the authorized life of Hawking, and five more. Nine books. No filler.</p>
-<p class="last-updated">Last updated: October 22, 2026 · Final list. The Pick of the Month and the video breakdown drop in November.</p>
+<p class="intro">November is about instruments and the minds that use them: Greene on awe, Pal on the end of the economic operating system, Gleick on the telephone, the authorized life of Hawking, and five more. Nine books. No filler. My Pick of the Month: <em>The Law of the Sublime</em>.</p>
+<p class="last-updated">Last updated: November 2, 2026 · Final list, with the Pick of the Month and the full video breakdown.</p>
 </header>
 
-<div class="authority-intro">
-<div class="container">
-<p>I'm Bjorn - I've reviewed 300+ nonfiction books over the last 10 years on <a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a> (18k subscribers) and <a href="https://x.com/poorbjorn" target="_blank">X</a> (47k followers). Every month I dig through the new releases so you don't have to. These are my honest picks. Nine this month, zero filler.</p>
+<!-- Video -->
+<div class="video-section">
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/AutuCt7O7ns" title="9 Best New Nonfiction Books - November 2026 (Robert Greene, Hawking &amp; More)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
+<p class="video-caption">Watch the full breakdown on YouTube</p>
 </div>
 
-<!-- Video placeholder -->
-<div class="video-section">
-<div style="background:var(--card);border-radius:var(--radius);padding:16px 20px;text-align:center;margin-bottom:0;border:1px solid rgba(230,169,25,.12)">
-<p style="color:var(--cream);font-size:1rem;margin-bottom:6px">📺 Video coming soon</p>
-<p style="color:var(--muted);font-size:.85rem">The full breakdown will drop closer to November.</p>
-</div>
+<div class="authority-intro">
+<details class="about-bjorn">
+<summary>Who is Bjorn?</summary>
+<p>I'm Bjorn - I've reviewed 300+ nonfiction books over the last 10 years on <a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a> (18k subscribers) and <a href="https://x.com/poorbjorn" target="_blank">X</a> (47k followers). Every month I dig through the new releases so you don't have to. These are my honest picks. Nine this month, zero filler.</p>
+</details>
 </div>
 
 <section>
 <div class="container">
 
 <!-- BOOK 1 - Greene -->
-<div class="book-card" id="book-1" data-book-id="nov26-1">
+<div class="book-card pick-of-month" id="book-1" data-book-id="nov26-1">
 <img src="/images/covers/9781984881045.jpg" alt="The Law of the Sublime by Robert Greene" class="book-cover" loading="lazy">
 <div class="book-card-content">
+<span class="pick-badge">Bjorn's Pick of the Month</span>
 <span class="book-num">01</span>
 <div class="book-title">The Law of the Sublime</div>
 <div class="book-author">Robert Greene</div>
@@ -432,7 +481,7 @@ section{padding:24px 0}
 <img src="/images/covers/9780374618940.jpg" alt="The Telephone: A New History by James Gleick" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="book-num">03</span>
-<div class="book-title">The Telephone: A New History</div>
+<div class="book-title">The Telephone: <span class="book-sub">A New History</span></div>
 <div class="book-author">James Gleick</div>
 <span class="genre-tag">Technology / History of Ideas / Human Nature</span>
 <span class="release-date">November 10</span>
@@ -456,7 +505,7 @@ section{padding:24px 0}
 <img src="/images/covers/B0HLBTJCQJ.jpg" width="324" height="500" alt="How to Be a Lot Less Stupid by Peter H. Frank" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="sponsored-pick-badge">Sponsored Pick</span>
-<div class="book-title">How to Be a Lot Less Stupid: Critical Thinking for Business and Life Before AI Rules Your World</div>
+<div class="book-title">How to Be a Lot Less Stupid: <span class="book-sub">Critical Thinking for Business and Life Before AI Rules Your World</span></div>
 <div class="book-author">Peter H. Frank</div>
 <span class="genre-tag">Critical Thinking / Business / AI</span>
 <p class="book-desc">When AI will happily think for you, critical thinking stops being optional. Peter H. Frank, a former New York Times business reporter and lecturer in critical thinking, makes the case for thinking from first principles - and gives you the tools to actually do it.</p>
@@ -474,7 +523,7 @@ section{padding:24px 0}
 <img src="/images/covers/9781984820112.jpg" width="304" height="450" alt="Hawking by Graham Farmelo" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="book-num">04</span>
-<div class="book-title">Hawking: His Life and Work</div>
+<div class="book-title">Hawking: <span class="book-sub">His Life and Work</span></div>
 <div class="book-author">Graham Farmelo</div>
 <span class="genre-tag">Biography / Science / Physics</span>
 <span class="release-date">November 24</span>
@@ -500,7 +549,7 @@ section{padding:24px 0}
 <img src="/images/covers/9780316581585.jpg" alt="Big Math by Steven Strogatz and Alex Townsend" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="book-num">05</span>
-<div class="book-title">Big Math: The Hidden Codes That Run Our World</div>
+<div class="book-title">Big Math: <span class="book-sub">The Hidden Codes That Run Our World</span></div>
 <div class="book-author">Steven Strogatz &amp; Alex Townsend</div>
 <span class="genre-tag">Science / Mathematics / AI</span>
 <span class="release-date">November 10</span>
@@ -525,7 +574,7 @@ section{padding:24px 0}
 <img src="/images/covers/9781419773587.jpg" alt="Circuit Breakers by Anna Chambers" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="book-num">06</span>
-<div class="book-title">Circuit Breakers: How Neuroscientists Get Inside Your Head</div>
+<div class="book-title">Circuit Breakers: <span class="book-sub">How Neuroscientists Get Inside Your Head</span></div>
 <div class="book-author">Anna Chambers</div>
 <span class="genre-tag">Psychology / Neuroscience</span>
 <span class="release-date">November 3</span>
@@ -539,7 +588,7 @@ section{padding:24px 0}
 <li>You liked <em><a href="/reviews/behave-robert-sapolsky">Behave</a></em> or <em><a href="/reviews/determined-robert-sapolsky">Determined</a></em> by Sapolsky</li>
 <li>You're suspicious of neuroscience headlines and want to see the methods</li>
 </ul></div>
-<a href="https://link.amazon/B0hejH67B" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
+<a href="https://www.amazon.com/s?k=Circuit+Breakers+Anna+Chambers&tag=poorbjorn-20" target="_blank" rel="sponsored nofollow" class="btn-amazon">Buy on Amazon →</a>
 <div class="hype-check"></div>
 </div>
 </div>
@@ -549,7 +598,7 @@ section{padding:24px 0}
 <img src="/images/covers/9798217044795.jpg" width="298" height="450" alt="Radical Surrender by Anna Lembke" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="book-num">07</span>
-<div class="book-title">Radical Surrender: Letting Go in a World Addicted to Control</div>
+<div class="book-title">Radical Surrender: <span class="book-sub">Letting Go in a World Addicted to Control</span></div>
 <div class="book-author">Anna Lembke</div>
 <span class="genre-tag">Psychology / Human Nature / Meaning</span>
 <span class="release-date">November 10</span>
@@ -575,7 +624,7 @@ section{padding:24px 0}
 <img src="/images/covers/9781668062333.jpg" width="265" height="400" alt="Embargo by Philip Delves Broughton" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="book-num">08</span>
-<div class="book-title">Embargo: The 1973 Oil Crisis That Changed the World (And What We Can Learn from It Now)</div>
+<div class="book-title">Embargo: <span class="book-sub">The 1973 Oil Crisis That Changed the World (And What We Can Learn from It Now)</span></div>
 <div class="book-author">Philip Delves Broughton</div>
 <span class="genre-tag">History / Geopolitics / Money</span>
 <span class="release-date">November 17</span>
@@ -601,7 +650,7 @@ section{padding:24px 0}
 <img src="/images/covers/9798217275410.jpg" width="302" height="450" alt="The Art of Organizing Thoughts by Shigehiko Toyama" class="book-cover" loading="lazy">
 <div class="book-card-content">
 <span class="book-num">09</span>
-<div class="book-title">The Art of Organizing Thoughts: Slow Wisdom for a Fast World</div>
+<div class="book-title">The Art of Organizing Thoughts: <span class="book-sub">Slow Wisdom for a Fast World</span></div>
 <div class="book-author">Shigehiko Toyama</div>
 <span class="genre-tag">Thinking / Philosophy / Productivity</span>
 <span class="release-date">November 3</span>
@@ -652,6 +701,8 @@ section{padding:24px 0}
 <a href="/monthly/" class="month-pill special">📚 All Monthly Releases</a>
 </div>
 </div>
+
+<a href="#" class="back-top" aria-label="Back to top">↑ Top</a>
 
 <footer>
 <p>© 2026 BookLab by Bjorn</p>
