@@ -274,6 +274,21 @@ All article and pillar pages (book lists, topic pages, etc.) must follow the **A
 - **Gold standard:** `_src/articles/best-books-by-ai-founders.html`
 - **Also good:** `_src/monthly/september-2026.html` (same card style)
 
+## Readability Standard (Nov 2026, approved by Bjorn)
+
+The November 2026 monthly page and the landing page were restyled for readability. **New and updated monthly pages, the landing page and the hub keep this style.** Reference: `_src/monthly/november-2026.html` (block marked `READABILITY EXPERIMENT`) and `_src/index.html` (block marked `READABILITY PASS`). When copying a month page as a template, keep that CSS block.
+
+- **Capitals:** page H1, section headings (`section h2`), book titles, authors, genre/date labels, "Bjorn's take" and "Read if" labels, badges and card-link text are `text-transform:uppercase` with letter-spacing (about .04em to .12em). A "Main: Subtitle" book title is split in markup into `<span class="book-sub">` (normal case, smaller, own line) so only the main title is capitalised.
+- **Contrast:** override `--muted:#cfc3a6` and `--text:#e6dcc4`; base font 17px; intro text cream. Do not go back to the dim `#9a8c75` for readable text.
+- **Chunks:** descriptions and takes capped at `max-width:64ch`, line-height about 1.75, 20px between blocks. "Bjorn's take" is upright (not italic); only book titles inside it are italic. The authority paragraph is upright, not italic.
+- **Social proof is collapsed:** the "I'm Bjorn, 300+ books, N subscribers" paragraph sits in `<details class="about-bjorn"><summary>Who is Bjorn?</summary>` directly under the video, closed by default, still using the `STAT` markers. Do not put it back above the video.
+- **No jump-to bar** (tried and rejected). The only navigation extra is the mobile-only `.back-top` button.
+- **No calendar emoji** in the monthly H1 or month tag.
+- **Landing page mobile (`@media(max-width:600px)`):** headings must be smaller with less letter-spacing (H1 1.65rem, section h2 1.25rem, card titles about 1rem) or the capitals wrap badly. Check any new uppercase heading on a phone-width viewport.
+- **Copy stays frozen in a design pass.** Prove it by comparing visible text before and after. Bjorn's takes come from his video script (docx); fix typos only when he asks, and keep his wording.
+- **Landing page upkeep for a new month:** Latest Video embed and caption, the Pick of the Month card (cover, title, blurb, link), the three newest reviews from `_src/reviews.html` (`REVIEWS` array, newest first), and the newest article in Deep Dives.
+- Roll the style out to other monthly and article pages only after Bjorn approves; preview first.
+
 ## New Articles / Pillar Pages
 
 When creating a new article or pillar page, you MUST also:
