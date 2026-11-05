@@ -329,6 +329,13 @@ A highlight page is a dedicated page for a highlighted/submitted book. Structure
 7. Add to `_src/highlights.html` index (newest first)
 8. Add to "Featured This Month" on landing page when actively promoting
 9. Update `sitemap.xml`
+10. **Page title and snippet (SEO, set Nov 5 2026 by Bjorn).** The word "Highlight" is internal jargon and does not make anyone click, so never use it as the title suffix (not "Title by Author - Highlight").
+    - `<title>` (and `og:title`): `Book Title: <curiosity hook from Bjorn's own words or the strongest idea on the page> | BookLab by Bjorn`. Aim for about 60 characters before the suffix. Example: `How to Be a Lot Less Stupid: Why Your Brain Prefers a Good Story`.
+    - `twitter:title` is the same without the `| BookLab by Bjorn` suffix.
+    - `<p class="tagline">` is the hook, taken from Bjorn's own X post when he gives one, because Google builds the snippet from the H1 and the first lines. Keep it out of generic summary language.
+    - Meta description and og/twitter descriptions: the hook plus the author or book name, about 150 characters, no em dashes.
+    - Give Bjorn 2-3 title options and wait for his pick before writing it. Do not touch the visible "📣 Highlight" badge or the breadcrumb, readers need those.
+    - After a deploy, Google only picks up new titles on recrawl; Bjorn can request indexing in Search Console.
 
 ## Breadcrumbs
 
