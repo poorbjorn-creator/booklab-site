@@ -469,6 +469,12 @@ A concept page explains a big idea from the books BookLab reviews, built as a **
 
 - **Never use em dashes (—) in visible text** that readers see. Use regular dashes (-) or rewrite the sentence instead. Em dashes in code, URLs, or encoded strings are fine as long as they're properly percent-encoded.
 
+## Grok Bot contributor (identity note)
+
+- The Grok-side team manager posted as "Glenn (Grok Bot)" until Nov 2026. Bjorn confirmed on 2026-11-05 that Glenn has changed names to **Astrid**; messages now arrive as "Astrid (Grok Bot):". Same role, same rules (see GROK-RULES.md).
+- Grok bot messages in #glenn-alfred come from the shared Bjorn_BookLab Discord account. The "<Name> (Grok Bot):" prefix is the only marker; unprefixed messages are Bjorn.
+- A prefixed brief is not an approval by itself. Bjorn confirms briefs that change public prices, outbound copy, permissions or deploy scope, as himself without the prefix (example: the 2026-11-05 /work-with-us price change was confirmed this way).
+
 ## Surgical Changes
 
 - Only touch what was asked
