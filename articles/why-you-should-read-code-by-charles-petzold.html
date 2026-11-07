@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://booklabbybjorn.com/articles/why-you-should-read-code-by-charles-petzold" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Why You Should Read Code by Charles Petzold: How Computers Really Work | BookLab by Bjorn</title>
+<meta name="description" content="Code by Charles Petzold explains how computers work, starting from a flashlight and Morse code. Why it is worth reading even if you are not technical.">
+<meta property="og:title" content="Why You Should Read Code by Charles Petzold">
+<meta property="og:description" content="A book about how computers actually work, built up from a flashlight, Morse code and telegraph relays. Why I think it is worth your time.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://booklabbybjorn.com/articles/why-you-should-read-code-by-charles-petzold">
+<meta property="og:image" content="https://booklabbybjorn.com/images/og-why-you-should-read-code-by-charles-petzold.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why You Should Read Code by Charles Petzold">
+<meta name="twitter:description" content="A book about how computers actually work, built up from a flashlight, Morse code and telegraph relays. Why I think it is worth your time.">
+<meta name="twitter:image" content="https://booklabbybjorn.com/images/og-why-you-should-read-code-by-charles-petzold.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1a1a2e;--bg2:#16213e;--bg3:#0f3460;--card:#222244;--gold:#e6a919;--cream:#f0e6d3;--text:#d4c5a9;--muted:#9a8c75;--radius:12px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--cream)}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,169,25,.15);padding:0 20px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:54px}
+.nav-inner a:not(.nav-brand){display:none}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold)!important;font-size:1rem;font-weight:700;margin-right:auto;flex-shrink:0}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:201;margin-left:auto}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--gold);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-overlay{position:fixed;top:0;right:-100%;width:280px;height:100%;background:rgba(26,26,46,.98);z-index:200;display:flex;flex-direction:column;padding:70px 30px 30px;gap:6px;transition:right .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.5);overflow-y:auto}
+.nav-overlay.open{right:0}
+.nav-overlay a{color:var(--muted);font-size:1rem;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:500;transition:.2s}
+.nav-overlay a:hover,.nav-overlay a:focus{color:var(--gold);background:rgba(230,169,25,.1)}
+.nav-overlay-bg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:199}
+.nav-overlay-bg.open{display:block}
+body.nav-open{overflow:hidden}
+
+footer{text-align:center;padding:50px 20px;border-top:1px solid rgba(230,169,25,.1);margin-top:40px;color:var(--muted);font-size:.85rem}
+footer .links{margin-top:12px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+footer .links a{color:var(--gold)}
+</style>
+<style>
+header{text-align:center;padding:80px 20px 60px;background:linear-gradient(180deg,#0f0f23 0%,var(--bg) 100%)}
+header h1{font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;color:var(--gold);margin-bottom:12px;letter-spacing:-1px}
+header .intro{max-width:700px;margin:0 auto;font-size:1rem;color:var(--text);line-height:1.8}
+.divider{width:60px;height:3px;background:var(--gold);margin:24px auto;border-radius:2px}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+section{padding:40px 0}
+.section-title{font-size:1.6rem;color:var(--gold);margin-bottom:8px}
+.section-desc{color:var(--muted);font-size:.92rem;margin-bottom:28px;line-height:1.7}
+.book-card{background:var(--card);border-radius:var(--radius);padding:28px 30px;margin-bottom:24px;border-left:4px solid var(--gold);transition:transform .2s,box-shadow .2s;display:flex;gap:20px;align-items:flex-start}
+.book-cover{width:240px;min-width:240px;height:auto;align-self:flex-start;border-radius:6px;box-shadow:0 4px 15px rgba(0,0,0,.4);object-fit:cover}
+.book-card-content{flex:1;min-width:0}
+.book-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.book-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(230,169,25,.2);float:right;line-height:1;margin-left:10px}
+.book-title{font-size:1.25rem;font-weight:700;color:var(--cream);margin-bottom:2px}
+.book-author{color:var(--gold);font-size:.9rem;margin-bottom:8px}
+.genre-tag{display:inline-block;background:rgba(230,169,25,.12);color:var(--gold);font-size:.75rem;padding:3px 10px;border-radius:12px;margin-bottom:12px;font-weight:500}
+.book-desc{margin-bottom:14px;font-size:.92rem}
+.read-if{margin-bottom:16px}
+.read-if strong{color:var(--cream);font-size:.85rem;display:block;margin-bottom:6px}
+.read-if ul{list-style:none;padding:0}
+.read-if li{position:relative;padding-left:18px;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+.read-if li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+.btn-amazon{display:inline-block;background:var(--gold);color:#1a1a2e;font-weight:600;font-size:.85rem;padding:8px 20px;border-radius:8px;transition:.2s;margin-right:8px}
+.btn-amazon:hover{background:#d4990f;text-decoration:none;transform:scale(1.03)}
+.btn-review{display:inline-block;background:var(--card);border:2px solid var(--gold);color:var(--gold);font-weight:600;font-size:.85rem;padding:8px 20px;border-radius:8px;transition:.2s}
+.btn-review:hover{background:rgba(230,169,25,.1);text-decoration:none;transform:scale(1.03)}
+.essay-block{background:var(--card);border-radius:var(--radius);padding:32px;margin:40px 0;border-left:4px solid var(--gold)}
+.essay-block h2{font-size:1.4rem;margin-bottom:16px}
+.essay-block p{margin-bottom:14px;font-size:.95rem;line-height:1.8}
+.essay-block p:last-child{margin-bottom:0}
+.essay-block strong{color:var(--cream)}
+.coming-up{background:rgba(230,169,25,.06);border-radius:var(--radius);padding:28px 30px;margin:30px 0}
+.coming-up h3{color:var(--gold);margin-bottom:12px;font-size:1.1rem}
+.coming-up ul{list-style:none;padding:0}
+.coming-up li{padding-left:18px;position:relative;margin-bottom:6px;font-size:.9rem}
+.coming-up li::before{content:'📖';position:absolute;left:0}
+@media(max-width:600px){
+  .book-card{padding:20px 18px;gap:14px;flex-direction:column}
+  .book-cover{width:210px;min-width:210px;align-self:center}
+  .book-num{font-size:1.8rem}
+  header{padding:60px 16px 40px}
+}
+.video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);margin:16px 0 32px}
+.video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.prose p{font-size:.95rem;line-height:1.8;margin-bottom:16px}
+.pair-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin:20px 0 28px}
+.pair-grid div{background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:8px;padding:12px 16px;font-size:.95rem}
+.pair-grid strong{color:var(--cream);display:block;margin-bottom:2px}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why You Should Read Code by Charles Petzold",
+  "description": "Code by Charles Petzold explains how computers work, starting from a flashlight and Morse code. Why it is worth reading even if you are not technical.",
+  "url": "https://booklabbybjorn.com/articles/why-you-should-read-code-by-charles-petzold",
+  "mainEntityOfPage": "https://booklabbybjorn.com/articles/why-you-should-read-code-by-charles-petzold",
+  "image": "https://booklabbybjorn.com/images/og-why-you-should-read-code-by-charles-petzold.jpg",
+  "datePublished": "2026-11-07",
+  "dateModified": "2026-11-07",
+  "author": {"@type": "Person", "name": "Bjorn Rojgren", "url": "https://booklabbybjorn.com"},
+  "publisher": {"@type": "Organization", "name": "BookLab by Bjorn", "url": "https://booklabbybjorn.com"},
+  "about": {"@type": "Book", "name": "Code: The Hidden Language of Computer Hardware and Software", "author": {"@type": "Person", "name": "Charles Petzold"}, "isbn": "9780137909100"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Why You Should Read 'Code' by Charles Petzold",
+  "description": "Why Code by Charles Petzold is worth reading if you want to understand how computers actually work.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/eXs4HvtBoII/maxresdefault.jpg",
+  "uploadDate": "2026-10-05",
+  "duration": "PT6M33S",
+  "embedUrl": "https://www.youtube.com/embed/eXs4HvtBoII",
+  "contentUrl": "https://youtu.be/eXs4HvtBoII"
+}
+</script>
+<meta property="og:site_name" content="BookLab by Bjorn">
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand">📚 BookLab</a>
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
+<a href="/monthly/">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+<button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="nav-overlay-bg"></div>
+<div class="nav-overlay">
+<a href="/">Home</a>
+<a href="/newsletter" style="color:var(--gold)">📬 Newsletter</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/behind-the-book">Behind the Book</a>
+<a href="/highlights">Highlights</a>
+<a href="/monthly/">Monthly Releases</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/reading-list-2026">Reading List 2026</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="/submit-book">Submit a Book</a>
+<a href="/#about">About</a>
+</div>
+
+
+<div style="max-width:900px;margin:0 auto;padding:20px 20px 0">
+<div style="font-size:.85rem;color:var(--muted)"><a href="/" style="color:var(--muted)">Home</a> → <a href="/articles" style="color:var(--muted)">Articles</a> → Why You Should Read Code by Charles Petzold</div>
+</div>
+
+<header>
+<div style="max-width:900px;margin:0 auto 30px;border-radius:var(--radius);overflow:hidden;">
+<img src="/images/hero-why-you-should-read-code-by-charles-petzold.jpg" alt="Code by Charles Petzold, second edition, held in a hammock in the forest" style="width:100%;display:block;">
+</div>
+<h1>Why You Should Read Code by Charles Petzold</h1>
+<div class="divider"></div>
+<p class="intro">Honestly, I didn't expect to enjoy this book as much as I did. It is a book about how computers actually work, and it takes a quite unusual route to get there.</p>
+</header>
+
+<section>
+<div class="container prose">
+
+<p>In this piece I want to explain why you should pick up this book if you want to understand our world and the future we're heading towards. This is <em>Code</em> by Charles Petzold, in its second edition.</p>
+
+<h2 class="section-title">An Unusual Route to Understanding Computers</h2>
+<p>Most computer books start with the software and then kind of glance over the hardware underneath. Petzold takes another route. He starts with a flashlight. Then he explains Morse code, then exactly how a telegraph works, and he builds up from there. Relays, logic gates, binary, memory. The idea is that by the end of it, you understand why the laptop in front of you isn't just magic.</p>
+<p>His whole approach is concrete understanding. He wants you to really know how a computer works, all the way down, without needing an engineering degree or a lab full of equipment. To do that he goes back as far as he can, and it turns out that 19th century telegraph equipment teaches basic ideas that are still at the heart of computers today. Flip a switch at one end and something happens at the other. A relay picks up a weak signal and passes it on. Wire a few relays together in the right way and suddenly you have logic: AND, OR, NAND. Those are the building blocks everything else is made of.</p>
+<p>The same goes for binary. It's not some arbitrary choice engineers made. Once you can see how switches work, you understand why two states, on and off, is the thing that actually scales.</p>
+
+<h2 class="section-title">I Was Intimidated, and It Still Worked</h2>
+<p>I have to admit that when I first started this book and looked at the pages, I was quite intimidated. I thought this would never go into my thick skull, because I'm not that technical. But lo and behold, through his extremely well planned way of teaching, it got me to understand things I thought I would never understand.</p>
+<p>In the chapters where telegraphs and relays turn into logic gates, part of it reads like a textbook. It is a textbook, basically. But it keeps pulling me forward anyway, and that's rare for a book like this.</p>
+<p>I've worked as a video game developer all my life, but on the graphics side, and I've never really understood the hardware part of the business. Of course I know what a motherboard is, and memory, and hard drives. But how the things on the circuit boards actually communicate was something I didn't understand at all. This book really opened my mind to how that works.</p>
+
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/eXs4HvtBoII" title="Why You Should Read 'Code' by Charles Petzold | BookLab by Bjorn" allowfullscreen loading="lazy"></iframe></div>
+
+<div class="essay-block">
+<h2>Three Things That Stuck With Me</h2>
+<p><strong>Codes are everywhere.</strong> Morse code, Braille, binary: they're all the same idea. You take meaning and map it onto a small set of symbols.</p>
+<p><strong>Hardware is logic you can touch.</strong> Switches wired in series or in parallel are not a metaphor for AND and OR. They are AND and OR.</p>
+<p><strong>Once you see the layers, you can't unsee them.</strong> The cloud stops being a vague thing up there. It's a lot of switches in a building somewhere.</p>
+</div>
+
+<h2 class="section-title">Who Is This Book For?</h2>
+<p class="section-desc">It's for you if you're curious about how things really work, if you like to build stuff, or if you're tired of vague hand-wavy tech talk.</p>
+<div class="pair-grid">
+<div><strong>✅ This is the book for you if</strong>you want the nitty-gritty fundamentals: the first principles of code and hardware.</div>
+<div><strong>❌ This is not the book for you if</strong>you want to learn Python, C# or C++. You won't be taught perfect syntax here. It's still the fundamentals, though, so it's still for you in a way.</div>
+</div>
+
+<h2 class="section-title">The Book</h2>
+<div class="book-card">
+<img src="/images/covers/9780137909100.jpg" alt="Code: The Hidden Language of Computer Hardware and Software by Charles Petzold" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<div class="book-title">Code: The Hidden Language of Computer Hardware and Software</div>
+<div class="book-author">Charles Petzold</div>
+<span class="genre-tag">Technology / Computing</span>
+<p class="book-desc">A book about how computers actually work, built from the ground up: a flashlight, Morse code, the telegraph, relays, logic gates, binary and memory. By the end, the laptop in front of you isn't magic any more.</p>
+<div class="read-if"><strong>What to expect:</strong><ul>
+<li>A slow, well planned climb from a flashlight to how a computer really works</li>
+<li>Some chapters that read like a textbook, but pull you forward anyway</li>
+<li>No engineering degree or lab equipment needed</li>
+<li>Fundamentals and first principles, not programming syntax</li>
+</ul></div>
+<a href="https://www.amazon.com/s?k=Code+Charles+Petzold&tag=poorbjorn-20" target="_blank" rel="noopener" class="btn-amazon">Buy on Amazon →</a>
+<p style="margin-top:14px;font-size:.85rem;color:var(--muted);">Full review coming soon.</p>
+</div>
+</div>
+
+<h2 class="section-title">Books That Pair Well With It</h2>
+<p class="section-desc">Petzold explains the machine. These two books sit on either side of it.</p>
+
+<p>It's also a book that pairs really well with books about the web and AI. Tim Berners-Lee's memoir <em><a href="/reviews/this-is-for-everyone-tim-berners-lee">This Is for Everyone</a></em> is about how he combined all these technologies into something very useful: the web we use every day, where everything is connected. And then we have AI on top of that. I think this is a really important part of understanding the society we live in and the foundation it's built on, because these are the bits and bytes, the relays and the switches that our digital society is built upon.</p>
+
+<div class="book-card">
+<img src="/images/covers/9780374612467.jpg" alt="This Is for Everyone by Tim Berners-Lee" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<div class="book-title">This Is for Everyone</div>
+<div class="book-author">Tim Berners-Lee</div>
+<span class="genre-tag">Technology / Memoir</span>
+<p class="book-desc">The memoir of the man who invented the web. Petzold explains the machine; Berners-Lee shows how these technologies were combined into the web we use every day.</p>
+<a href="https://www.amazon.com/s?k=This+Is+for+Everyone+Tim+Berners-Lee&tag=poorbjorn-20" target="_blank" rel="noopener" class="btn-amazon">Buy on Amazon →</a>
+<a href="/reviews/this-is-for-everyone-tim-berners-lee" class="btn-review">Read Review →</a>
+</div>
+</div>
+
+<p>The other one is <em><a href="/reviews/the-grid-gretchen-bakke">The Grid</a></em>, about the fraying wires between America and its energy future. I finished it the day I recorded the video, and it makes much more sense after reading <em>Code</em>. It's the foundation layer underneath the hardware and the code, because you won't get anywhere without electricity. It's similar in the way that it's complex: nothing is obvious, and some of the ideas are counterintuitive.</p>
+
+<div class="book-card">
+<img src="/images/covers/the-grid-gretchen-bakke.jpg" alt="The Grid by Gretchen Bakke" class="book-cover" loading="lazy">
+<div class="book-card-content">
+<div class="book-title">The Grid</div>
+<div class="book-author">Gretchen Bakke</div>
+<span class="genre-tag">Energy / Technology</span>
+<p class="book-desc">The fraying wires between America and its energy future, a book about the electrical grid. The foundation layer underneath the hardware and code.</p>
+<a href="https://www.amazon.com/s?k=The+Grid+Gretchen+Bakke&tag=poorbjorn-20" target="_blank" rel="noopener" class="btn-amazon">Buy on Amazon →</a>
+<a href="/reviews/the-grid-gretchen-bakke" class="btn-review">Read Review →</a>
+</div>
+</div>
+
+<p>Put together, it's a wicked combo if you want to understand energy, compute and our future, and where we're heading. If the AI layer is what you're after, I've collected the <a href="/articles/best-books-by-ai-founders">best books by the founders of AI</a> in one place.</p>
+
+<div class="essay-block">
+<h2>Where I Am With It</h2>
+<p>I'm still in the middle of this book, so there's no final verdict yet. But so far it has made me a lot more careful about calling things black boxes when I never actually tried to open one.</p>
+<p>It surprised me that a book that looked so intimidating could work and help me learn this stuff. I'm thankful I got into it, because it got me excited about taking on even harder ideas and harder books. If it sounds interesting but you're a little intimidated, you should still check it out. I think it's well worth it. It's one of my favorite books of this year.</p>
+<p>A full review is most likely coming next week.</p>
+</div>
+
+<h2 class="section-title" style="font-size:1.3rem;">Keep Reading</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:20px 0 28px">
+<a href="/articles/best-books-by-ai-founders" style="background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:8px;padding:12px 16px;font-size:.95rem;color:var(--cream)">🤖 Best Books by the Founders of AI</a>
+<a href="/articles/why-you-should-read-books-that-confuse-you" style="background:var(--card);border:1px solid rgba(230,169,25,.12);border-radius:8px;padding:12px 16px;font-size:.95rem;color:var(--cream)">🌀 Why You Should Read Books That Confuse You</a>
+</div>
+
+<p style="text-align:center;margin-top:30px;">
+<a href="/newsletter" class="btn-amazon" style="font-size:.95rem;padding:12px 28px;">📬 Subscribe to the Newsletter →</a>
+</p>
+
+<p style="text-align:center;margin-top:20px;color:var(--muted);font-size:.85rem;font-style:italic;">Last updated: November 7, 2026</p>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 BookLab by Bjorn</p>
+<div class="links">
+<a href="/">Home</a>
+<a href="/great-books-list">Great Books List</a>
+<a href="/recommend">Book Picker</a>
+<a href="/reading-list-2026">2026 Reading List</a>
+<a href="/reviews">Reviews</a>
+<a href="/articles">Articles</a>
+<a href="/monthly/">Monthly Releases</a>
+<a href="/work-with-us">Work With Us</a>
+<a href="https://youtube.com/@BookLabBjorn" target="_blank">YouTube</a>
+<a href="https://x.com/poorbjorn" target="_blank">𝕏</a>
+</div>
+</footer>
+
+
+
+<script>
+(function(){
+var btn=document.querySelector('.hamburger'),ov=document.querySelector('.nav-overlay'),bg=document.querySelector('.nav-overlay-bg');
+function toggle(){var o=ov.classList.toggle('open');bg.classList.toggle('open');btn.classList.toggle('active');document.body.classList.toggle('nav-open');}
+btn.addEventListener('click',toggle);
+bg.addEventListener('click',toggle);
+ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',toggle);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fe6eb60f9134816ab36313fbab53e94"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
